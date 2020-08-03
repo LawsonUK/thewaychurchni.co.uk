@@ -34,10 +34,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-purgecss`,
-      options: { tailwind: true },
-    },
-    {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
@@ -51,6 +47,23 @@ module.exports = {
         rule: {
           include: /images/,
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        tailwind: true,
+        whitelist: [
+          "bg-gray-700",
+          "bg-blue-700",
+          "bg-indigo-700",
+          "bg-green-700",
+          "bg-orange-700",
+          "bg-purple-700",
+          "bg-red-700",
+          "bg-pink-700",
+          "bg-teal-700",
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

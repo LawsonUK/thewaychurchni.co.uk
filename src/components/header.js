@@ -3,8 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import Logo from "./../images/logo.svg"
 
-const Header = ({ data }) => {
-  console.log("data", data)
+const Header = () => {
   return (
     <div className="absolute z-10 w-full pt-4">
       <header className="flex relative items-center max-w-screen-xl m-auto">
