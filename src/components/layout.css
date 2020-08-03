@@ -7,3 +7,12 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+.link {
+  @apply text-red-600 font-extrabold;
+}
+
+.banner-background {
+  min-height: 600px;
+  display: flex;
+}
