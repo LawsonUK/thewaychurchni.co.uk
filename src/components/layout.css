@@ -4,9 +4,16 @@
   box-sizing: border-box;
 }
 
-@import "tailwindcss/components";
+body {
+  color: #555;
+}
 
-@import "tailwindcss/utilities";
+h1,
+h1,
+h3,
+h4 {
+  color: #000;
+}
 
 .link {
   @apply text-red-600 font-extrabold;
@@ -16,3 +23,7 @@
   min-height: 600px;
   display: flex;
 }
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";

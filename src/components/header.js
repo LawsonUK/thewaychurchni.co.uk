@@ -6,12 +6,12 @@ import Logo from "./../images/logo.svg"
 const Header = () => {
   return (
     <div className="absolute z-10 w-full pt-4">
-      <header className="flex relative items-center max-w-screen-xl m-auto">
+      <header className="flex relative justify-between items-center max-w-screen-xl m-auto p-4 xl:p-0 xl:pt-4">
         <Link to="/">
           <Logo />
         </Link>
 
-        <nav className="hidden md:flex ml-12">
+        <nav className="hidden md:flex">
           <ul className="flex">
             <li className="mr-8">
               <Link className="link" to="/church">
@@ -35,9 +35,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <span className="font-extrabold right-0 absolute">
-          Every Sunday @ 11AM
-        </span>
+        <span className="font-extrabold">Every Sunday @ 11AM</span>
       </header>
     </div>
   )

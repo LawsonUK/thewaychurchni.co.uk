@@ -1,7 +1,11 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        dark: "#242424",
+      },
+    },
     fontFamily: {
       sans: ["Inter", "-apple-system", "BlinkMacSystemFont"],
       serif: ["Source Serif Pro", "Georgia", "Cambria"],
