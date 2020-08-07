@@ -27,7 +27,7 @@ const IndexPage = ({ data }) => {
   const blog2Url = data.blog2.nodes[0].fluid
   const blog3Url = data.blog3.nodes[0].fluid
   return (
-    <Layout>
+    <Layout absolute="true">
       <SEO title="Home" />
 
       <BackgroundImage
@@ -42,12 +42,18 @@ const IndexPage = ({ data }) => {
               and living as people of the way
             </h1>
             <div className="absolute">
-              <button className="text-gray-100 bg-red-500 pt-3 pb-3 pl-6 pr-6 rounded shadow-md mr-4">
+              <Link
+                to="/church"
+                className="text-gray-100 bg-red-500 pt-3 pb-3 pl-6 pr-6 rounded shadow-md mr-4"
+              >
                 Learn more
-              </button>
-              <button className="bg-gray-100 text-red-500 pt-3 pb-3 pl-6 pr-6 rounded shadow-md">
+              </Link>
+              <Link
+                to="/contact"
+                className="bg-gray-100 text-red-500 pt-3 pb-3 pl-6 pr-6 rounded shadow-md"
+              >
                 Get in touch
-              </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -60,9 +66,12 @@ const IndexPage = ({ data }) => {
         </div>
         <div>
           <span>Message</span>
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-black">
+          <Link
+            to="/"
+            className="block text-2xl md:text-3xl font-bold mb-4 link"
+          >
             The Passover Lamb
-          </h2>
+          </Link>
           <p>
             Passover was the first & most important meal in Israel’s religious
             life, but as Jesus celebrates it with his disciples he changes the
@@ -153,7 +162,7 @@ const IndexPage = ({ data }) => {
                         alt="Johnny Carson"
                       />
                     </Link>
-                    <Link className="text-red-600 font-bold" to="/">
+                    <Link className="text-red-500 font-bold" to="/">
                       Johnny Carson
                     </Link>
                   </div>
@@ -186,7 +195,7 @@ const IndexPage = ({ data }) => {
                         alt="Johnny Carson"
                       />
                     </Link>
-                    <Link className="text-red-600 font-bold" to="/">
+                    <Link className="text-red-500 font-bold" to="/">
                       Johnny Carson
                     </Link>
                   </div>
@@ -219,7 +228,7 @@ const IndexPage = ({ data }) => {
                         alt="Johnny Carson"
                       />
                     </Link>
-                    <Link className="text-red-600 font-bold" to="/">
+                    <Link className="text-red-500 font-bold" to="/">
                       Johnny Carson
                     </Link>
                   </div>

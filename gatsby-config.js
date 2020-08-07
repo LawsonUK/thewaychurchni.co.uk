@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `the-way-church`,
+        name: `The Way Church`,
         short_name: `the-way-church`,
         start_url: `/`,
         background_color: `#663399`,
