@@ -6,7 +6,11 @@ import Logo from "./../images/logo.svg"
 const Header = ({ absolute }) => {
   return (
     <div className={`${absolute && "absolute"} z-10 w-full pt-4`}>
-      <header className="flex relative justify-between items-center max-w-screen-xl m-auto p-4 xl:p-0 xl:pt-4">
+      <header
+        className={`${
+          absolute && "p-4"
+        } flex relative justify-between items-center max-w-screen-xl m-auto xl:p-0 xl:pt-4`}
+      >
         <Link to="/">
           <Logo />
         </Link>
