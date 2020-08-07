@@ -19,7 +19,6 @@ import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 
 const IndexPage = ({ data }) => {
-  console.log("banner", data.banner)
   const bannerUrl = data.banner.nodes[0].fluid
   const messageUrl = data.message.nodes[0].fluid
   const avatarUrl = data.avatar.nodes[0].fluid

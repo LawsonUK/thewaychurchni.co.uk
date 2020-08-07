@@ -15,6 +15,14 @@ h4 {
   color: #000;
 }
 
+p {
+  @apply mb-6;
+}
+
+h2 {
+  @apply text-3xl font-bold;
+}
+
 .link {
   @apply text-red-600 font-extrabold;
 }
@@ -24,9 +32,20 @@ h4 {
   display: flex;
 }
 
+.card-bg {
+  border: 1px solid #353535;
+}
+
 .card-bg:before {
   content: "";
   opacity: 0.25 !important;
+  z-index: 0;
+}
+
+.card-bg:after {
+  content: "";
+  opacity: 0.1 !important;
+  z-index: 0;
 }
 
 @import "tailwindcss/components";

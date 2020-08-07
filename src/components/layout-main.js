@@ -18,7 +18,7 @@ const LayoutMain = ({ children }) => {
   `)
 
   return (
-    <div>
+    <div className="banner max-w-screen-xl m-auto p-4 xl:p-0">
       <Header siteTitle={data.site.siteMetadata.title} absolute={false} />
       <div>
         <main>{children}</main>
