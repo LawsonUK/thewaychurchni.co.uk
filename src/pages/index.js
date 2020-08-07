@@ -81,90 +81,105 @@ const IndexPage = ({ data }) => {
               Blog
             </Link>
           </div>
-          <ul className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-            <li className="rounded overflow-hidden">
-              <BackgroundImage
-                className="p-12 bg-opacity-75"
-                fluid={blog1Url}
-                backgroundColor={`#242424`}
-              >
-                <h2 className="text-gray-100 text-2xl font-bold">
-                  Don't Face Unbelief Alone
-                </h2>
-                <span className="text-gray-200">Mar 7, 2020</span>
-                <p className="text-gray-100">
-                  Unbelief can become a vicious cycle, leaving us isolated and
-                  increasingly vulnerable to more and more deception.
-                </p>
-                <div className="flex items-center mt-8">
-                  <Link to="/">
-                    <Img
-                      className="rounded-full w-10 mr-4"
-                      fluid={avatarUrl}
-                      alt="Johnny Carson"
-                    />
+          <ul className="grid gap-12 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+            <li className="flex flex-col md:col-span-2 xl:col-span-1">
+              <div className="rounded overflow-hidden flex flex-grow">
+                <BackgroundImage
+                  className="card-bg p-12 w-full"
+                  fluid={blog1Url}
+                  backgroundColor={`#000000`}
+                >
+                  <Link
+                    className="text-2xl font-bold block text-red-500 mb-2"
+                    to="/"
+                  >
+                    Don't Face Unbelief Alone
                   </Link>
-                  <Link className="text-red-600 font-bold" to="/">
-                    Johnny Carson
-                  </Link>
-                </div>
-              </BackgroundImage>
+                  <span className="text-gray-200">Mar 7, 2020</span>
+                  <p className="text-gray-100 mt-4">
+                    Unbelief can become a vicious cycle, leaving us isolated and
+                    increasingly vulnerable to more and more deception.
+                  </p>
+                  <div className="flex items-center mt-8">
+                    <Link to="/">
+                      <Img
+                        className="rounded-full w-10 mr-4"
+                        fluid={avatarUrl}
+                        alt="Johnny Carson"
+                      />
+                    </Link>
+                    <Link className="text-red-600 font-bold" to="/">
+                      Johnny Carson
+                    </Link>
+                  </div>
+                </BackgroundImage>
+              </div>
             </li>
-            <li className="rounded overflow-hidden">
-              <BackgroundImage
-                className="p-12 bg-opacity-75"
-                fluid={blog2Url}
-                backgroundColor={`#242424`}
-              >
-                <h2 className="text-gray-100 text-2xl font-bold">
-                  No God but One
-                </h2>
-                <span className="text-gray-200">Mar 7, 2020</span>
-                <p className="text-gray-100">
-                  Unbelief can become a vicious cycle, leaving us isolated and
-                  increasingly vulnerable to more and more deception.
-                </p>
-                <div className="flex items-center mt-8">
-                  <Link to="/">
-                    <Img
-                      className="rounded-full w-10 mr-4"
-                      fluid={avatarUrl}
-                      alt="Johnny Carson"
-                    />
+            <li className="flex flex-col">
+              <div className="rounded overflow-hidden flex flex-grow">
+                <BackgroundImage
+                  className="card-bg p-12 bg-opacity-75"
+                  fluid={blog2Url}
+                  backgroundColor={`#000000`}
+                >
+                  <Link
+                    className="text-2xl font-bold block text-red-500 mb-2"
+                    to="/"
+                  >
+                    No God but One
                   </Link>
-                  <Link className="text-red-600 font-bold" to="/">
-                    Johnny Carson
-                  </Link>
-                </div>
-              </BackgroundImage>
+                  <span className="text-gray-200">Mar 7, 2020</span>
+                  <p className="text-gray-100 mt-4">
+                    Unbelief can become a vicious cycle, leaving us isolated and
+                    increasingly vulnerable to more and more deception.
+                  </p>
+                  <div className="flex items-center mt-8">
+                    <Link to="/">
+                      <Img
+                        className="rounded-full w-10 mr-4"
+                        fluid={avatarUrl}
+                        alt="Johnny Carson"
+                      />
+                    </Link>
+                    <Link className="text-red-600 font-bold" to="/">
+                      Johnny Carson
+                    </Link>
+                  </div>
+                </BackgroundImage>
+              </div>
             </li>
-            <li className="rounded overflow-hidden">
-              <BackgroundImage
-                className="p-12 bg-opacity-75"
-                fluid={blog3Url}
-                backgroundColor={`#242424`}
-              >
-                <h2 className="text-gray-100 text-2xl font-bold">
-                  Battling Anxiety with Thankful Prayer
-                </h2>
-                <span className="text-gray-200">Mar 7, 2020</span>
-                <p className="text-gray-100">
-                  Unbelief can become a vicious cycle, leaving us isolated and
-                  increasingly vulnerable to more and more deception.
-                </p>
-                <div className="flex items-center mt-8">
-                  <Link to="/">
-                    <Img
-                      className="rounded-full w-10 mr-4"
-                      fluid={avatarUrl}
-                      alt="Johnny Carson"
-                    />
+            <li className="flex flex-col">
+              <div className="rounded overflow-hidden flex flex-grow">
+                <BackgroundImage
+                  className="card-bg p-12 bg-opacity-75"
+                  fluid={blog3Url}
+                  backgroundColor={`#000000`}
+                >
+                  <Link
+                    className="text-2xl font-bold block text-red-500 mb-2"
+                    to="/"
+                  >
+                    Battling Anxiety with Thankful Prayer
                   </Link>
-                  <Link className="text-red-600 font-bold" to="/">
-                    Johnny Carson
-                  </Link>
-                </div>
-              </BackgroundImage>
+                  <span className="text-gray-200">Mar 7, 2020</span>
+                  <p className="text-gray-100 mt-4">
+                    Unbelief can become a vicious cycle, leaving us isolated and
+                    increasingly vulnerable to more and more deception.
+                  </p>
+                  <div className="flex items-center mt-8">
+                    <Link to="/">
+                      <Img
+                        className="rounded-full w-10 mr-4"
+                        fluid={avatarUrl}
+                        alt="Johnny Carson"
+                      />
+                    </Link>
+                    <Link className="text-red-600 font-bold" to="/">
+                      Johnny Carson
+                    </Link>
+                  </div>
+                </BackgroundImage>
+              </div>
             </li>
           </ul>
         </section>

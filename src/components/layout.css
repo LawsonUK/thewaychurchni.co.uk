@@ -24,6 +24,11 @@ h4 {
   display: flex;
 }
 
+.card-bg:before {
+  content: "";
+  opacity: 0.25 !important;
+}
+
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
