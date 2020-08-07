@@ -13,7 +13,7 @@ const ChurchPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Church" />
-      <section className="banner text-center mt-24 mb-32 flex flex-col">
+      <section className="banner text-center mt-24 mb-8 md:mb-16 flex flex-col">
         <div className="w-full">
           <h3 className="mb-3">Church</h3>
           <h1 className="text-2xl md:text-4xl font-extrabold mb-12">
@@ -21,7 +21,7 @@ const ChurchPage = ({ data }) => {
           </h1>
         </div>
 
-        <ul className="grid grid-cols-4 grid-rows-2 gap-2 w-full">
+        <ul className="grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full">
           <li className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col">
             <Img
               className="flex flex-grow"
@@ -36,7 +36,7 @@ const ChurchPage = ({ data }) => {
               alt="Johnny Carson"
             />
           </li>
-          <li className="bg-red-400 rounded overflow-hidden flex flex-col">
+          <li className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1">
             <Img
               className="flex flex-grow"
               fluid={church3Url}
@@ -60,7 +60,7 @@ const ChurchPage = ({ data }) => {
         </ul>
       </section>
 
-      <section className="grid md:grid-cols-2 md:gap-12 items-start mb-32">
+      <section className="grid md:grid-cols-2 md:gap-12 items-center mb-12 md:mb-12">
         <div>
           <h2 className="mb-4 text-black">Our Story</h2>
           <p>
@@ -95,16 +95,20 @@ const ChurchPage = ({ data }) => {
         </div>
       </section>
 
-      <section className="grid md:grid-cols-2 md:gap-12 items-start mb-32">
-        <div>
+      <section className="flex flex-col mb-16">
+        <div className="flex flex-row mb-8 lg:mb-16">
           <Img
-            className="rounded mb-12"
+            className="rounded flex flex-grow w-1/2 mr-4"
             fluid={church2Url}
             alt="Johnny Carson"
           />
-          <Img className="rounded" fluid={church3Url} alt="Johnny Carson" />
+          <Img
+            className="rounded flex flex-grow w-1/2"
+            fluid={church3Url}
+            alt="Johnny Carson"
+          />
         </div>
-        <div>
+        <div className="flex flex-col">
           <h2 className="mb-4 text-black">What to Expect</h2>
           <p>
             We meet in Ballyclare town hall on a Sunday morning, but if you find
@@ -152,7 +156,8 @@ const ChurchPage = ({ data }) => {
           </p>
         </div>
       </section>
-      <section className="team grid lg:grid-cols-3">
+      <section className="team grid lg:grid-cols-3 mb-24">
+        <h2 className="mb-4 text-black">The Team</h2>
         <ul>
           <li></li>
           <li></li>
