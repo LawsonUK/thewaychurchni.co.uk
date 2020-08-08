@@ -54,7 +54,7 @@ const Footer = () => {
             {/* <a href="/" target="blank"> */}
             <Icon
               icon={twitterCircleFilled}
-              style={{ fontSize: "27.259260177612305px" }}
+              style={{ fontSize: "27.259260177612305px", color: "#000000" }}
             />
             {/* </a> */}
           </li>
@@ -62,7 +62,7 @@ const Footer = () => {
             {/* <a href="/" target="blank"> */}
             <Icon
               icon={facebookIcon}
-              style={{ fontSize: "24.851852416992188px" }}
+              style={{ fontSize: "24.851852416992188px", color: "#000000" }}
             />
             {/* </a> */}
           </li>
@@ -70,7 +70,7 @@ const Footer = () => {
             {/* <a href="/" target="blank"> */}
             <Icon
               icon={circleinstagramIcon}
-              style={{ fontSize: "25.851852416992188px" }}
+              style={{ fontSize: "25.851852416992188px", color: "#000000" }}
             />
             {/* </a> */}
           </li>

@@ -3,16 +3,16 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import {
-  EmailShareButton,
-  EmailIcon,
-  FacebookShareButton,
-  FacebookIcon,
-  TwitterShareButton,
-  TwitterIcon,
-  WhatsappShareButton,
-  WhatsappIcon,
-} from "react-share"
+// import {
+//   EmailShareButton,
+//   EmailIcon,
+//   FacebookShareButton,
+//   FacebookIcon,
+//   TwitterShareButton,
+//   TwitterIcon,
+//   WhatsappShareButton,
+//   WhatsappIcon,
+// } from "react-share"
 
 import Img from "gatsby-image"
 
@@ -87,7 +87,7 @@ const IndexPage = ({ data }) => {
             <Link className="text-red-600 font-bold" to="/">
               Johnny Carson
             </Link>
-            <ul className="flex ml-8">
+            {/* <ul className="flex ml-8">
               <li className="mr-3">
                 <EmailShareButton
                   url={"https://www.thewaychurchni.co.uk"}
@@ -120,7 +120,7 @@ const IndexPage = ({ data }) => {
                   <WhatsappIcon size={32} round />
                 </WhatsappShareButton>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
       </section>
@@ -236,7 +236,6 @@ const IndexPage = ({ data }) => {
             </li>
           </ul>
         </section>
-        <section className="welcome"></section>
       </div>
     </Layout>
   )

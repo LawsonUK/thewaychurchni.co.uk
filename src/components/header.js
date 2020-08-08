@@ -41,6 +41,35 @@ const Header = ({ absolute }) => {
         </nav>
         <span className="font-extrabold">Every Sunday @ 11AM</span>
       </header>
+
+      <nav
+        className={`flex justify-end md:hidden ${
+          absolute && "pr-4 -mt-4 relative z-10"
+        }`}
+      >
+        <ul className="flex">
+          <li className="mr-8">
+            <Link className="link" to="/church">
+              Church
+            </Link>
+          </li>
+          <li className="mr-8">
+            <Link className="link" to="/blog">
+              Blog
+            </Link>
+          </li>
+          <li className="mr-8">
+            <Link className="link" to="/media">
+              Media
+            </Link>
+          </li>
+          <li>
+            <Link className="link" to="/contact">
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </div>
   )
 }

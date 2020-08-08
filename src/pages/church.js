@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout-main"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
@@ -10,6 +10,8 @@ const ChurchPage = ({ data }) => {
   const church3Url = data.church3.nodes[0].fluid
   const church4Url = data.church4.nodes[0].fluid
   const church5Url = data.church5.nodes[0].fluid
+  const avatarUrl = data.avatar.nodes[0].fluid
+
   return (
     <Layout>
       <SEO title="Church" />
@@ -156,114 +158,89 @@ const ChurchPage = ({ data }) => {
           </p>
         </div>
       </section>
-      <section className="team mb-24">
-        <div class="py-12 bg-white">
-          <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-              <h3 class="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-                The Team
-              </h3>
-            </div>
-
-            <div class="mt-10">
-              <ul class="md:grid md:grid-cols-2 md:col-gap-8 md:row-gap-10">
-                <li className="col-span-2">
-                  <div class="flex">
-                    <div class="flex-shrink-0">
-                      <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                        <svg
-                          class="h-6 w-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="ml-4">
-                      <h4 class="text-lg leading-6 font-medium text-gray-900">
-                        Johnny Carson
-                      </h4>
-                      <p class="mt-2 text-base leading-6 text-gray-500">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Maiores impedit perferendis suscipit eaque, iste
-                        dolor cupiditate blanditiis ratione.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li class="mt-10 md:mt-0">
-                  <div class="flex">
-                    <div class="flex-shrink-0">
-                      <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                        <svg
-                          class="h-6 w-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="ml-4">
-                      <h4 class="text-lg leading-6 font-medium text-gray-900">
-                        Stuart Elliott
-                      </h4>
-                      <p class="mt-2 text-base leading-6 text-gray-500">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Maiores impedit perferendis suscipit eaque, iste
-                        dolor cupiditate blanditiis ratione.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li class="mt-10 md:mt-0">
-                  <div class="flex">
-                    <div class="flex-shrink-0">
-                      <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                        <svg
-                          class="h-6 w-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M13 10V3L4 14h7v7l9-11h-7z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="ml-4">
-                      <h4 class="text-lg leading-6 font-medium text-gray-900">
-                        Transfers are instant
-                      </h4>
-                      <p class="mt-2 text-base leading-6 text-gray-500">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Maiores impedit perferendis suscipit eaque, iste
-                        dolor cupiditate blanditiis ratione.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
+      <section className="team bg-dark rounded max-w-screen-xl m-auto p-12 pt-16 pb-16">
+        <div className="flex justify-center items-center mb-16">
+          <h2 className="text-gray-400 text-base font-light">Team</h2>
         </div>
+        <ul className="grid gap-12 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+          <li className="flex flex-col md:col-span-2 xl:col-span-1 md:mb-12 xl:mb-0">
+            <div className="flex flex-col flex-grow xl:items-start">
+              <div className="flex items-center mb-6 md:pl-20 md:pr-20 xl:pl-0 xl:pr-0">
+                <Img
+                  className="rounded-full w-24 mr-6"
+                  fluid={avatarUrl}
+                  alt="Johnny Carson"
+                />
+                <h3 className="text-2xl text-gray-100">Johnny Carson</h3>
+              </div>
+              <div className="md:pl-20 md:pr-20 xl:pl-0 xl:pr-0">
+                <p className="text-gray-500 mt-4">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Repellendus quae maiores reprehenderit eum modi
+                  exercitationem. Excepturi deleniti quisquam nam quidem
+                  necessitatibus veritatis sit, consequatur reprehenderit,
+                  temporibus consectetur amet eius modi?
+                </p>
+                <p className="text-gray-500 mt-4">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Reprehenderit, porro, minus dolores ut ab, magnam autem optio
+                  numquam totam suscipit atque? Debitis consequuntur eos beatae
+                  porro magnam eaque cumque quos?
+                </p>
+              </div>
+            </div>
+          </li>
+          <li className="flex flex-col">
+            <div className="flex flex-col flex-grow">
+              <div className="flex items-center mb-6">
+                <Img
+                  className="rounded-full w-24 mr-6"
+                  fluid={avatarUrl}
+                  alt="Johnny Carson"
+                />
+                <h3 className="text-2xl text-gray-100">Stuart Elliott</h3>
+              </div>
+              <p className="text-gray-500 mt-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Repellendus quae maiores reprehenderit eum modi exercitationem.
+                Excepturi deleniti quisquam nam quidem necessitatibus veritatis
+                sit, consequatur reprehenderit, temporibus consectetur amet eius
+                modi?
+              </p>
+              <p className="text-gray-500 mt-4">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Reprehenderit, porro, minus dolores ut ab, magnam autem optio
+                numquam totam suscipit atque? Debitis consequuntur eos beatae
+                porro magnam eaque cumque quos?
+              </p>
+            </div>
+          </li>
+          <li className="flex flex-col">
+            <div className="flex flex-col flex-grow">
+              <div className="flex items-center mb-6">
+                <Img
+                  className="rounded-full w-24 mr-6"
+                  fluid={avatarUrl}
+                  alt="Johnny Carson"
+                />
+                <h3 className="text-2xl text-gray-100">Chris McKinven</h3>
+              </div>
+              <p className="text-gray-500 mt-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Repellendus quae maiores reprehenderit eum modi exercitationem.
+                Excepturi deleniti quisquam nam quidem necessitatibus veritatis
+                sit, consequatur reprehenderit, temporibus consectetur amet eius
+                modi?
+              </p>
+              <p className="text-gray-500 mt-4">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Reprehenderit, porro, minus dolores ut ab, magnam autem optio
+                numquam totam suscipit atque? Debitis consequuntur eos beatae
+                porro magnam eaque cumque quos?
+              </p>
+            </div>
+          </li>
+        </ul>
       </section>
     </Layout>
   )
@@ -309,6 +286,15 @@ export const query = graphql`
     }
     church5: allImageSharp(
       filter: { fluid: { originalName: { eq: "church5.jpg" } } }
+    ) {
+      nodes {
+        fluid(maxWidth: 620, jpegQuality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    avatar: allImageSharp(
+      filter: { fluid: { originalName: { eq: "avatar.jpg" } } }
     ) {
       nodes {
         fluid(maxWidth: 620, jpegQuality: 100) {
