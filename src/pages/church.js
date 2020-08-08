@@ -158,13 +158,15 @@ const ChurchPage = ({ data }) => {
           </p>
         </div>
       </section>
-      <section className="team bg-dark rounded max-w-screen-xl m-auto p-12 pt-16 pb-16">
-        <div className="flex justify-center items-center mb-16">
-          <h2 className="text-gray-400 text-base font-light">Team</h2>
+      <section className="team bg-dark rounded max-w-screen-xl m-auto p-6 md:p-6 pt-12">
+        <div className="flex justify-center font-bold items-center mb-12">
+          <h2 className="text-gray-400 text-xl font-light mt-0 md:mt-6">
+            Team
+          </h2>
         </div>
-        <ul className="grid gap-12 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
-          <li className="flex flex-col md:col-span-2 xl:col-span-1 md:mb-12 xl:mb-0">
-            <div className="flex flex-col flex-grow xl:items-start">
+        <ul className="grid gap-4 xl:gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 pb-0 md:pb-8">
+          <li className="flex flex-col md:col-span-2 xl:col-span-1">
+            <div className="flex flex-col flex-grow xl:items-start bg-darker p-6 rounded">
               <div className="flex items-center mb-6 md:pl-20 md:pr-20 xl:pl-0 xl:pr-0">
                 <Img
                   className="rounded-full w-24 mr-6"
@@ -191,7 +193,7 @@ const ChurchPage = ({ data }) => {
             </div>
           </li>
           <li className="flex flex-col">
-            <div className="flex flex-col flex-grow">
+            <div className="flex flex-col flex-grow bg-darker p-6 rounded">
               <div className="flex items-center mb-6">
                 <Img
                   className="rounded-full w-24 mr-6"
@@ -216,7 +218,7 @@ const ChurchPage = ({ data }) => {
             </div>
           </li>
           <li className="flex flex-col">
-            <div className="flex flex-col flex-grow">
+            <div className="flex flex-col flex-grow bg-darker p-6 rounded">
               <div className="flex items-center mb-6">
                 <Img
                   className="rounded-full w-24 mr-6"

@@ -35,8 +35,8 @@ const IndexPage = ({ data }) => {
         backgroundColor={`#040e18`}
       >
         <section className="banner max-w-screen-xl m-auto flex flex-grow p-4 xl:p-0">
-          <div className=" pl-4 pr-4 xl:pl-0 xl:pr-0">
-            <h1 className="text-2xl md:text-4xl font-extrabold mb-8 mt-10">
+          <div className="pl-4 pr-4 xl:pl-0 xl:pr-0 mt-16 sm:mt-0">
+            <h1 className=" text-xl sm:text-3xl md:text-4xl font-extrabold mb-8 mt-10">
               Proclaiming Jesus as the way <br />
               and living as people of the way
             </h1>

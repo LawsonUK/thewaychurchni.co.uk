@@ -11,7 +11,7 @@ const Header = ({ absolute }) => {
           absolute && "p-4"
         } flex relative justify-between items-center max-w-screen-xl m-auto xl:p-0 xl:pt-4`}
       >
-        <Link to="/">
+        <Link className="-mt-4 " to="/">
           <Logo />
         </Link>
 
@@ -39,12 +39,12 @@ const Header = ({ absolute }) => {
             </li>
           </ul>
         </nav>
-        <span className="font-extrabold">Every Sunday @ 11AM</span>
+        <span className="font-extrabold mt-6 md:mt-0">Every Sunday @ 11AM</span>
       </header>
 
       <nav
-        className={`flex justify-end md:hidden ${
-          absolute && "pr-4 -mt-4 relative z-10"
+        className={`flex justify-end md:hidden mt-3 ${
+          absolute && "pr-4 relative z-10 -mt-1"
         }`}
       >
         <ul className="flex">

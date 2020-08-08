@@ -30,6 +30,13 @@ h2 {
 .banner-background {
   min-height: 600px;
   display: flex;
+  background-color: #fff;
+}
+
+.banner-background:before,
+.banner-background:after {
+  background-position: 75% 60% !important;
+  opacity: 60% !important;
 }
 
 .card-bg {
