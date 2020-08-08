@@ -48,6 +48,10 @@ h2 {
   z-index: 0;
 }
 
+.circle {
+  border-radius: 100%;
+}
+
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
