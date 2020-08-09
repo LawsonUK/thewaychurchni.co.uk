@@ -82,45 +82,43 @@ const ContactPage = ({ data }) => {
           </ul>
         </div>
       </section>
-      <div className="bg-dark p-4 mt-16 rounded mt">
-        <ul className="grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full">
-          <li className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col">
-            <Img
-              className="flex flex-grow"
-              fluid={church1Url}
-              alt="Johnny Carson"
-            />
-          </li>
-          <li className="bg-red-600 rounded overflow-hidden flex flex-col">
-            <Img
-              className="flex flex-grow"
-              fluid={church2Url}
-              alt="Johnny Carson"
-            />
-          </li>
-          <li className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1">
-            <Img
-              className="flex flex-grow"
-              fluid={church3Url}
-              alt="Johnny Carson"
-            />
-          </li>
-          <li className="bg-red-200 rounded overflow-hidden flex flex-col">
-            <Img
-              className="flex flex-grow"
-              fluid={church4Url}
-              alt="Johnny Carson"
-            />
-          </li>
-          <li className="bg-red-100 rounded overflow-hidden flex flex-col">
-            <Img
-              className="flex flex-grow"
-              fluid={church5Url}
-              alt="Johnny Carson"
-            />
-          </li>
-        </ul>
-      </div>
+      <ul className="grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full">
+        <li className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col">
+          <Img
+            className="flex flex-grow"
+            fluid={church1Url}
+            alt="Johnny Carson"
+          />
+        </li>
+        <li className="bg-red-600 rounded overflow-hidden flex flex-col">
+          <Img
+            className="flex flex-grow"
+            fluid={church2Url}
+            alt="Johnny Carson"
+          />
+        </li>
+        <li className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1">
+          <Img
+            className="flex flex-grow"
+            fluid={church3Url}
+            alt="Johnny Carson"
+          />
+        </li>
+        <li className="bg-red-200 rounded overflow-hidden flex flex-col">
+          <Img
+            className="flex flex-grow"
+            fluid={church4Url}
+            alt="Johnny Carson"
+          />
+        </li>
+        <li className="bg-red-100 rounded overflow-hidden flex flex-col">
+          <Img
+            className="flex flex-grow"
+            fluid={church5Url}
+            alt="Johnny Carson"
+          />
+        </li>
+      </ul>
     </Layout>
   )
 }

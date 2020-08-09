@@ -97,7 +97,7 @@ const ChurchPage = ({ data }) => {
         </div>
       </section>
 
-      <section className="flex flex-col mb-16">
+      <section className="flex flex-col mb-4 md:mb-16">
         <div className="flex flex-row mb-8 lg:mb-16">
           <Img
             className="rounded flex flex-grow w-1/2 mr-4"
@@ -158,48 +158,21 @@ const ChurchPage = ({ data }) => {
           </p>
         </div>
       </section>
-      <section className="team bg-dark rounded max-w-screen-xl m-auto p-4 md:p-6 pt-12">
-        <div className="flex justify-center font-bold items-center mb-12">
-          <h2 className="text-2xl font-bold text-wayblue mt-0 md:mt-6">Team</h2>
-        </div>
-        <ul className="grid gap-4 xl:gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 pb-0 md:pb-8">
-          <li className="flex flex-col md:col-span-2 xl:col-span-1">
-            <div className="flex flex-col flex-grow xl:items-start bg-darker p-6 rounded">
-              <div className="flex items-center mb-6 md:pl-20 md:pr-20 xl:pl-0 xl:pr-0">
-                <Img
-                  className="rounded-full w-24 mr-6"
-                  fluid={avatarUrl}
-                  alt="Johnny Carson"
-                />
-                <h3 className="text-2xl text-gray-100">Johnny Carson</h3>
-              </div>
-              <div className="md:pl-20 md:pr-20 xl:pl-0 xl:pr-0">
-                <p className="text-gray-500 mt-4">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Repellendus quae maiores reprehenderit eum modi
-                  exercitationem. Excepturi deleniti quisquam nam quidem
-                  necessitatibus veritatis sit, consequatur reprehenderit,
-                  temporibus consectetur amet eius modi?
-                </p>
-                <p className="text-gray-500 mt-4">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Reprehenderit, porro, minus dolores ut ab, magnam autem optio
-                  numquam totam suscipit atque? Debitis consequuntur eos beatae
-                  porro magnam eaque cumque quos?
-                </p>
-              </div>
+      <h2 className="text-3xl font-bold text-wayblue mt-0 md:mt-6 md:text-center mb-8">
+        Team
+      </h2>
+      <ul className="grid gap-4 xl:gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 pb-0">
+        <li className="flex flex-col md:col-span-2 xl:col-span-1">
+          <div className="flex flex-col flex-grow xl:items-start bg-dark p-6 rounded">
+            <div className="flex items-center mb-6 md:pl-20 md:pr-20 xl:pl-0 xl:pr-0">
+              <Img
+                className="rounded-full w-24 mr-6"
+                fluid={avatarUrl}
+                alt="Johnny Carson"
+              />
+              <h3 className="text-2xl text-gray-100">Johnny Carson</h3>
             </div>
-          </li>
-          <li className="flex flex-col">
-            <div className="flex flex-col flex-grow bg-darker p-6 rounded">
-              <div className="flex items-center mb-6">
-                <Img
-                  className="rounded-full w-24 mr-6"
-                  fluid={avatarUrl}
-                  alt="Johnny Carson"
-                />
-                <h3 className="text-2xl text-gray-100">Stuart Elliott</h3>
-              </div>
+            <div className="md:pl-20 md:pr-20 xl:pl-0 xl:pr-0">
               <p className="text-gray-500 mt-4">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Repellendus quae maiores reprehenderit eum modi exercitationem.
@@ -214,34 +187,59 @@ const ChurchPage = ({ data }) => {
                 porro magnam eaque cumque quos?
               </p>
             </div>
-          </li>
-          <li className="flex flex-col">
-            <div className="flex flex-col flex-grow bg-darker p-6 rounded">
-              <div className="flex items-center mb-6">
-                <Img
-                  className="rounded-full w-24 mr-6"
-                  fluid={avatarUrl}
-                  alt="Johnny Carson"
-                />
-                <h3 className="text-2xl text-gray-100">Chris McKinven</h3>
-              </div>
-              <p className="text-gray-500 mt-4">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Repellendus quae maiores reprehenderit eum modi exercitationem.
-                Excepturi deleniti quisquam nam quidem necessitatibus veritatis
-                sit, consequatur reprehenderit, temporibus consectetur amet eius
-                modi?
-              </p>
-              <p className="text-gray-500 mt-4">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Reprehenderit, porro, minus dolores ut ab, magnam autem optio
-                numquam totam suscipit atque? Debitis consequuntur eos beatae
-                porro magnam eaque cumque quos?
-              </p>
+          </div>
+        </li>
+        <li className="flex flex-col">
+          <div className="flex flex-col flex-grow bg-dark p-6 rounded">
+            <div className="flex items-center mb-6">
+              <Img
+                className="rounded-full w-24 mr-6"
+                fluid={avatarUrl}
+                alt="Johnny Carson"
+              />
+              <h3 className="text-2xl text-gray-100">Stuart Elliott</h3>
             </div>
-          </li>
-        </ul>
-      </section>
+            <p className="text-gray-500 mt-4">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Repellendus quae maiores reprehenderit eum modi exercitationem.
+              Excepturi deleniti quisquam nam quidem necessitatibus veritatis
+              sit, consequatur reprehenderit, temporibus consectetur amet eius
+              modi?
+            </p>
+            <p className="text-gray-500 mt-4">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Reprehenderit, porro, minus dolores ut ab, magnam autem optio
+              numquam totam suscipit atque? Debitis consequuntur eos beatae
+              porro magnam eaque cumque quos?
+            </p>
+          </div>
+        </li>
+        <li className="flex flex-col">
+          <div className="flex flex-col flex-grow bg-dark p-6 rounded">
+            <div className="flex items-center mb-6">
+              <Img
+                className="rounded-full w-24 mr-6"
+                fluid={avatarUrl}
+                alt="Johnny Carson"
+              />
+              <h3 className="text-2xl text-gray-100">Chris McKinven</h3>
+            </div>
+            <p className="text-gray-500 mt-4">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Repellendus quae maiores reprehenderit eum modi exercitationem.
+              Excepturi deleniti quisquam nam quidem necessitatibus veritatis
+              sit, consequatur reprehenderit, temporibus consectetur amet eius
+              modi?
+            </p>
+            <p className="text-gray-500 mt-4">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Reprehenderit, porro, minus dolores ut ab, magnam autem optio
+              numquam totam suscipit atque? Debitis consequuntur eos beatae
+              porro magnam eaque cumque quos?
+            </p>
+          </div>
+        </li>
+      </ul>
     </Layout>
   )
 }
