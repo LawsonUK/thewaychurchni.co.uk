@@ -15,7 +15,7 @@ const Header = ({ absolute }) => {
           <Logo />
         </Link>
 
-        <nav className="hidden md:flex">
+        <nav className="hidden md:flex ml-24">
           <ul className="flex">
             <li className="mr-8">
               <Link className="link" to="/church">
