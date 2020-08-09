@@ -85,7 +85,7 @@ const IndexPage = ({ data }) => {
             <h2 className="text-2xl font-bold text-wayblue">
               Latest from the Blog
             </h2>
-            <Link className="link text-red-600" to="/">
+            <Link className="link text-red-600" to="/blog">
               Blog
             </Link>
           </div>

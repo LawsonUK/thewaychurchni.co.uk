@@ -54,6 +54,23 @@ h2 {
   z-index: 0;
 }
 
+.card-light-bg {
+  border: 1px solid #9f9f9f;
+  background-color: #242424;
+}
+
+.card-light-bg:before {
+  content: "";
+  opacity: 0.25 !important;
+  z-index: 0;
+}
+
+.card-light-bg:after {
+  content: "";
+  opacity: 0.1 !important;
+  z-index: 0;
+}
+
 .circle {
   border-radius: 100%;
 }
