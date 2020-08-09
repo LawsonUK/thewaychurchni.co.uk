@@ -2,18 +2,6 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
-// import {
-//   EmailShareButton,
-//   EmailIcon,
-//   FacebookShareButton,
-//   FacebookIcon,
-//   TwitterShareButton,
-//   TwitterIcon,
-//   WhatsappShareButton,
-//   WhatsappIcon,
-// } from "react-share"
-
 import Img from "gatsby-image"
 
 import BackgroundImage from "gatsby-background-image"
@@ -34,9 +22,10 @@ const IndexPage = ({ data }) => {
         fluid={bannerUrl}
         backgroundColor={`#040e18`}
       >
-        <section className="banner max-w-screen-xl m-auto flex flex-grow p-4 xl:p-0">
+        <div className="absolute top-0 bottom-0 right-0 left-0 bg-white opacity-50 z-0 transition-opacity duration-200 lg:opacity-0"></div>
+        <section className="banner max-w-screen-xl m-auto flex flex-grow p-4 xl:p-0 relative z-10">
           <div className="pl-4 pr-4 xl:pl-0 xl:pr-0 mt-16 sm:mt-0">
-            <h1 className=" text-xl sm:text-3xl md:text-4xl font-extrabold mb-8 mt-10">
+            <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold mb-8 mt-10">
               Proclaiming Jesus as the way <br />
               and living as people of the way
             </h1>
@@ -87,47 +76,13 @@ const IndexPage = ({ data }) => {
             <Link className="text-red-600 font-bold" to="/">
               Johnny Carson
             </Link>
-            {/* <ul className="flex ml-8">
-              <li className="mr-3">
-                <EmailShareButton
-                  url={"https://www.thewaychurchni.co.uk"}
-                  quote={"Test"}
-                >
-                  <EmailIcon size={32} round />
-                </EmailShareButton>
-              </li>
-              <li className="mr-3">
-                <FacebookShareButton
-                  url={"https://www.thewaychurchni.co.uk"}
-                  quote={"Test"}
-                >
-                  <FacebookIcon size={32} round />
-                </FacebookShareButton>
-              </li>
-              <li className="mr-3">
-                <TwitterShareButton
-                  url={"https://www.thewaychurchni.co.uk"}
-                  quote={"Test"}
-                >
-                  <TwitterIcon size={32} round />
-                </TwitterShareButton>
-              </li>
-              <li>
-                <WhatsappShareButton
-                  url={"https://www.thewaychurchni.co.uk"}
-                  quote={"Test"}
-                >
-                  <WhatsappIcon size={32} round />
-                </WhatsappShareButton>
-              </li>
-            </ul> */}
           </div>
         </div>
       </section>
       <div className="bg-dark">
         <section className="latest-blog max-w-screen-xl m-auto p-6 pt-16 pb-16 xl:pl-0 xl:pr-0">
           <div className="flex justify-between items-center mb-12">
-            <h2 className="text-2xl font-bold text-gray-100">
+            <h2 className="text-2xl font-bold text-wayblue">
               Latest from the Blog
             </h2>
             <Link className="link text-red-600" to="/">

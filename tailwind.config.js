@@ -5,6 +5,7 @@ module.exports = {
       colors: {
         dark: "#242424",
         darker: "#121212",
+        wayblue: "#54B0B1",
       },
     },
     fontFamily: {

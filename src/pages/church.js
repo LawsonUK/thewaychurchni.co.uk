@@ -18,7 +18,7 @@ const ChurchPage = ({ data }) => {
       <section className="banner text-center mt-24 mb-8 md:mb-16 flex flex-col">
         <div className="w-full">
           <h3 className="mb-3 ">Church</h3>
-          <h1 className="text-3xl md:text-4xl font-extrabold mb-12">
+          <h1 className="text-3xl md:text-4xl font-extrabold mb-12 text-wayblue">
             The Way Church
           </h1>
         </div>
@@ -64,7 +64,7 @@ const ChurchPage = ({ data }) => {
 
       <section className="grid md:grid-cols-2 md:gap-12 items-center mb-12 md:mb-12">
         <div>
-          <h2 className="mb-4 text-black">Our Story</h2>
+          <h2 className="mb-4 text-wayblue">Our Story</h2>
           <p>
             It has been said that God’s way is like Hebrew – it can only be read
             backwards! In some respects that is like our own story.
@@ -111,7 +111,7 @@ const ChurchPage = ({ data }) => {
           />
         </div>
         <div className="flex flex-col lg:max-w-4xl lg:m-auto">
-          <h2 className="mb-4 text-black">What to Expect</h2>
+          <h2 className="mb-4 text-wayblue">What to Expect</h2>
           <p>
             We meet in Ballyclare town hall on a Sunday morning, but if you find
             the car park full, the square car park beside it is free. When you
@@ -158,11 +158,9 @@ const ChurchPage = ({ data }) => {
           </p>
         </div>
       </section>
-      <section className="team bg-dark rounded max-w-screen-xl m-auto p-6 md:p-6 pt-12">
+      <section className="team bg-dark rounded max-w-screen-xl m-auto p-4 md:p-6 pt-12">
         <div className="flex justify-center font-bold items-center mb-12">
-          <h2 className="text-gray-400 text-xl font-light mt-0 md:mt-6">
-            Team
-          </h2>
+          <h2 className="text-2xl font-bold text-wayblue mt-0 md:mt-6">Team</h2>
         </div>
         <ul className="grid gap-4 xl:gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 pb-0 md:pb-8">
           <li className="flex flex-col md:col-span-2 xl:col-span-1">

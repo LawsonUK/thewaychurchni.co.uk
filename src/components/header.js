@@ -39,7 +39,9 @@ const Header = ({ absolute }) => {
             </li>
           </ul>
         </nav>
-        <span className="font-extrabold mt-6 md:mt-0">Every Sunday @ 11AM</span>
+        <span className="font-extrabold mt-6 md:mt-0 text-black">
+          Every Sunday @ 11AM
+        </span>
       </header>
 
       <nav

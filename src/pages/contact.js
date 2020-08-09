@@ -22,7 +22,7 @@ const ContactPage = ({ data }) => {
       <section className="banner text-center mt-24 mb-8 md:mb-24 flex flex-col">
         <div className="w-full">
           <h3 className="mb-3">Contact</h3>
-          <h1 className="text-3xl md:text-4xl font-extrabold mb-4">
+          <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-wayblue">
             Feel free to get in touch
           </h1>
           <p>It would be great to see you! Why not come along some Sunday</p>
@@ -30,13 +30,13 @@ const ContactPage = ({ data }) => {
       </section>
       <section className="contact-details grid md:grid-cols-3 text-center">
         <div className="mb-12">
-          <h3 className="text-black text-2xl font-bold mb-4">Details</h3>
+          <h3 className="text-wayblue text-2xl font-bold mb-4">Details</h3>
           <a className="link" href="mailTo:hello@thewaychurchni.co.uk">
             hello@thewaychurchni.co.uk
           </a>
         </div>
         <div className="mb-12">
-          <h3 className="text-black text-2xl font-bold mb-4">Visit Us</h3>
+          <h3 className="text-2xl font-bold mb-4 text-wayblue">Visit Us</h3>
           <p className="mb-0">Ballyclare town hall</p>
           <p className="mb-0">BT39 9BB</p>
           <p>
@@ -51,7 +51,7 @@ const ContactPage = ({ data }) => {
           </p>
         </div>
         <div className="mb-12">
-          <h3 className="text-black text-2xl font-bold mb-4">
+          <h3 className="text-wayblue text-2xl font-bold mb-4">
             Connect with us
           </h3>
           <ul className="flex mt-5 md:mt-0 justify-center">
