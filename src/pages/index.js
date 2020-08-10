@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => {
               </Link>
               <Link
                 to="/contact"
-                className="bg-gray-100 text-gray-700 pt-3 pb-3 pl-6 pr-6 rounded shadow-md"
+                className="bg-gray-100 text-red-500 pt-3 pb-3 pl-6 pr-6 rounded shadow-md"
               >
                 Get in touch
               </Link>

@@ -16,7 +16,7 @@ const BlogPage = ({ data }) => {
     <Layout>
       <SEO title="Blog"></SEO>
 
-      <section className="banner max-w-screen-xl m-auto mt-24 mb-8 md:mb-16 grid grid-cols-1 lg:grid-cols-2 lg:gap-32 pb-6">
+      <section className="banner max-w-screen-xl m-auto mt-24 mb-8 md:mb-16 grid grid-cols-1 lg:grid-cols-2 lg:gap-32 pr-4 pl-4 pt-0 xl:p-0 pb-6">
         <div className="w-full text-center">
           <h3 className="mb-3">Blog</h3>
           <h1 className="text-3xl md:text-4xl font-extrabold text-wayblue mb-4">
@@ -59,7 +59,7 @@ const BlogPage = ({ data }) => {
       </section>
 
       <div className="bg-light pb-2 pt-8">
-        <div className="rounded">
+        <div className="p-4 xl:p-0">
           <section className="latest-blog max-w-screen-xl m-auto pt-8 pb-8 mb-8">
             <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
               <li className="flex flex-col">

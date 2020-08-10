@@ -7,9 +7,7 @@ const Header = ({ absolute }) => {
   return (
     <div className={`${absolute && "absolute"} z-10 w-full pt-4`}>
       <header
-        className={`${
-          absolute && "p-4"
-        } flex relative justify-between items-center max-w-screen-xl m-auto xl:p-0 xl:pt-4`}
+        className={`p-4 flex relative justify-between items-center max-w-screen-xl m-auto xl:p-0 xl:pt-4`}
       >
         <Link className="-mt-4 " to="/">
           <Logo />
@@ -45,9 +43,7 @@ const Header = ({ absolute }) => {
       </header>
 
       <nav
-        className={`flex justify-end md:hidden mt-3 ${
-          absolute && "pr-4 relative z-10 -mt-1"
-        }`}
+        className={`flex justify-end md:hidden mt-3 pr-4 relative z-10 -mt-1"`}
       >
         <ul className="flex">
           <li className="mr-8">
