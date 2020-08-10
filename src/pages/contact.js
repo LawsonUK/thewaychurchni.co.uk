@@ -28,7 +28,7 @@ const ContactPage = ({ data }) => {
           <p>It would be great to see you! Why not come along some Sunday</p>
         </div>
       </section>
-      <section className="contact-details grid md:grid-cols-3 text-center">
+      <section className="contact-details max-w-screen-xl m-auto grid md:grid-cols-3 text-center">
         <div className="mb-12">
           <h3 className="text-black text-2xl font-bold mb-4">Details</h3>
           <a className="link" href="mailTo:hello@thewaychurchni.co.uk">
@@ -82,40 +82,40 @@ const ContactPage = ({ data }) => {
           </ul>
         </div>
       </section>
-      <ul className="max-w-screen-xl m-auto grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full p-4 shadow-lg">
+      <ul className="max-w-screen-xl m-auto grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 p-4 shadow-lg">
         <li className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col">
           <Img
             className="flex flex-grow"
             fluid={church1Url}
-            alt="Johnny Carson"
+            alt="Jonathan Carson"
           />
         </li>
         <li className="bg-red-600 rounded overflow-hidden flex flex-col">
           <Img
             className="flex flex-grow"
             fluid={church2Url}
-            alt="Johnny Carson"
+            alt="Jonathan Carson"
           />
         </li>
         <li className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1">
           <Img
             className="flex flex-grow"
             fluid={church3Url}
-            alt="Johnny Carson"
+            alt="Jonathan Carson"
           />
         </li>
         <li className="bg-red-200 rounded overflow-hidden flex flex-col">
           <Img
             className="flex flex-grow"
             fluid={church4Url}
-            alt="Johnny Carson"
+            alt="Jonathan Carson"
           />
         </li>
         <li className="bg-red-100 rounded overflow-hidden flex flex-col">
           <Img
             className="flex flex-grow"
             fluid={church5Url}
-            alt="Johnny Carson"
+            alt="Jonathan Carson"
           />
         </li>
       </ul>

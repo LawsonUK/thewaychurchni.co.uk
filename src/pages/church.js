@@ -28,35 +28,35 @@ const ChurchPage = ({ data }) => {
             <Img
               className="flex flex-grow"
               fluid={church1Url}
-              alt="Johnny Carson"
+              alt="Jonathan Carson"
             />
           </li>
           <li className="bg-red-600 rounded overflow-hidden flex flex-col">
             <Img
               className="flex flex-grow"
               fluid={church2Url}
-              alt="Johnny Carson"
+              alt="Jonathan Carson"
             />
           </li>
           <li className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1">
             <Img
               className="flex flex-grow"
               fluid={church3Url}
-              alt="Johnny Carson"
+              alt="Jonathan Carson"
             />
           </li>
           <li className="bg-red-200 rounded overflow-hidden flex flex-col">
             <Img
               className="flex flex-grow"
               fluid={church4Url}
-              alt="Johnny Carson"
+              alt="Jonathan Carson"
             />
           </li>
           <li className="bg-red-100 rounded overflow-hidden flex flex-col">
             <Img
               className="flex flex-grow"
               fluid={church5Url}
-              alt="Johnny Carson"
+              alt="Jonathan Carson"
             />
           </li>
         </ul>
@@ -70,8 +70,8 @@ const ChurchPage = ({ data }) => {
             backwards! In some respects that is like our own story.
           </p>
           <p>
-            In 2014 Johnny Carson and Stuart Elliott met through a mutual
-            friend. Johnny was happily pastoring in a church and Stuart was
+            In 2014 Jonathan Carson and Stuart Elliott met through a mutual
+            friend. Jonathan was happily pastoring in a church and Stuart was
             seeking a home church to be rooted in with his family. Both men were
             convinced of the need for local churches to be ruthlessly committed
             to both serious attention to the word of God and serious pursuit of
@@ -79,11 +79,11 @@ const ChurchPage = ({ data }) => {
             two different ends of the spectrum.
           </p>
           <p>
-            In early 2017, Johnny began to feel stirred and unsettled in
+            In early 2017, Jonathan began to feel stirred and unsettled in
             ministry and after a season of seeking the Lord, he and his wife
             Sandra were convinced the Lord was calling them to step out in faith
-            and plant a church. Johnny announced his notice and left his church
-            at the end of 2017.
+            and plant a church. Jonathan announced his notice and left his
+            church at the end of 2017.
           </p>
           <p>
             Ballyclare seemed to be the right fit – not because there was no
@@ -93,7 +93,7 @@ const ChurchPage = ({ data }) => {
           </p>
         </div>
         <div className=" p-4 shadow-lg">
-          <Img className="rounded" fluid={church4Url} alt="Johnny Carson" />
+          <Img className="rounded" fluid={church4Url} alt="Jonathan Carson" />
         </div>
       </section>
 
@@ -102,21 +102,21 @@ const ChurchPage = ({ data }) => {
           <Img
             className="rounded flex flex-grow w-1/2 mr-4"
             fluid={church2Url}
-            alt="Johnny Carson"
+            alt="Jonathan Carson"
           />
           <Img
             className="rounded flex flex-grow w-1/2"
             fluid={church3Url}
-            alt="Johnny Carson"
+            alt="Jonathan Carson"
           />
         </div>
 
-        <h2 className="mt-4 p-4 xl:pb-16 text-wayblue lg:max-w-4xl lg:m-auto">
+        <h2 className="mt-4 p-4 xl:pb-12 text-wayblue lg:max-w-4xl lg:m-auto">
           What We Believe
         </h2>
         <div className="lg:m-auto p-4 xl:p-0 grid grid-cols-1 lg:grid-cols-2 lg:gap-24">
           <div>
-            <h3 className="text-xl mb-4">Statement of Faith</h3>
+            <h3 className="text-xl mb-4 mt-4">Statement of Faith</h3>
             <p>
               This statement of faith reflects an evangelical, reformed and
               charismatic theology. It is evangelical because the gospel is of
@@ -124,7 +124,7 @@ const ChurchPage = ({ data }) => {
               sovereign to save; and it is charismatic because we believe in the
               continuation of all spiritual gifts listed in the New Testament.
             </p>
-            <h3 className="text-xl mb-4">The Scriptures</h3>
+            <h3 className="text-xl mb-4 mt-4">The Scriptures</h3>
             <p>
               We accept the Bible (39 books of the Old Testament and the 27
               books of the New Testament) as the written Word of God. We believe
@@ -142,7 +142,7 @@ const ChurchPage = ({ data }) => {
               power. All believers are exhorted to study the Scriptures and
               diligently apply them to their lives.
             </p>
-            <h3 className="text-xl mb-4">God</h3>
+            <h3 className="text-xl mb-4 mt-4">God</h3>
             <p>
               We believe there is one God; infinite and eternal, almighty and
               perfect in holiness, truth and love. In the unity of the godhead,
@@ -159,7 +159,7 @@ const ChurchPage = ({ data }) => {
               glory and intends for humanity in particular, to live in
               fellowship with Himself.
             </p>
-            <h3 className="text-xl mb-4">Jesus Christ</h3>
+            <h3 className="text-xl mb-4 mt-4">Jesus Christ</h3>
 
             <p>
               We believe that Jesus Christ is the only begotten Son of God who
@@ -184,7 +184,7 @@ const ChurchPage = ({ data }) => {
               His body, the church, and should be adored, loved, served and
               obeyed by all as his inevitable return is waited for.
             </p>
-            <h3 className="text-xl mb-4">The Holy Spirit</h3>
+            <h3 className="text-xl mb-4 mt-4">The Holy Spirit</h3>
 
             <p>
               We believe that the Holy Spirit is the third person of the trinity
@@ -216,7 +216,7 @@ const ChurchPage = ({ data }) => {
               mission of the Church in the world today.
             </p>
 
-            <h3 className="text-xl mb-4">The Devil</h3>
+            <h3 className="text-xl mb-4 mt-4">The Devil</h3>
 
             <p>
               We believe in a real, literal, personal Devil who is the archenemy
@@ -237,7 +237,7 @@ const ChurchPage = ({ data }) => {
               eternity.{" "}
             </p>
 
-            <h3 className="text-xl mb-4">Humanity</h3>
+            <h3 className="text-xl mb-4 mt-4">Humanity</h3>
 
             <p>
               We believe that God made humanity — male and female in His own
@@ -258,7 +258,7 @@ const ChurchPage = ({ data }) => {
             </p>
           </div>
           <div>
-            <h3 className="text-xl mb-4">The Gospel</h3>
+            <h3 className="text-xl mb-4 mt-4">The Gospel</h3>
 
             <p>
               We believe that the gospel is the good news of Jesus Christ who
@@ -292,7 +292,7 @@ const ChurchPage = ({ data }) => {
               pontificate but in obedience to the great commission preach this
               gospel of grace to all people in all nations.
             </p>
-            <h3 className="text-xl mb-4">The Church</h3>
+            <h3 className="text-xl mb-4 mt-4">The Church</h3>
 
             <p>
               We believe that God by His Word and Spirit creates the Church,
@@ -370,7 +370,7 @@ const ChurchPage = ({ data }) => {
               means of grace for believers who partake of it.
             </p>
 
-            <h3 className="text-xl mb-4">The Future State</h3>
+            <h3 className="text-xl mb-4 mt-4">The Future State</h3>
 
             <p>
               We believe that the consummation of all things includes the
@@ -393,7 +393,7 @@ const ChurchPage = ({ data }) => {
               and glory in what is clear - namely Christ is returning.
             </p>
 
-            <h3 className="text-xl mb-4">Christian Behaviour</h3>
+            <h3 className="text-xl mb-4 mt-4">Christian Behaviour</h3>
 
             <p>
               We believe every believer is to live as salt and light in the
@@ -481,9 +481,9 @@ const ChurchPage = ({ data }) => {
                   <Img
                     className="rounded-full w-20 mr-6"
                     fluid={avatarUrl}
-                    alt="Johnny Carson"
+                    alt="Jonathan Carson"
                   />
-                  <h3 className="text-2xl">Jonathan Carson</h3>
+                  <h3 className="text-2xl text-wayblue">Jonathan Carson</h3>
                 </div>
                 <div className="md:pl-20 md:pr-20 xl:pl-0 xl:pr-0">
                   <p className="mt-4">
@@ -508,9 +508,9 @@ const ChurchPage = ({ data }) => {
                   <Img
                     className="rounded-full w-20 mr-6"
                     fluid={avatarUrl}
-                    alt="Johnny Carson"
+                    alt="Jonathan Carson"
                   />
-                  <h3 className="text-2xl">Stuart Elliott</h3>
+                  <h3 className="text-2xl text-wayblue">Stuart Elliott</h3>
                 </div>
                 <p className="mt-4">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -533,9 +533,9 @@ const ChurchPage = ({ data }) => {
                   <Img
                     className="rounded-full w-20 mr-6"
                     fluid={avatarUrl}
-                    alt="Johnny Carson"
+                    alt="Jonathan Carson"
                   />
-                  <h3 className="text-2xl">Chris McKinven</h3>
+                  <h3 className="text-2xl text-wayblue">Chris McKinven</h3>
                 </div>
                 <p className="mt-4">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.

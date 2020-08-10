@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => {
               </Link>
               <Link
                 to="/contact"
-                className="bg-gray-100 text-red-500 pt-3 pb-3 pl-6 pr-6 rounded shadow-md"
+                className="bg-gray-100 text-gray-700 pt-3 pb-3 pl-6 pr-6 rounded shadow-md"
               >
                 Get in touch
               </Link>
@@ -70,11 +70,11 @@ const IndexPage = ({ data }) => {
               <Img
                 className="rounded-full w-10 xl:w-12 mr-4"
                 fluid={avatarUrl}
-                alt="Johnny Carson"
+                alt="Jonathan Carson"
               />
             </Link>
             <Link className="text-red-600 font-bold" to="/">
-              Johnny Carson
+              Jonathan Carson
             </Link>
           </div>
         </div>
@@ -89,12 +89,12 @@ const IndexPage = ({ data }) => {
               View More
             </Link>
           </div>
-          <ul className="grid gap-12 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+          <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
             <li className="flex flex-col md:col-span-2 xl:col-span-1">
               <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
-                <Img className="w-full h-64 mb-4" fluid={blog1Url} />
+                <Img className="w-full h-64 mb-4 rounded" fluid={blog1Url} />
                 <Link
-                  className="text-2xl font-bold block text-red-500 mb-2"
+                  className="text-xl font-bold block text-red-500 mb-2"
                   to="/"
                 >
                   Don't Face Unbelief Alone
@@ -109,20 +109,20 @@ const IndexPage = ({ data }) => {
                     <Img
                       className="rounded-full w-10 mr-4"
                       fluid={avatarUrl}
-                      alt="Johnny Carson"
+                      alt="Jonathan Carson"
                     />
                   </Link>
-                  <Link className="text-red-500 font-bold" to="/">
-                    Johnny Carson
+                  <Link className="text-gray-700 font-bold" to="/">
+                    Jonathan Carson
                   </Link>
                 </div>
               </div>
             </li>
             <li className="flex flex-col">
               <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
-                <Img className="w-full h-64 mb-4" fluid={blog2Url} />
+                <Img className="w-full h-64 mb-4 rounded" fluid={blog2Url} />
                 <Link
-                  className="text-2xl font-bold block text-red-500 mb-2"
+                  className="text-xl font-bold block text-red-500 mb-2"
                   to="/"
                 >
                   No God but One
@@ -137,20 +137,20 @@ const IndexPage = ({ data }) => {
                     <Img
                       className="rounded-full w-10 mr-4"
                       fluid={avatarUrl}
-                      alt="Johnny Carson"
+                      alt="Jonathan Carson"
                     />
                   </Link>
-                  <Link className="text-red-500 font-bold" to="/">
-                    Johnny Carson
+                  <Link className="text-gray-700 font-bold" to="/">
+                    Jonathan Carson
                   </Link>
                 </div>
               </div>
             </li>
             <li className="flex flex-col">
               <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
-                <Img className="w-full h-64 mb-4" fluid={blog3Url} />
+                <Img className="w-full h-64 mb-4 rounded" fluid={blog3Url} />
                 <Link
-                  className="text-2xl font-bold block text-red-500 mb-2"
+                  className="text-xl font-bold block text-red-500 mb-2"
                   to="/"
                 >
                   Battling Anxiety with Thankful Prayer
@@ -165,11 +165,11 @@ const IndexPage = ({ data }) => {
                     <Img
                       className="rounded-full w-10 mr-4"
                       fluid={avatarUrl}
-                      alt="Johnny Carson"
+                      alt="Jonathan Carson"
                     />
                   </Link>
-                  <Link className="text-red-500 font-bold" to="/">
-                    Johnny Carson
+                  <Link className="text-gray-700 font-bold" to="/">
+                    Jonathan Carson
                   </Link>
                 </div>
               </div>
