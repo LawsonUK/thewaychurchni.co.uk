@@ -19,7 +19,7 @@ const ContactPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Church" />
-      <section className="banner text-center mt-24 mb-8 md:mb-24 flex flex-col">
+      <section className="banner max-w-screen-xl m-auto text-center mt-24 mb-8 md:mb-24 flex flex-col">
         <div className="w-full">
           <h3 className="mb-3">Contact</h3>
           <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-wayblue">
@@ -82,7 +82,7 @@ const ContactPage = ({ data }) => {
           </ul>
         </div>
       </section>
-      <ul className="grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full">
+      <ul className="max-w-screen-xl m-auto grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full p-4 shadow-lg">
         <li className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col">
           <Img
             className="flex flex-grow"
