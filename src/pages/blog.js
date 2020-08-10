@@ -60,7 +60,7 @@ const BlogPage = ({ data }) => {
 
       <div className="bg-light pb-2 pt-8">
         <div className="p-4 xl:p-0">
-          <section className="latest-blog max-w-screen-xl m-auto pt-8 pb-8 mb-8">
+          <section className="latest-blog max-w-screen-xl m-auto pt-8 pb-8 mb-6">
             <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
               <li className="flex flex-col">
                 <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
