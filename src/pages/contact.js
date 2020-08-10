@@ -31,8 +31,8 @@ const ContactPage = ({ data }) => {
       <section className="contact-details max-w-screen-xl m-auto grid md:grid-cols-3 text-center">
         <div className="mb-12">
           <h3 className="text-black text-2xl font-bold mb-4">Details</h3>
-          <a className="link" href="mailTo:hello@thewaychurchni.co.uk">
-            hello@thewaychurchni.co.uk
+          <a className="link" href="mailTo:info@thewaychurchni.co.uk">
+            info@thewaychurchni.co.uk
           </a>
         </div>
         <div className="mb-12">
@@ -56,28 +56,28 @@ const ContactPage = ({ data }) => {
           </h3>
           <ul className="flex mt-5 md:mt-0 justify-center">
             <li className="mr-2">
-              {/* <a href="/" target="blank"> */}
-              <Icon
-                icon={twitterCircleFilled}
-                style={{ fontSize: "35.259260177612305px", color: "#000000" }}
-              />
-              {/* </a> */}
+              <a href="https://twitter.com/thewaychurch4">
+                <Icon
+                  icon={twitterCircleFilled}
+                  style={{ fontSize: "35.259260177612305px", color: "#000000" }}
+                />
+              </a>
             </li>
             <li className="mr-2">
-              {/* <a href="/" target="blank"> */}
-              <Icon
-                icon={facebookIcon}
-                style={{ fontSize: "32.851852416992188px", color: "#000000" }}
-              />
-              {/* </a> */}
+              <a href="https://www.facebook.com/thewaychurchni">
+                <Icon
+                  icon={facebookIcon}
+                  style={{ fontSize: "32.851852416992188px", color: "#000000" }}
+                />
+              </a>
             </li>
             <li>
-              {/* <a href="/" target="blank"> */}
-              <Icon
-                icon={circleinstagramIcon}
-                style={{ fontSize: "33.851852416992188px", color: "#000000" }}
-              />
-              {/* </a> */}
+              <a href="https://www.instagram.com/thewaychurchni/">
+                <Icon
+                  icon={circleinstagramIcon}
+                  style={{ fontSize: "33.851852416992188px", color: "#000000" }}
+                />
+              </a>
             </li>
           </ul>
         </div>

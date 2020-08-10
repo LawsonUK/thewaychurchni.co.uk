@@ -51,28 +51,28 @@ const Footer = () => {
         </span>
         <ul className="flex mt-5 md:mt-0">
           <li className="mr-2">
-            {/* <a href="/" target="blank"> */}
-            <Icon
-              icon={twitterCircleFilled}
-              style={{ fontSize: "27.259260177612305px", color: "#000000" }}
-            />
-            {/* </a> */}
+            <a href="https://twitter.com/thewaychurch4">
+              <Icon
+                icon={twitterCircleFilled}
+                style={{ fontSize: "27.259260177612305px", color: "#000000" }}
+              />
+            </a>
           </li>
           <li className="mr-2">
-            {/* <a href="/" target="blank"> */}
-            <Icon
-              icon={facebookIcon}
-              style={{ fontSize: "24.851852416992188px", color: "#000000" }}
-            />
-            {/* </a> */}
+            <a href="https://www.facebook.com/thewaychurchni">
+              <Icon
+                icon={facebookIcon}
+                style={{ fontSize: "24.851852416992188px", color: "#000000" }}
+              />
+            </a>
           </li>
           <li>
-            {/* <a href="/" target="blank"> */}
-            <Icon
-              icon={circleinstagramIcon}
-              style={{ fontSize: "25.851852416992188px", color: "#000000" }}
-            />
-            {/* </a> */}
+            <a href="https://www.instagram.com/thewaychurchni/">
+              <Icon
+                icon={circleinstagramIcon}
+                style={{ fontSize: "25.851852416992188px", color: "#000000" }}
+              />
+            </a>
           </li>
         </ul>
       </div>

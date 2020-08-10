@@ -33,7 +33,7 @@ const BlogPage = ({ data }) => {
             sunt ex, error repellat officia sapiente dolorum quas similique!
           </p>
         </div>
-        <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
+        <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-6 bg-white">
           <Img className="w-full h-64 mb-4 rounded" fluid={blog1Url} />
           <Link className="text-2xl font-bold block text-red-500 mb-2" to="/">
             Don't Face Unbelief Alone
