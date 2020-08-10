@@ -82,7 +82,7 @@ const IndexPage = ({ data }) => {
       <div className="bg-dark">
         <section className="latest-blog max-w-screen-xl m-auto p-6 pt-16 pb-16 xl:pl-0 xl:pr-0">
           <div className="flex justify-between items-center mb-12">
-            <h2 className="text-2xl font-bold text-wayblue">
+            <h2 className="text-2xl font-bold text-white">
               Latest from the Blog
             </h2>
             <Link className="link text-red-600" to="/blog">

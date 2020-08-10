@@ -16,7 +16,7 @@ h4 {
 }
 
 p {
-  @apply mb-6;
+  @apply mb-6 leading-7;
 }
 
 h2 {
@@ -39,7 +39,7 @@ h2 {
 }
 
 .card-bg {
-  border: 1px solid #353535;
+  border: 1px solid #5e5e5e;
 }
 
 .card-bg:before {
@@ -54,18 +54,26 @@ h2 {
   z-index: 0;
 }
 
-.card-light-bg {
+.card-light-bg,
+.card-light-main {
   border: 1px solid #9f9f9f;
   background-color: #242424;
 }
 
-.card-light-bg:before {
+.card-light-main {
+  height: 300px;
+}
+
+.card-light-bg:before,
+.card-light-main:before {
   content: "";
   opacity: 0.25 !important;
   z-index: 0;
+  height: 300px;
 }
 
-.card-light-bg:after {
+.card-light-bg:after,
+.card-light-main:after {
   content: "";
   opacity: 0.1 !important;
   z-index: 0;

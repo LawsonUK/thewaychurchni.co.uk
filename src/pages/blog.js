@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/layout-main"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 
@@ -16,30 +16,45 @@ const BlogPage = ({ data }) => {
     <Layout>
       <SEO title="Blog"></SEO>
 
-      <BackgroundImage
-        className="banner-background"
-        fluid={bannerUrl}
-        backgroundColor={`#040e18`}
-      >
-        <div className="absolute top-0 bottom-0 right-0 left-0 bg-white opacity-50 z-0 transition-opacity duration-200 lg:opacity-0"></div>
-        <section className="banner max-w-screen-xl m-auto flex flex-grow p-4 xl:p-0 relative z-10">
-          <div className="pl-4 pr-4 xl:pl-0 xl:pr-0 mt-16 sm:mt-0">
-            <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold mb-8 mt-10">
-              Don't Face Unbelief
-            </h1>
-            <div className="absolute">
-              <Link
-                to="/church"
-                className="text-gray-100 bg-red-500 pt-3 pb-3 pl-6 pr-6 rounded shadow-md mr-4"
-              >
-                Read more
+      <section className="banner text-center mt-24 mb-8 md:mb-16 grid grid-cols-1 lg:grid-cols-2">
+        <div className="w-full">
+          <h3 className="mb-3">Blog</h3>
+          <h1 className="text-3xl md:text-4xl font-extrabold text-wayblue mb-4">
+            Thoughts from <br /> the Pastors
+          </h1>
+          <p className="mb-12">Helping you on</p>
+        </div>
+        <BackgroundImage
+          className="card-light-main p-12 w-full rounded overflow-hidden"
+          fluid={blog1Url}
+          backgroundColor={`#000000`}
+        >
+          <div>
+            <Link className="text-2xl font-bold block text-red-500 mb-2" to="/">
+              Don't Face Unbelief Alone
+            </Link>
+            <span className="text-gray-200">Mar 7, 2020</span>
+            <p className="text-gray-100 mt-4">
+              Unbelief can become a vicious cycle, leaving us isolated and
+              increasingly vulnerable to more and more deception.
+            </p>
+            <div className="flex items-center justify-center mt-8">
+              <Link to="/">
+                <Img
+                  className="rounded-full w-10 mr-4"
+                  fluid={avatarUrl}
+                  alt="Johnny Carson"
+                />
+              </Link>
+              <Link className="text-red-500 font-bold" to="/">
+                Johnny Carson
               </Link>
             </div>
           </div>
-        </section>
-      </BackgroundImage>
+        </BackgroundImage>
+      </section>
 
-      <h2 className="max-w-screen-xl m-auto text-2xl font-bold text-wayblue mb-4">
+      <h2 className="max-w-screen-xl m-auto text-2xl font-bold text-wayblue">
         Latest Posts
       </h2>
       <div className="rounded">
@@ -148,7 +163,7 @@ const BlogPage = ({ data }) => {
         </section>
       </div>
 
-      <h2 className="max-w-screen-xl m-auto text-2xl font-bold text-wayblue mb-4">
+      <h2 className="max-w-screen-xl m-auto text-2xl font-bold text-wayblue ">
         Featured Posts
       </h2>
       <div className="rounded">
