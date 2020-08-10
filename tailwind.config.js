@@ -6,6 +6,7 @@ module.exports = {
         dark: "#242424",
         darker: "#121212",
         wayblue: "#54B0B1",
+        light: "#f5f5f5",
       },
     },
     fontFamily: {

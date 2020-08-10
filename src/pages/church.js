@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../components/layout-main"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 
@@ -13,9 +13,9 @@ const ChurchPage = ({ data }) => {
   const avatarUrl = data.avatar.nodes[0].fluid
 
   return (
-    <Layout>
+    <Layout absolute="true">
       <SEO title="Church" />
-      <section className="banner text-center mt-24 mb-8 md:mb-16 flex flex-col">
+      <section className="banner text-center mt-24 mb-8 md:mb-16 flex flex-col max-w-screen-xl m-auto">
         <div className="w-full">
           <h3 className="mb-3 ">Church</h3>
           <h1 className="text-3xl md:text-4xl font-extrabold mb-12 text-wayblue">
@@ -23,7 +23,7 @@ const ChurchPage = ({ data }) => {
           </h1>
         </div>
 
-        <ul className="grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full">
+        <ul className="grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full p-4 shadow-lg">
           <li className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col">
             <Img
               className="flex flex-grow"
@@ -92,13 +92,13 @@ const ChurchPage = ({ data }) => {
             area.
           </p>
         </div>
-        <div>
+        <div className=" p-4 shadow-lg">
           <Img className="rounded" fluid={church4Url} alt="Johnny Carson" />
         </div>
       </section>
 
       <section className="flex flex-col mb-4 md:mb-16">
-        <div className="flex flex-row mb-8 lg:mb-16">
+        <div className="flex flex-row mb-8 lg:mb-16  p-4 shadow-lg">
           <Img
             className="rounded flex flex-grow w-1/2 mr-4"
             fluid={church2Url}
