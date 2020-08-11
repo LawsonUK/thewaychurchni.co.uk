@@ -73,7 +73,7 @@ const IndexPage = ({ data }) => {
                 alt="Jonathan Carson"
               />
             </Link>
-            <Link className="text-red-600 font-bold" to="/">
+            <Link className="text-gray-700 font-bold" to="/">
               Jonathan Carson
             </Link>
           </div>
