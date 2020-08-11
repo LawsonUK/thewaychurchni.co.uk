@@ -27,6 +27,19 @@ h2 {
   @apply text-red-600 font-extrabold;
 }
 
+.player-wrapper {
+  position: relative;
+  padding-top: 38.25%;
+  max-height: 600px;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-height: 600px;
+}
+
 .banner-background {
   min-height: 600px;
   display: flex;

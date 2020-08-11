@@ -22,12 +22,13 @@
     "intersection-observer": "^0.11.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-burger-menu": "^2.6.13",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
-    "react-share": "^4.2.1",
-    "tailwindcss": "^1.5.2",
     "react-moment": "^0.9.7",
-    "react-burger-menu": "^2.6.13"
+    "react-player": "^2.6.0",
+    "react-share": "^4.2.1",
+    "tailwindcss": "^1.5.2"
   },
   "devDependencies": {
     "@iconify/icons-ant-design": "^1.0.8",
