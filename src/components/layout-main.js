@@ -19,7 +19,11 @@ const LayoutMain = ({ children }) => {
 
   return (
     <div className="banner p-0">
-      <Header siteTitle={data.site.siteMetadata.title} absolute={false} />
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        absolute={false}
+        live="true"
+      />
       <div>
         <main>{children}</main>
         <Footer />

@@ -26,7 +26,11 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      <Header siteTitle={data.site.siteMetadata.title} absolute={true} />
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        absolute={true}
+        live={true}
+      />
       <div>
         <main>{children}</main>
         <Footer />

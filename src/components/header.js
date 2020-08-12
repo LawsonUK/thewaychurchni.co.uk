@@ -3,7 +3,29 @@ import PropTypes from "prop-types"
 import React from "react"
 import Logo from "./../images/logo.svg"
 
-const Header = ({ absolute }) => {
+const Header = ({ absolute, live }) => {
+  const liveMenuItem = (
+    <li className="mr-8 md:mr-4 lg:mr-8 flex">
+      <Link className="link mr-2" to="/live">
+        Live
+      </Link>
+      <svg
+        id="icon-camera"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#2a2a31"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+        <circle class="capture" stroke="#ea3970" cx="12" cy="13" r="4"></circle>
+      </svg>
+    </li>
+  )
   return (
     <div className={`${absolute && "absolute"} z-10 w-full pt-4`}>
       <header
@@ -15,17 +37,18 @@ const Header = ({ absolute }) => {
 
         <nav className="hidden md:flex ml-24">
           <ul className="flex">
-            <li className="mr-8">
+            {live && liveMenuItem}
+            <li className="mr-8 md:mr-4 lg:mr-8">
               <Link className="link" to="/church">
                 Church
               </Link>
             </li>
-            <li className="mr-8">
+            <li className="mr-8 md:mr-4 lg:mr-8">
               <Link className="link" to="/blog">
                 Blog
               </Link>
             </li>
-            <li className="mr-8">
+            <li className="mr-8 md:mr-4 lg:mr-8">
               <Link className="link" to="/media">
                 Media
               </Link>
@@ -46,6 +69,7 @@ const Header = ({ absolute }) => {
         className={`flex justify-end md:hidden mt-3 pr-4 relative z-10 -mt-1"`}
       >
         <ul className="flex">
+          {live && liveMenuItem}
           <li className="mr-8">
             <Link className="link" to="/church">
               Church

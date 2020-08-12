@@ -4,10 +4,7 @@ import Layout from "../components/layout-main"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 
-import BackgroundImage from "gatsby-background-image"
-
 const BlogPage = ({ data }) => {
-  const bannerUrl = data.banner.nodes[0].fluid
   const avatarUrl = data.avatar.nodes[0].fluid
   const blog1Url = data.blog1.nodes[0].fluid
   const blog2Url = data.blog2.nodes[0].fluid

@@ -23,7 +23,7 @@ const LivePage = () => {
         </div>
       </section>
       <section className="player pt-12 pb-12 bg-light mb-24">
-        <div className="max-w-6xl m-auto pl-4 pr-4 player-wrapper">
+        <div className="max-w-4xl m-auto pl-4 pr-4 player-wrapper">
           <ReactPlayer
             url="https://www.youtube.com/watch?v=LI5dBkIG5EI"
             className="react-player"
