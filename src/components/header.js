@@ -5,7 +5,7 @@ import Logo from "./../images/logo.svg"
 
 const Header = ({ absolute, live }) => {
   const liveMenuItem = (
-    <li className="mr-8 md:mr-4 lg:mr-8 flex">
+    <li className="mr-6 md:mr-4 lg:mr-8 flex">
       <Link className="link mr-2" to="/live">
         Live
       </Link>
@@ -70,17 +70,17 @@ const Header = ({ absolute, live }) => {
       >
         <ul className="flex">
           {live && liveMenuItem}
-          <li className="mr-8">
+          <li className="mr-6">
             <Link className="link" to="/church">
               Church
             </Link>
           </li>
-          <li className="mr-8">
+          <li className="mr-6">
             <Link className="link" to="/blog">
               Blog
             </Link>
           </li>
-          <li className="mr-8">
+          <li className="mr-6">
             <Link className="link" to="/media">
               Media
             </Link>
