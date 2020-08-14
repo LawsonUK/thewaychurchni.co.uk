@@ -36,19 +36,19 @@ const Header = ({ absolute, live }) => {
         </Link>
 
         <nav className="hidden md:flex ml-24">
-          <ul className="flex">
+          <ul className="flex text-sm lg:text-base">
             {live && liveMenuItem}
-            <li className="mr-8 md:mr-4 lg:mr-8">
+            <li className="mr-8 md:mr-6 lg:mr-8">
               <Link className="link" to="/church">
                 Church
               </Link>
             </li>
-            <li className="mr-8 md:mr-4 lg:mr-8">
+            <li className="mr-8 md:mr-6 lg:mr-8">
               <Link className="link" to="/blog">
                 Blog
               </Link>
             </li>
-            <li className="mr-8 md:mr-4 lg:mr-8">
+            <li className="mr-8 md:mr-6 lg:mr-8">
               <Link className="link" to="/media">
                 Media
               </Link>
@@ -68,7 +68,7 @@ const Header = ({ absolute, live }) => {
       <nav
         className={`flex justify-end md:hidden mt-3 pr-4 relative z-10 -mt-1"`}
       >
-        <ul className="flex">
+        <ul className="flex text-sm md:text-base">
           {live && liveMenuItem}
           <li className="mr-6">
             <Link className="link" to="/church">
