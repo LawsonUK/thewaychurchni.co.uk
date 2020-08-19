@@ -6,24 +6,31 @@ import Logo from "./../images/logo.svg"
 const Header = ({ absolute, live }) => {
   const liveMenuItem = (
     <li className="mr-6 md:mr-4 lg:mr-8 flex">
-      <Link className="link mr-2" to="/live">
+      <Link className="link flex" to="/live">
         Live
+        <svg
+          id="icon-camera"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#2a2a31"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="ml-2 -mt-1 md:mt-0"
+        >
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+          <circle
+            className="capture"
+            stroke="#ea3970"
+            cx="12"
+            cy="13"
+            r="4"
+          ></circle>
+        </svg>
       </Link>
-      <svg
-        id="icon-camera"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#2a2a31"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-        <circle class="capture" stroke="#ea3970" cx="12" cy="13" r="4"></circle>
-      </svg>
     </li>
   )
   return (

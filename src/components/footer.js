@@ -67,7 +67,7 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/thewaychurchni/">
+            <a href="https://www.instagram.com/thewaychurchni">
               <Icon
                 icon={circleinstagramIcon}
                 style={{ fontSize: "25.851852416992188px", color: "#000000" }}
