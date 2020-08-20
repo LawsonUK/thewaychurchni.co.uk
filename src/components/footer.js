@@ -21,22 +21,42 @@ const Footer = () => {
         <nav className="md:flex md:mt-4 mb-4 md:mb-0">
           <ul className="flex">
             <li className="mr-8">
-              <Link className="link" to="/church">
+              <Link
+                className="link"
+                activeClassName="link-active"
+                isPartiallyCurrent="link-active"
+                to="/church"
+              >
                 Church
               </Link>
             </li>
             <li className="mr-8">
-              <Link className="link" to="/blog">
+              <Link
+                className="link"
+                activeClassName="link-active"
+                isPartiallyCurrent="link-active"
+                to="/blog"
+              >
                 Blog
               </Link>
             </li>
             <li className="mr-8">
-              <Link className="link" to="/media">
+              <Link
+                className="link"
+                activeClassName="link-active"
+                isPartiallyCurrent="link-active"
+                to="/media"
+              >
                 Media
               </Link>
             </li>
             <li>
-              <Link className="link" to="/contact">
+              <Link
+                className="link"
+                activeClassName="link-active"
+                isPartiallyCurrent="link-active"
+                to="/contact"
+              >
                 Contact
               </Link>
             </li>

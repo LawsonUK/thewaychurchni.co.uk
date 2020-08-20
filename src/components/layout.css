@@ -24,7 +24,11 @@ h2 {
 }
 
 .link {
-  @apply text-red-600 font-extrabold;
+  @apply text-red-600 font-extrabold pb-1;
+}
+
+.link-active {
+  @apply border-b-4 border-wayblue;
 }
 
 .player-wrapper {
@@ -55,47 +59,6 @@ h2 {
 .banner-background:before,
 .banner-background:after {
   background-position: 75% 60% !important;
-}
-
-.card-bg {
-  border: 1px solid #5e5e5e;
-}
-
-.card-bg:before {
-  content: "";
-  opacity: 0.25 !important;
-  z-index: 0;
-}
-
-.card-bg:after {
-  content: "";
-  opacity: 0.1 !important;
-  z-index: 0;
-}
-
-.card-light-bg,
-.card-light-main {
-  border: 1px solid #9f9f9f;
-  background-color: #242424;
-}
-
-.card-light-main {
-  height: 300px;
-}
-
-.card-light-bg:before,
-.card-light-main:before {
-  content: "";
-  opacity: 0.25 !important;
-  z-index: 0;
-  height: 300px;
-}
-
-.card-light-bg:after,
-.card-light-main:after {
-  content: "";
-  opacity: 0.1 !important;
-  z-index: 0;
 }
 
 .circle {

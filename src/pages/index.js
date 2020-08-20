@@ -85,9 +85,6 @@ const IndexPage = ({ data }) => {
             <Link className="link text-red-600" to="/blog">
               <h2 className="text-2xl font-bold">Latest from the Blog</h2>
             </Link>
-            <Link className="link text-red-600" to="/blog">
-              View More
-            </Link>
           </div>
           <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
             <li className="flex flex-col md:col-span-2 xl:col-span-1">

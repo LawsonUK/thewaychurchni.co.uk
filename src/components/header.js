@@ -6,7 +6,12 @@ import Logo from "./../images/logo.svg"
 const Header = ({ absolute, live }) => {
   const liveMenuItem = (
     <li className="mr-6 md:mr-4 lg:mr-8 flex">
-      <Link className="link flex" to="/live">
+      <Link
+        className="link flex"
+        activeClassName="link-active"
+        isPartiallyCurrent="link-active"
+        to="/live"
+      >
         Live
         <svg
           id="icon-camera"
@@ -43,25 +48,45 @@ const Header = ({ absolute, live }) => {
         </Link>
 
         <nav className="hidden md:flex ml-24">
-          <ul className="flex text-sm lg:text-base">
+          <ul className="flex text-sm lg:text-base mt-1">
             {live && liveMenuItem}
             <li className="mr-8 md:mr-6 lg:mr-8">
-              <Link className="link" to="/church">
+              <Link
+                className="link"
+                activeClassName="link-active"
+                isPartiallyCurrent="link-active"
+                to="/church"
+              >
                 Church
               </Link>
             </li>
             <li className="mr-8 md:mr-6 lg:mr-8">
-              <Link className="link" to="/blog">
+              <Link
+                className="link"
+                activeClassName="link-active"
+                isPartiallyCurrent="link-active"
+                to="/blog"
+              >
                 Blog
               </Link>
             </li>
             <li className="mr-8 md:mr-6 lg:mr-8">
-              <Link className="link" to="/media">
+              <Link
+                className="link"
+                activeClassName="link-active"
+                isPartiallyCurrent="link-active"
+                to="/media"
+              >
                 Media
               </Link>
             </li>
             <li>
-              <Link className="link" to="/contact">
+              <Link
+                className="link"
+                activeClassName="link-active"
+                isPartiallyCurrent="link-active"
+                to="/contact"
+              >
                 Contact
               </Link>
             </li>
@@ -78,22 +103,42 @@ const Header = ({ absolute, live }) => {
         <ul className="flex text-sm md:text-base">
           {live && liveMenuItem}
           <li className="mr-6">
-            <Link className="link" to="/church">
+            <Link
+              className="link"
+              activeClassName="link-active"
+              isPartiallyCurrent="link-active"
+              to="/church"
+            >
               Church
             </Link>
           </li>
           <li className="mr-6">
-            <Link className="link" to="/blog">
+            <Link
+              className="link"
+              activeClassName="link-active"
+              isPartiallyCurrent="link-active"
+              to="/blog"
+            >
               Blog
             </Link>
           </li>
           <li className="mr-6">
-            <Link className="link" to="/media">
+            <Link
+              className="link"
+              activeClassName="link-active"
+              isPartiallyCurrent="link-active"
+              to="/media"
+            >
               Media
             </Link>
           </li>
           <li>
-            <Link className="link" to="/contact">
+            <Link
+              className="link"
+              activeClassName="link-active"
+              isPartiallyCurrent="link-active"
+              to="/contact"
+            >
               Contact
             </Link>
           </li>

@@ -44,7 +44,7 @@ const ContactPage = ({ data }) => {
               className="link"
               href="https://goo.gl/maps/8svpGszzstGSKYmz7"
               target="_blank"
-              rel="noopener"
+              rel="noreferrer"
             >
               Get Directions
             </a>

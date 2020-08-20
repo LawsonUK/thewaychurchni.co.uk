@@ -1,5 +1,4 @@
 import React from "react"
-import { graphql } from "gatsby"
 import Layout from "../components/layout-main"
 import SEO from "../components/seo"
 import ReactPlayer from "react-player/lazy"
@@ -57,7 +56,7 @@ const LivePage = () => {
               className="link"
               href="https://goo.gl/maps/8svpGszzstGSKYmz7"
               target="_blank"
-              rel="noopener"
+              rel="noreferrer"
             >
               Get Directions
             </a>
