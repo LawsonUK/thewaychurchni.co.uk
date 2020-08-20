@@ -48,7 +48,7 @@ const Header = ({ absolute, live }) => {
         </Link>
 
         <nav className="hidden md:flex ml-24">
-          <ul className="flex text-sm lg:text-base mt-1">
+          <ul className="flex text-sm lg:text-base mt-2 h-8">
             {live && liveMenuItem}
             <li className="mr-8 md:mr-6 lg:mr-8">
               <Link
