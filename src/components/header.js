@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import Logo from "./../images/logo.svg"
 
-const Header = ({ absolute, live }) => {
+const Header = ({ absolute, live, headerText }) => {
   const liveMenuItem = (
     <li className="mr-6 md:mr-4 lg:mr-8 flex">
       <Link
@@ -93,7 +93,7 @@ const Header = ({ absolute, live }) => {
           </ul>
         </nav>
         <span className="font-extrabold mt-6 md:mt-0 text-black">
-          Every Sunday @ 11AM
+          {headerText}
         </span>
       </header>
 

@@ -7,7 +7,7 @@ import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 
 const IndexPage = ({ data }) => {
-  const bannerUrl = data.banner.nodes[0].fluid
+  const indexPage = data.indexpage.nodes[0]
   const messageUrl = data.message.nodes[0].fluid
   const avatarUrl = data.avatar.nodes[0].fluid
   const blog1Url = data.blog1.nodes[0].fluid
@@ -19,15 +19,14 @@ const IndexPage = ({ data }) => {
 
       <BackgroundImage
         className="banner-background"
-        fluid={bannerUrl}
+        fluid={indexPage.bannerImage.childImageSharp.fluid}
         backgroundColor={`#040e18`}
       >
         <div className="absolute top-0 bottom-0 right-0 left-0 bg-white opacity-50 z-0 transition-opacity duration-200 lg:opacity-0"></div>
         <section className="banner max-w-screen-xl m-auto flex flex-grow p-4 xl:p-0 relative z-10">
           <div className="pl-4 pr-4 xl:pl-0 xl:pr-0 mt-16 sm:mt-0">
             <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold mb-8 mt-10">
-              Proclaiming Jesus as the way <br />
-              and living as people of the way
+              <pre className="font-sans">{indexPage.bannerText}</pre>
             </h1>
             <div className="absolute">
               <Link
@@ -180,12 +179,15 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   {
-    banner: allImageSharp(
-      filter: { fluid: { originalName: { eq: "banner.jpg" } } }
-    ) {
+    indexpage: allStrapiHomePage {
       nodes {
-        fluid(maxWidth: 1440, jpegQuality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+        bannerText
+        bannerImage {
+          childImageSharp {
+            fluid(maxWidth: 1440, jpegQuality: 100) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
         }
       }
     }

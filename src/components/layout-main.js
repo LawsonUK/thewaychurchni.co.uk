@@ -14,6 +14,11 @@ const LayoutMain = ({ children }) => {
           title
         }
       }
+      allStrapiHomePage {
+        nodes {
+          headerText
+        }
+      }
     }
   `)
 
@@ -23,6 +28,7 @@ const LayoutMain = ({ children }) => {
         siteTitle={data.site.siteMetadata.title}
         absolute={false}
         live="true"
+        headerText={data.allStrapiHomePage.nodes[0].headerText}
       />
       <div>
         <main>{children}</main>
