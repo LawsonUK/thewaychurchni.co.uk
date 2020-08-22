@@ -3,12 +3,13 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
+import moment from "moment"
 
 import BackgroundImage from "gatsby-background-image"
 
 const IndexPage = ({ data }) => {
   const indexPage = data.indexpage.nodes[0]
-  const messageUrl = data.message.nodes[0].fluid
+  const message = data.message.nodes[0]
   const avatarUrl = data.avatar.nodes[0].fluid
   const blog1Url = data.blog1.nodes[0].fluid
   const blog2Url = data.blog2.nodes[0].fluid
@@ -48,66 +49,75 @@ const IndexPage = ({ data }) => {
       <section className="featured-message max-w-screen-xl m-auto grid gap-12 xl:gap-24 sm:grid-cols-2 p-6 pt-16 pb-16 xl:pl-0 xl:pr-0">
         <div>
           <Link to="/">
-            <Img className="rounded" fluid={messageUrl} alt="Message" />
+            <Img
+              className="rounded"
+              fluid={message.featuredImage.childImageSharp.fluid}
+              alt="Message"
+            />
           </Link>
         </div>
         <div>
-          <span>Message</span>
+          <div className="flex flex-col">
+            <span>{message.media_type.type}</span>
+            <span className="text-sm text-gray-500">
+              {moment(message.publishedOn).format("Do MMM Y")}
+            </span>
+          </div>
           <Link
             to="/"
             className="block text-2xl md:text-3xl font-bold mb-4 link"
           >
-            The Passover Lamb
+            {message.title}
           </Link>
-          <p>
-            Passover was the first & most important meal in Israel’s religious
-            life, but as Jesus celebrates it with his disciples he changes the
-            script as he reveals Passover’s true meaning.
-          </p>
+          <p>{message.excerpt}</p>
 
           <div>
-            <Link
-              to="/"
-              className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 mr-4 items-center"
-            >
-              Video
-              <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="video-camera w-4 h-4 ml-1"
+            {message.videoLink && (
+              <Link
+                to="/"
+                className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 mr-4 items-center"
               >
-                <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
-              </svg>
-            </Link>
-            <Link
-              to="/"
-              className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-400 text-yellow-800 cursor-pointer items-center"
-            >
-              Audio
-              <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="microphone w-4 h-4 ml-1"
+                Video
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="video-camera w-4 h-4 ml-1"
+                >
+                  <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
+                </svg>
+              </Link>
+            )}
+            {message.audioFile.publicURL && (
+              <Link
+                to="/"
+                className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-400 text-yellow-800 cursor-pointer items-center"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </Link>
+                Audio
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="microphone w-4 h-4 ml-1"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </Link>
+            )}
           </div>
 
           <div className="flex items-center mt-8">
             <Link to="/">
               <Img
                 className="rounded-full w-10 xl:w-12 mr-4"
-                fluid={avatarUrl}
+                fluid={message.teacher.avatar.childImageSharp.fluid}
                 alt="Jonathan Carson"
               />
             </Link>
             <Link className="text-gray-700 font-bold" to="/">
-              Jonathan Carson
+              {message.teacher.name}
             </Link>
           </div>
         </div>
@@ -225,12 +235,39 @@ export const query = graphql`
         }
       }
     }
-    message: allImageSharp(
-      filter: { fluid: { originalName: { eq: "message.jpg" } } }
+    message: allStrapiMediaPosts(
+      limit: 1
+      sort: { order: DESC, fields: publishedOn }
     ) {
       nodes {
-        fluid(maxWidth: 620, jpegQuality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+        title
+        videoLink
+        publishedOn
+        slug
+        description
+        excerpt
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 620, maxHeight: 373, jpegQuality: 100) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        audioFile {
+          publicURL
+        }
+        teacher {
+          avatar {
+            childImageSharp {
+              fluid(maxWidth: 40, jpegQuality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+          name
+        }
+        media_type {
+          type
         }
       }
     }
