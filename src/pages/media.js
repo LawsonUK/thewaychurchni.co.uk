@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
 
 import LayoutMain from "../components/layout-main"
@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import Img from "gatsby-image"
 
 const MediaPage = ({ data }) => {
+  // const [mediaList, setmediaList] = useState(initialState)
   const messageUrl = data.message.nodes[0].fluid
   const avatarUrl = data.avatar.nodes[0].fluid
   const blog1Url = data.blog1.nodes[0].fluid
@@ -92,6 +93,14 @@ const MediaPage = ({ data }) => {
       <div className="bg-light pb-2 pt-8">
         <div className="p-4 xl:p-0">
           <section className="latest-blog max-w-screen-xl m-auto pt-8 pb-8 mb-6">
+            <div className="relative mx-auto text-gray-600 mb-10 flex justify-center">
+              <input
+                className="border-2 border-gray-300 bg-white h-10 px-5 rounded-lg text-sm focus:outline-none w-full md:w-1/2"
+                type="search"
+                name="search"
+                placeholder="Filter Media"
+              />
+            </div>
             <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
               <li className="flex flex-col">
                 <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
