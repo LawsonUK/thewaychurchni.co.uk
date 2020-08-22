@@ -1,19 +1,17 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, useState } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import moment from "moment"
 
 import BackgroundImage from "gatsby-background-image"
 
 const IndexPage = ({ data }) => {
   const indexPage = data.indexpage.nodes[0]
   const message = data.message.nodes[0]
-  const avatarUrl = data.avatar.nodes[0].fluid
-  const blog1Url = data.blog1.nodes[0].fluid
-  const blog2Url = data.blog2.nodes[0].fluid
-  const blog3Url = data.blog3.nodes[0].fluid
+  const firstPost = data.firstPost.nodes[0]
+  const posts = data.posts.nodes
+
   return (
     <Layout absolute="true">
       <SEO title="Home" />
@@ -48,7 +46,7 @@ const IndexPage = ({ data }) => {
       </BackgroundImage>
       <section className="featured-message max-w-screen-xl m-auto grid gap-12 xl:gap-24 sm:grid-cols-2 p-6 pt-16 pb-16 xl:pl-0 xl:pr-0">
         <div>
-          <Link to="/">
+          <Link to={`/media/${message.slug}`}>
             <Img
               className="rounded"
               fluid={message.featuredImage.childImageSharp.fluid}
@@ -59,9 +57,7 @@ const IndexPage = ({ data }) => {
         <div>
           <div className="flex flex-col">
             <span>{message.media_type.type}</span>
-            <span className="text-sm text-gray-500">
-              {moment(message.publishedOn).format("Do MMM Y")}
-            </span>
+            <span className="text-sm text-gray-500">{message.publishedOn}</span>
           </div>
           <Link
             to="/"
@@ -75,7 +71,7 @@ const IndexPage = ({ data }) => {
             {message.videoLink && (
               <Link
                 to="/"
-                className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 mr-4 items-center"
+                className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
               >
                 Video
                 <svg
@@ -109,16 +105,16 @@ const IndexPage = ({ data }) => {
           </div>
 
           <div className="flex items-center mt-8">
-            <Link to="/">
+            <span>
               <Img
                 className="rounded-full w-10 xl:w-12 mr-4"
                 fluid={message.teacher.avatar.childImageSharp.fluid}
                 alt="Jonathan Carson"
               />
-            </Link>
-            <Link className="text-gray-700 font-bold" to="/">
+            </span>
+            <span className="text-gray-700 font-bold" to="/">
               {message.teacher.name}
-            </Link>
+            </span>
           </div>
         </div>
       </section>
@@ -132,88 +128,69 @@ const IndexPage = ({ data }) => {
           <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
             <li className="flex flex-col md:col-span-2 xl:col-span-1">
               <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
-                <Img className="w-full h-64 mb-4 rounded" fluid={blog1Url} />
+                <Link to="{`/blog/${firstPost.slug}`}">
+                  <Img
+                    className="w-full h-64 mb-4 rounded"
+                    fluid={firstPost.featuredImage.childImageSharp.fluid}
+                  />
+                </Link>
+
                 <Link
                   className="text-xl font-bold block text-red-500 mb-2"
-                  to="/"
+                  to={`/blog/${firstPost.slug}`}
                 >
-                  Don't Face Unbelief Alone
+                  {firstPost.title}
                 </Link>
-                <span className="text-gray-600">Mar 7, 2020</span>
-                <p className="mt-2">
-                  Unbelief can become a vicious cycle, leaving us isolated and
-                  increasingly vulnerable to more and more deception.
-                </p>
+                <span className="text-gray-600">{firstPost.publishedOn}</span>
+                <p className="mt-2">{firstPost.excerpt.substring(0, 130)}</p>
                 <div className="flex items-center mb-3">
-                  <Link to="/">
+                  <span>
                     <Img
                       className="rounded-full w-10 mr-4"
-                      fluid={avatarUrl}
-                      alt="Jonathan Carson"
+                      fluid={firstPost.author.avatar.childImageSharp.fluid}
+                      alt={firstPost.author.name}
                     />
-                  </Link>
-                  <Link className="text-gray-700 font-bold" to="/">
-                    Jonathan Carson
-                  </Link>
+                  </span>
+                  <span className="text-gray-700 font-bold" to="/">
+                    {firstPost.author.name}
+                  </span>
                 </div>
               </div>
             </li>
-            <li className="flex flex-col">
-              <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
-                <Img className="w-full h-64 mb-4 rounded" fluid={blog2Url} />
-                <Link
-                  className="text-xl font-bold block text-red-500 mb-2"
-                  to="/"
-                >
-                  No God but One
-                </Link>
-                <span className="text-gray-600">Mar 7, 2020</span>
-                <p className="mt-2">
-                  Unbelief can become a vicious cycle, leaving us isolated and
-                  increasingly vulnerable to more and more deception.
-                </p>
-                <div className="flex items-center mb-3">
-                  <Link to="/">
-                    <Img
-                      className="rounded-full w-10 mr-4"
-                      fluid={avatarUrl}
-                      alt="Jonathan Carson"
-                    />
-                  </Link>
-                  <Link className="text-gray-700 font-bold" to="/">
-                    Jonathan Carson
-                  </Link>
-                </div>
-              </div>
-            </li>
-            <li className="flex flex-col">
-              <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
-                <Img className="w-full h-64 mb-4 rounded" fluid={blog3Url} />
-                <Link
-                  className="text-xl font-bold block text-red-500 mb-2"
-                  to="/"
-                >
-                  Battling Anxiety with Thankful Prayer
-                </Link>
-                <span className="text-gray-600">Mar 7, 2020</span>
-                <p className="mt-2">
-                  Unbelief can become a vicious cycle, leaving us isolated and
-                  increasingly vulnerable to more and more deception.
-                </p>
-                <div className="flex items-center mb-3">
-                  <Link to="/">
-                    <Img
-                      className="rounded-full w-10 mr-4"
-                      fluid={avatarUrl}
-                      alt="Jonathan Carson"
-                    />
-                  </Link>
-                  <Link className="text-gray-700 font-bold" to="/">
-                    Jonathan Carson
-                  </Link>
-                </div>
-              </div>
-            </li>
+            {posts.map(post => {
+              return (
+                <li className="flex flex-col">
+                  <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
+                    <Link to="{`/blog/${post.slug}`}">
+                      <Img
+                        className="w-full h-64 mb-4 rounded"
+                        fluid={post.featuredImage.childImageSharp.fluid}
+                      />
+                    </Link>
+                    <Link
+                      className="text-xl font-bold block text-red-500 mb-2"
+                      to={`/blog/${post.slug}`}
+                    >
+                      {post.title}
+                    </Link>
+                    <span className="text-gray-600">{post.publishedOn}</span>
+                    <p className="mt-2">{post.excerpt.substring(0, 130)}</p>
+                    <div className="flex items-center mb-3">
+                      <span>
+                        <Img
+                          className="rounded-full w-10 mr-4"
+                          fluid={post.author.avatar.childImageSharp.fluid}
+                          alt={post.author.name}
+                        />
+                      </span>
+                      <span className="text-gray-700 font-bold" to="/">
+                        {post.author.name}
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              )
+            })}
           </ul>
         </section>
       </div>
@@ -242,7 +219,7 @@ export const query = graphql`
       nodes {
         title
         videoLink
-        publishedOn
+        publishedOn(formatString: "Do MMM Y")
         slug
         description
         excerpt
@@ -271,40 +248,61 @@ export const query = graphql`
         }
       }
     }
-    avatar: allImageSharp(
-      filter: { fluid: { originalName: { eq: "avatar.jpg" } } }
+    firstPost: allStrapiBlogPosts(
+      limit: 1
+      sort: { fields: publishedOn, order: DESC }
     ) {
       nodes {
-        fluid(maxWidth: 620, jpegQuality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+        slug
+        title
+        author {
+          avatar {
+            childImageSharp {
+              fluid(maxWidth: 40, jpegQuality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+          name
         }
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 373, jpegQuality: 100) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        publishedOn(formatString: "Do MMM Y")
+        excerpt
       }
     }
-    blog1: allImageSharp(
-      filter: { fluid: { originalName: { eq: "blog1.jpg" } } }
+    posts: allStrapiBlogPosts(
+      limit: 3
+      sort: { fields: publishedOn, order: DESC }
+      skip: 1
     ) {
       nodes {
-        fluid(maxWidth: 620, jpegQuality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+        slug
+        title
+        author {
+          avatar {
+            childImageSharp {
+              fluid(maxWidth: 40, jpegQuality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+          name
         }
-      }
-    }
-    blog2: allImageSharp(
-      filter: { fluid: { originalName: { eq: "blog2.jpg" } } }
-    ) {
-      nodes {
-        fluid(maxWidth: 620, jpegQuality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 373, jpegQuality: 100) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
         }
-      }
-    }
-    blog3: allImageSharp(
-      filter: { fluid: { originalName: { eq: "blog3.jpg" } } }
-    ) {
-      nodes {
-        fluid(maxWidth: 620, jpegQuality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        publishedOn(formatString: "Do MMM Y")
+        excerpt
       }
     }
   }

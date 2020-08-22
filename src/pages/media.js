@@ -18,7 +18,8 @@ const MediaPage = ({ data }) => {
       <div className="max-w-screen-xl m-auto mt-24 text-center">
         <h3 className="mb-3">Media</h3>
         <h1 className="text-3xl md:text-4xl font-extrabold text-wayblue mb-4">
-          Check out our latest media
+          Check out
+          <br /> our latest media
         </h1>
         <p>Messages, testimonies and more!</p>
       </div>
@@ -45,7 +46,7 @@ const MediaPage = ({ data }) => {
           <div>
             <Link
               to="/"
-              className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 mr-4 items-center"
+              className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
             >
               Video
               <svg
@@ -119,7 +120,7 @@ const MediaPage = ({ data }) => {
                   <div className="flex mb-8">
                     <Link
                       to="/"
-                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 mr-4 items-center"
+                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
                     >
                       Video
                       <svg
@@ -179,7 +180,7 @@ const MediaPage = ({ data }) => {
                   <div className="flex mb-8">
                     <Link
                       to="/"
-                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 mr-4 items-center"
+                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
                     >
                       Video
                       <svg
@@ -239,7 +240,7 @@ const MediaPage = ({ data }) => {
                   <div className="flex mb-8">
                     <Link
                       to="/"
-                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 mr-4 items-center"
+                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
                     >
                       Video
                       <svg
@@ -299,7 +300,7 @@ const MediaPage = ({ data }) => {
                   <div className="flex mb-8">
                     <Link
                       to="/"
-                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 mr-4 items-center"
+                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
                     >
                       Video
                       <svg
@@ -359,7 +360,7 @@ const MediaPage = ({ data }) => {
                   <div className="flex mb-8">
                     <Link
                       to="/"
-                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 mr-4 items-center"
+                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
                     >
                       Video
                       <svg
@@ -419,7 +420,7 @@ const MediaPage = ({ data }) => {
                   <div className="flex mb-8">
                     <Link
                       to="/"
-                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 mr-4 items-center"
+                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
                     >
                       Video
                       <svg
@@ -479,7 +480,7 @@ const MediaPage = ({ data }) => {
                   <div className="flex mb-8">
                     <Link
                       to="/"
-                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 mr-4 items-center"
+                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
                     >
                       Video
                       <svg
@@ -539,7 +540,7 @@ const MediaPage = ({ data }) => {
                   <div className="flex mb-8">
                     <Link
                       to="/"
-                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 mr-4 items-center"
+                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
                     >
                       Video
                       <svg
@@ -599,7 +600,7 @@ const MediaPage = ({ data }) => {
                   <div className="flex mb-8">
                     <Link
                       to="/"
-                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 mr-4 items-center"
+                      className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
                     >
                       Video
                       <svg
