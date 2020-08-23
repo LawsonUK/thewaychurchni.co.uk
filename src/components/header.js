@@ -9,7 +9,7 @@ const Header = ({ absolute, live, headerText }) => {
       <Link
         className="link flex"
         activeClassName="link-active"
-        isPartiallyCurrent="link-active"
+        partiallyActive={true}
         to="/live"
       >
         Live
@@ -54,7 +54,7 @@ const Header = ({ absolute, live, headerText }) => {
               <Link
                 className="link"
                 activeClassName="link-active"
-                isPartiallyCurrent="link-active"
+                partiallyActive={true}
                 to="/church"
               >
                 Church
@@ -64,7 +64,7 @@ const Header = ({ absolute, live, headerText }) => {
               <Link
                 className="link"
                 activeClassName="link-active"
-                isPartiallyCurrent="link-active"
+                partiallyActive={true}
                 to="/blog"
               >
                 Blog
@@ -74,7 +74,7 @@ const Header = ({ absolute, live, headerText }) => {
               <Link
                 className="link"
                 activeClassName="link-active"
-                isPartiallyCurrent="link-active"
+                partiallyActive={true}
                 to="/media"
               >
                 Media
@@ -84,7 +84,7 @@ const Header = ({ absolute, live, headerText }) => {
               <Link
                 className="link"
                 activeClassName="link-active"
-                isPartiallyCurrent="link-active"
+                partiallyActive={true}
                 to="/contact"
               >
                 Contact
@@ -106,7 +106,7 @@ const Header = ({ absolute, live, headerText }) => {
             <Link
               className="link"
               activeClassName="link-active"
-              isPartiallyCurrent="link-active"
+              partiallyActive={true}
               to="/church"
             >
               Church
@@ -116,7 +116,7 @@ const Header = ({ absolute, live, headerText }) => {
             <Link
               className="link"
               activeClassName="link-active"
-              isPartiallyCurrent="link-active"
+              partiallyActive={true}
               to="/blog"
             >
               Blog
@@ -126,7 +126,7 @@ const Header = ({ absolute, live, headerText }) => {
             <Link
               className="link"
               activeClassName="link-active"
-              isPartiallyCurrent="link-active"
+              partiallyActive={true}
               to="/media"
             >
               Media
@@ -136,7 +136,7 @@ const Header = ({ absolute, live, headerText }) => {
             <Link
               className="link"
               activeClassName="link-active"
-              isPartiallyCurrent="link-active"
+              partiallyActive={true}
               to="/contact"
             >
               Contact

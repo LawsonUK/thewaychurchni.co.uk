@@ -24,7 +24,7 @@ const Footer = () => {
               <Link
                 className="link"
                 activeClassName="link-active"
-                isPartiallyCurrent="link-active"
+                partiallyActive={true}
                 to="/church"
               >
                 Church
@@ -34,7 +34,7 @@ const Footer = () => {
               <Link
                 className="link"
                 activeClassName="link-active"
-                isPartiallyCurrent="link-active"
+                partiallyActive={true}
                 to="/blog"
               >
                 Blog
@@ -44,7 +44,7 @@ const Footer = () => {
               <Link
                 className="link"
                 activeClassName="link-active"
-                isPartiallyCurrent="link-active"
+                partiallyActive={true}
                 to="/media"
               >
                 Media
@@ -54,7 +54,7 @@ const Footer = () => {
               <Link
                 className="link"
                 activeClassName="link-active"
-                isPartiallyCurrent="link-active"
+                partiallyActive={true}
                 to="/contact"
               >
                 Contact

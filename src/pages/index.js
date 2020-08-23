@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link, useState } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
@@ -7,10 +7,10 @@ import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 
 const IndexPage = ({ data }) => {
-  const indexPage = data.indexpage.nodes[0]
-  const message = data.message.nodes[0]
-  const firstPost = data.firstPost.nodes[0]
-  const posts = data.posts.nodes
+  const indexPage = data.indexpage.nodes[0] ? data.indexpage.nodes[0] : false
+  const message = data.message.nodes[0] ? data.message.nodes[0] : false
+  const firstPost = data.firstPost.nodes[0] ? data.firstPost.nodes[0] : false
+  const posts = data.posts.nodes ? data.posts.nodes : false
 
   return (
     <Layout absolute="true">
@@ -44,80 +44,85 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
       </BackgroundImage>
-      <section className="featured-message max-w-screen-xl m-auto grid gap-12 xl:gap-24 sm:grid-cols-2 p-6 pt-16 pb-16 xl:pl-0 xl:pr-0">
-        <div>
-          <Link to={`/media/${message.slug}`}>
-            <Img
-              className="rounded"
-              fluid={message.featuredImage.childImageSharp.fluid}
-              alt="Message"
-            />
-          </Link>
-        </div>
-        <div>
-          <div className="flex flex-col">
-            <span>{message.media_type.type}</span>
-            <span className="text-sm text-gray-500">{message.publishedOn}</span>
-          </div>
-          <Link
-            to="/"
-            className="block text-2xl md:text-3xl font-bold mb-4 link"
-          >
-            {message.title}
-          </Link>
-          <p>{message.excerpt}</p>
-
+      {message && (
+        <section className="featured-message max-w-screen-xl m-auto grid gap-12 xl:gap-24 sm:grid-cols-2 p-6 pt-16 pb-16 xl:pl-0 xl:pr-0">
           <div>
-            {message.videoLink && (
-              <Link
-                to="/"
-                className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
-              >
-                Video
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="video-camera w-4 h-4 ml-1"
-                >
-                  <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
-                </svg>
-              </Link>
-            )}
-            {message.audioFile.publicURL && (
-              <Link
-                to="/"
-                className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-400 text-yellow-800 cursor-pointer items-center"
-              >
-                Audio
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="microphone w-4 h-4 ml-1"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </Link>
-            )}
-          </div>
-
-          <div className="flex items-center mt-8">
-            <span>
+            <Link to={`/media/${message.slug}`}>
               <Img
-                className="rounded-full w-10 xl:w-12 mr-4"
-                fluid={message.teacher.avatar.childImageSharp.fluid}
-                alt="Jonathan Carson"
+                className="rounded"
+                fluid={message.featuredImage.childImageSharp.fluid}
+                alt="Message"
               />
-            </span>
-            <span className="text-gray-700 font-bold" to="/">
-              {message.teacher.name}
-            </span>
+            </Link>
           </div>
-        </div>
-      </section>
+          <div>
+            <div className="flex flex-col">
+              <span>{message.media_type.type}</span>
+              <span className="text-sm text-gray-500">
+                {message.publishedOn}
+              </span>
+            </div>
+            <Link
+              to="/"
+              className="block text-2xl md:text-3xl font-bold mb-4 link"
+            >
+              {message.title}
+            </Link>
+            <p>{message.excerpt}</p>
+
+            <div>
+              {message.videoLink && (
+                <Link
+                  to="/"
+                  className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
+                >
+                  Video
+                  <svg
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="video-camera w-4 h-4 ml-1"
+                  >
+                    <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
+                  </svg>
+                </Link>
+              )}
+              {message.audioFile.publicURL && (
+                <Link
+                  to="/"
+                  className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-400 text-yellow-800 cursor-pointer items-center"
+                >
+                  Audio
+                  <svg
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="microphone w-4 h-4 ml-1"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </Link>
+              )}
+            </div>
+
+            <div className="flex items-center mt-8">
+              <span>
+                <Img
+                  className="rounded-full w-10 xl:w-12 mr-4"
+                  fluid={message.teacher.avatar.childImageSharp.fluid}
+                  alt="Jonathan Carson"
+                />
+              </span>
+              <span className="text-gray-700 font-bold" to="/">
+                {message.teacher.name}
+              </span>
+            </div>
+          </div>
+        </section>
+      )}
+
       <div className="bg-light">
         <section className="latest-blog max-w-screen-xl m-auto p-6 pt-16 pb-16 xl:pl-0 xl:pr-0">
           <div className="flex justify-between items-center mb-8 lg:mb-12">
@@ -126,71 +131,75 @@ const IndexPage = ({ data }) => {
             </Link>
           </div>
           <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
-            <li className="flex flex-col md:col-span-2 xl:col-span-1">
-              <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
-                <Link to="{`/blog/${firstPost.slug}`}">
-                  <Img
-                    className="w-full h-64 mb-4 rounded"
-                    fluid={firstPost.featuredImage.childImageSharp.fluid}
-                  />
-                </Link>
-
-                <Link
-                  className="text-xl font-bold block text-red-500 mb-2"
-                  to={`/blog/${firstPost.slug}`}
-                >
-                  {firstPost.title}
-                </Link>
-                <span className="text-gray-600">{firstPost.publishedOn}</span>
-                <p className="mt-2">{firstPost.excerpt.substring(0, 130)}</p>
-                <div className="flex items-center mb-3">
-                  <span>
+            {firstPost && (
+              <li className="flex flex-col md:col-span-2 xl:col-span-1">
+                <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
+                  <Link to={`/blog/${firstPost.slug}`}>
                     <Img
-                      className="rounded-full w-10 mr-4"
-                      fluid={firstPost.author.avatar.childImageSharp.fluid}
-                      alt={firstPost.author.name}
+                      className="w-full h-64 mb-4 rounded"
+                      fluid={firstPost.featuredImage.childImageSharp.fluid}
                     />
-                  </span>
-                  <span className="text-gray-700 font-bold" to="/">
-                    {firstPost.author.name}
-                  </span>
-                </div>
-              </div>
-            </li>
-            {posts.map(post => {
-              return (
-                <li className="flex flex-col">
-                  <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
-                    <Link to="{`/blog/${post.slug}`}">
+                  </Link>
+
+                  <Link
+                    className="text-xl font-bold block text-red-500 mb-2"
+                    to={`/blog/${firstPost.slug}`}
+                  >
+                    {firstPost.title}
+                  </Link>
+                  <span className="text-gray-600">{firstPost.publishedOn}</span>
+                  <p className="mt-2">{firstPost.excerpt.substring(0, 130)}</p>
+                  <div className="flex items-center mb-3">
+                    <span>
                       <Img
-                        className="w-full h-64 mb-4 rounded"
-                        fluid={post.featuredImage.childImageSharp.fluid}
+                        className="rounded-full w-10 mr-4"
+                        fluid={firstPost.author.avatar.childImageSharp.fluid}
+                        alt={firstPost.author.name}
                       />
-                    </Link>
-                    <Link
-                      className="text-xl font-bold block text-red-500 mb-2"
-                      to={`/blog/${post.slug}`}
-                    >
-                      {post.title}
-                    </Link>
-                    <span className="text-gray-600">{post.publishedOn}</span>
-                    <p className="mt-2">{post.excerpt.substring(0, 130)}</p>
-                    <div className="flex items-center mb-3">
-                      <span>
-                        <Img
-                          className="rounded-full w-10 mr-4"
-                          fluid={post.author.avatar.childImageSharp.fluid}
-                          alt={post.author.name}
-                        />
-                      </span>
-                      <span className="text-gray-700 font-bold" to="/">
-                        {post.author.name}
-                      </span>
-                    </div>
+                    </span>
+                    <span className="text-gray-700 font-bold" to="/">
+                      {firstPost.author.name}
+                    </span>
                   </div>
-                </li>
-              )
-            })}
+                </div>
+              </li>
+            )}
+
+            {posts &&
+              posts.map(post => {
+                return (
+                  <li className="flex flex-col" key={post.strapiId}>
+                    <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
+                      <Link to={`/blog/${post.slug}`}>
+                        <Img
+                          className="w-full h-64 mb-4 rounded"
+                          fluid={post.featuredImage.childImageSharp.fluid}
+                        />
+                      </Link>
+                      <Link
+                        className="text-xl font-bold block text-red-500 mb-2"
+                        to={`/blog/${post.slug}`}
+                      >
+                        {post.title}
+                      </Link>
+                      <span className="text-gray-600">{post.publishedOn}</span>
+                      <p className="mt-2">{post.excerpt.substring(0, 130)}</p>
+                      <div className="flex items-center mb-3">
+                        <span>
+                          <Img
+                            className="rounded-full w-10 mr-4"
+                            fluid={post.author.avatar.childImageSharp.fluid}
+                            alt={post.author.name}
+                          />
+                        </span>
+                        <span className="text-gray-700 font-bold" to="/">
+                          {post.author.name}
+                        </span>
+                      </div>
+                    </div>
+                  </li>
+                )
+              })}
           </ul>
         </section>
       </div>
@@ -282,9 +291,11 @@ export const query = graphql`
       skip: 1
     ) {
       nodes {
+        strapiId
         slug
         title
         author {
+          name
           avatar {
             childImageSharp {
               fluid(maxWidth: 40, jpegQuality: 100) {
@@ -292,7 +303,6 @@ export const query = graphql`
               }
             }
           }
-          name
         }
         featuredImage {
           childImageSharp {
