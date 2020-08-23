@@ -72,7 +72,14 @@ module.exports = {
         apiURL: `https://thewaychurch.herokuapp.com`,
         queryLimit: 1000, // Default to 100
         contentTypes: [`blog-posts`, `media-posts`, `media-types`],
-        singleTypes: [`home-page`, `live-page`, `church-page`, `contact-page`],
+        singleTypes: [
+          `home-page`,
+          `live-page`,
+          `church-page`,
+          `contact-page`,
+          `blog-page`,
+          `media-page`,
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
