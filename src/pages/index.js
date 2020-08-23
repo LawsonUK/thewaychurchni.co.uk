@@ -3,6 +3,8 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
+import LatestMedia from "../components/latest-media"
+import Card from "../components/card"
 
 import BackgroundImage from "gatsby-background-image"
 
@@ -44,84 +46,8 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
       </BackgroundImage>
-      {message && (
-        <section className="featured-message max-w-screen-xl m-auto grid gap-12 xl:gap-24 sm:grid-cols-2 p-6 pt-16 pb-16 xl:pl-0 xl:pr-0">
-          <div>
-            <Link to={`/media/${message.slug}`}>
-              <Img
-                className="rounded"
-                fluid={message.featuredImage.childImageSharp.fluid}
-                alt="Message"
-              />
-            </Link>
-          </div>
-          <div>
-            <div className="flex flex-col">
-              <span>{message.media_type.type}</span>
-              <span className="text-sm text-gray-500">
-                {message.publishedOn}
-              </span>
-            </div>
-            <Link
-              to="/"
-              className="block text-2xl md:text-3xl font-bold mb-4 link"
-            >
-              {message.title}
-            </Link>
-            <p>{message.excerpt}</p>
 
-            <div>
-              {message.videoLink && (
-                <Link
-                  to="/"
-                  className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
-                >
-                  Video
-                  <svg
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    className="video-camera w-4 h-4 ml-1"
-                  >
-                    <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
-                  </svg>
-                </Link>
-              )}
-              {message.audioFile && (
-                <Link
-                  to="/"
-                  className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-400 text-yellow-800 cursor-pointer items-center"
-                >
-                  Audio
-                  <svg
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    className="microphone w-4 h-4 ml-1"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                </Link>
-              )}
-            </div>
-
-            <div className="flex items-center mt-8">
-              <span>
-                <Img
-                  className="rounded-full w-10 xl:w-12 mr-4"
-                  fluid={message.teacher.avatar.childImageSharp.fluid}
-                  alt="Jonathan Carson"
-                />
-              </span>
-              <span className="text-gray-700 font-bold" to="/">
-                {message.teacher.name}
-              </span>
-            </div>
-          </div>
-        </section>
-      )}
+      {message && <LatestMedia media={message} />}
 
       <div className="bg-light">
         <section className="latest-blog max-w-screen-xl m-auto p-6 pt-16 pb-16 xl:pl-0 xl:pr-0">
@@ -169,34 +95,7 @@ const IndexPage = ({ data }) => {
               posts.map(post => {
                 return (
                   <li className="flex flex-col" key={post.strapiId}>
-                    <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
-                      <Link to={`/blog/${post.slug}`}>
-                        <Img
-                          className="w-full h-64 mb-4 rounded"
-                          fluid={post.featuredImage.childImageSharp.fluid}
-                        />
-                      </Link>
-                      <Link
-                        className="text-xl font-bold block text-red-500 mb-2"
-                        to={`/blog/${post.slug}`}
-                      >
-                        {post.title}
-                      </Link>
-                      <span className="text-gray-600">{post.publishedOn}</span>
-                      <p className="mt-2">{post.excerpt.substring(0, 130)}</p>
-                      <div className="flex items-center mb-3">
-                        <span>
-                          <Img
-                            className="rounded-full w-10 mr-4"
-                            fluid={post.author.avatar.childImageSharp.fluid}
-                            alt={post.author.name}
-                          />
-                        </span>
-                        <span className="text-gray-700 font-bold" to="/">
-                          {post.author.name}
-                        </span>
-                      </div>
-                    </div>
+                    <Card data={post} />
                   </li>
                 )
               })}

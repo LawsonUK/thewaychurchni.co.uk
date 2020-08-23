@@ -3,8 +3,10 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout-main"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
+import Card from "../components/card"
 
 const BlogPage = ({ data }) => {
+  const blogPage = data.blogPage.nodes[0] ? data.blogPage.nodes[0] : false
   const allPosts = data.posts.nodes ? data.posts.nodes : false
   const firstPost = data.firstPost.nodes[0] ? data.firstPost.nodes[0] : false
   const [filteredPosts, setFilteredPosts] = useState([])
@@ -29,17 +31,12 @@ const BlogPage = ({ data }) => {
         <div className="w-full text-center">
           <h3 className="mb-3">Blog</h3>
           <h1 className="text-3xl md:text-4xl font-extrabold text-wayblue mb-4">
-            Thoughts from <br /> the Pastors
+            {blogPage.title}
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore
-            sunt ex, error repellat officia sapiente dolorum quas similique!
-            Eius sed maxime tempore voluptas repellendus libero ratione
-            voluptatem et voluptatibus vel.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore
-            sunt ex, error repellat officia sapiente dolorum quas similique!
+          <p className="mb-12">
+            <pre className="font-sans whitespace-pre-wrap">
+              {blogPage.subTitle}
+            </pre>
           </p>
         </div>
         {firstPost && (
@@ -92,36 +89,7 @@ const BlogPage = ({ data }) => {
                 filteredPosts.map(post => {
                   return (
                     <li className="flex flex-col" key={post.strapiId}>
-                      <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
-                        <Link to={`/blog/${post.slug}`}>
-                          <Img
-                            className="w-full h-64 mb-4 rounded"
-                            fluid={post.featuredImage.childImageSharp.fluid}
-                          />
-                        </Link>
-                        <Link
-                          className="text-xl font-bold block text-red-500 mb-2"
-                          to={`/blog/${post.slug}`}
-                        >
-                          {post.title}
-                        </Link>
-                        <span className="text-gray-600">
-                          {post.publishedOn}
-                        </span>
-                        <p className="mt-2">{post.excerpt.substring(0, 130)}</p>
-                        <div className="flex items-center mb-3">
-                          <span>
-                            <Img
-                              className="rounded-full w-10 mr-4"
-                              fluid={post.author.avatar.childImageSharp.fluid}
-                              alt={post.author.name}
-                            />
-                          </span>
-                          <span className="text-gray-700 font-bold" to="/">
-                            {post.author.name}
-                          </span>
-                        </div>
-                      </div>
+                      <Card data={post} />
                     </li>
                   )
                 })}
@@ -135,6 +103,12 @@ const BlogPage = ({ data }) => {
 
 export const query = graphql`
   {
+    blogPage: allStrapiBlogPage {
+      nodes {
+        title
+        subTitle
+      }
+    }
     firstPost: allStrapiBlogPosts(
       limit: 1
       sort: { fields: publishedOn, order: DESC }
