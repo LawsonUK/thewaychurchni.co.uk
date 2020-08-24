@@ -37,11 +37,9 @@ const MediaPage = ({ data }) => {
         <h1 className="text-3xl md:text-4xl font-extrabold text-wayblue mb-4 px-24">
           {mediaPage.title}
         </h1>
-        <p className="mb-12">
-          <pre className="font-sans whitespace-pre-wrap">
-            {mediaPage.subTitle}
-          </pre>
-        </p>
+        <pre className="font-sans whitespace-pre-wrap mb-6">
+          {mediaPage.subTitle}
+        </pre>
       </div>
       {latestMedia && <LatestMedia media={latestMedia} />}
 
@@ -123,6 +121,7 @@ export const query = graphql`
       skip: 1
     ) {
       nodes {
+        strapiId
         title
         videoLink
         publishedOn(formatString: "Do MMM Y")

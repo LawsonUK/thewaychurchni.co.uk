@@ -30,14 +30,12 @@ const BlogPage = ({ data }) => {
       <section className="banner max-w-screen-xl m-auto mt-24 mb-8 md:mb-16 grid grid-cols-1 lg:grid-cols-2 lg:gap-32 pr-4 pl-4 pt-0 xl:p-0 pb-6">
         <div className="w-full text-center">
           <h3 className="mb-3">Blog</h3>
-          <h1 className="text-3xl md:text-4xl font-extrabold text-wayblue mb-4">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-wayblue mb-8">
             {blogPage.title}
           </h1>
-          <p className="mb-12">
-            <pre className="font-sans whitespace-pre-wrap">
-              {blogPage.subTitle}
-            </pre>
-          </p>
+          <pre className="font-sans whitespace-pre-wrap mb-12 px-6">
+            {blogPage.subTitle}
+          </pre>
         </div>
         {firstPost && (
           <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
