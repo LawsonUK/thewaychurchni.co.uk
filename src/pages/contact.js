@@ -82,7 +82,7 @@ const ContactPage = ({ data }) => {
           </ul>
         </div>
       </section>
-      <ul className="max-w-screen-xl m-auto grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 p-4 shadow-lg">
+      <ul className="gallery max-w-screen-xl m-auto grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 p-4 shadow-lg">
         <li className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col">
           <Img
             className="flex flex-grow"

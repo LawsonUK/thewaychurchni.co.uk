@@ -33,9 +33,7 @@ const BlogPage = ({ data }) => {
           <h1 className="text-3xl md:text-4xl font-extrabold text-wayblue mb-8">
             {blogPage.title}
           </h1>
-          <pre className="font-sans whitespace-pre-wrap mb-12 px-6">
-            {blogPage.subTitle}
-          </pre>
+          <pre className="mb-12 px-6">{blogPage.subTitle}</pre>
         </div>
         {firstPost && (
           <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
