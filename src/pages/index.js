@@ -185,7 +185,7 @@ export const query = graphql`
       }
     }
     posts: allStrapiBlogPosts(
-      limit: 3
+      limit: 2
       sort: { fields: publishedOn, order: DESC }
       skip: 1
     ) {
