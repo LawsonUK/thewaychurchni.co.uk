@@ -6,6 +6,12 @@ import Img from "gatsby-image"
 
 const ChurchPage = ({ data }) => {
   const churchPage = data.churchPage.nodes[0]
+  const gallery = churchPage.nodes[0].gallery[0]
+  const image1 = gallery.image1.childImageSharp.fluid
+  const image2 = gallery.image2.childImageSharp.fluid
+  const image3 = gallery.image3.childImageSharp.fluid
+  const image4 = gallery.image4.childImageSharp.fluid
+  const image5 = gallery.image5.childImageSharp.fluid
 
   let teamCount = 0
   const team = churchPage.team.map(member => {
@@ -86,13 +92,6 @@ const ChurchPage = ({ data }) => {
       return html
     })
   }
-
-  const gallery = data.churchPage.nodes[0].gallery[0]
-  const image1 = gallery.image1.childImageSharp.fluid
-  const image2 = gallery.image2.childImageSharp.fluid
-  const image3 = gallery.image3.childImageSharp.fluid
-  const image4 = gallery.image4.childImageSharp.fluid
-  const image5 = gallery.image5.childImageSharp.fluid
 
   return (
     <Layout absolute="true">

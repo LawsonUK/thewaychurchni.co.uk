@@ -21,8 +21,10 @@ pre {
   font-family: Inter, -apple-system, BlinkMacSystemFont;
 }
 
-pre.heading {
-  line-height: 3rem;
+@media only screen and (min-width: 640px) {
+  pre.heading {
+    line-height: 3rem;
+  }
 }
 
 p {
