@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react"
-
 import { graphql } from "gatsby"
-
 import LayoutMain from "../components/layout-main"
 import SEO from "../components/seo"
 import LatestMedia from "../components/latest-media"
