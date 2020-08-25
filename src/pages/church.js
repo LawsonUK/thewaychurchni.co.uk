@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 
 const ChurchPage = ({ data }) => {
   const churchPage = data.churchPage.nodes[0]
-  const gallery = churchPage.nodes[0].gallery[0]
+  const gallery = churchPage.gallery[0]
   const image1 = gallery.image1.childImageSharp.fluid
   const image2 = gallery.image2.childImageSharp.fluid
   const image3 = gallery.image3.childImageSharp.fluid
