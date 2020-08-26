@@ -18,7 +18,9 @@ const card = ({ data, media = false }) => {
         {data.title}
       </Link>
       <span className="text-gray-600">{data.publishedOn}</span>
-      <p className="mt-2">{data.excerpt.substring(0, 130)}</p>
+      <pre className="mt-2 mb-8">
+        {data.excerpt.split(" ").splice(0, 20).join(" ")}...
+      </pre>
       {media ? (
         <>
           <div className="flex mb-8">

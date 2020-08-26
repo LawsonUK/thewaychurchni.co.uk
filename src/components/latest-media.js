@@ -22,7 +22,9 @@ const latestMedia = ({ media }) => {
         <Link to="/" className="block text-2xl md:text-3xl font-bold mb-4 link">
           {media.title}
         </Link>
-        <p>{media.excerpt}</p>
+        <pre className="mb-6">
+          {media.excerpt.split(" ").splice(0, 20).join(" ")}...
+        </pre>
 
         <div>
           {media.videoLink && (

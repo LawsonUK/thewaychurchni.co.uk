@@ -51,7 +51,9 @@ const BlogPage = ({ data }) => {
               {firstPost.title}
             </Link>
             <span className="text-gray-600">{firstPost.publishedOn}</span>
-            <p className="mt-2">{firstPost.excerpt.substring(0, 130)}</p>
+            <pre className="mt-2 mb-8">
+              {firstPost.excerpt.split(" ").splice(0, 20).join(" ")}...
+            </pre>
             <div className="flex items-center mb-3">
               <span>
                 <Img
