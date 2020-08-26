@@ -205,7 +205,7 @@ export const query = graphql`
           image {
             childImageSharp {
               fluid(maxWidth: 80, jpegQuality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -214,35 +214,35 @@ export const query = graphql`
           image1 {
             childImageSharp {
               fluid(maxWidth: 620, maxHeight: 466, jpegQuality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluid
               }
             }
           }
           image2 {
             childImageSharp {
               fluid(maxWidth: 306, maxHeight: 229, jpegQuality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluid
               }
             }
           }
           image3 {
             childImageSharp {
               fluid(maxHeight: 229, jpegQuality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluid
               }
             }
           }
           image4 {
             childImageSharp {
               fluid(maxWidth: 306, maxHeight: 229, jpegQuality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluid
               }
             }
           }
           image5 {
             childImageSharp {
               fluid(maxWidth: 306, maxHeight: 229, jpegQuality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluid
               }
             }
           }

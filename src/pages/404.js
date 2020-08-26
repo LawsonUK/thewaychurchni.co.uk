@@ -72,7 +72,7 @@ export const query = graphql`
     ) {
       nodes {
         fluid(maxWidth: 640, jpegQuality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -81,7 +81,7 @@ export const query = graphql`
     ) {
       nodes {
         fluid(maxWidth: 620, jpegQuality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -90,7 +90,7 @@ export const query = graphql`
     ) {
       nodes {
         fluid(maxWidth: 620, jpegQuality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -99,7 +99,7 @@ export const query = graphql`
     ) {
       nodes {
         fluid(maxWidth: 620, jpegQuality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -108,7 +108,7 @@ export const query = graphql`
     ) {
       nodes {
         fluid(maxWidth: 620, jpegQuality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid
         }
       }
     }

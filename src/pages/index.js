@@ -114,7 +114,7 @@ export const query = graphql`
         bannerImage {
           childImageSharp {
             fluid(maxWidth: 1440, jpegQuality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -134,7 +134,7 @@ export const query = graphql`
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 620, maxHeight: 373, jpegQuality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -145,7 +145,7 @@ export const query = graphql`
           avatar {
             childImageSharp {
               fluid(maxWidth: 40, jpegQuality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -167,7 +167,7 @@ export const query = graphql`
           avatar {
             childImageSharp {
               fluid(maxWidth: 40, jpegQuality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -176,7 +176,7 @@ export const query = graphql`
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 373, jpegQuality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -198,7 +198,7 @@ export const query = graphql`
           avatar {
             childImageSharp {
               fluid(maxWidth: 40, jpegQuality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -206,7 +206,7 @@ export const query = graphql`
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 373, jpegQuality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }
