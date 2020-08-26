@@ -120,36 +120,36 @@ export const query = graphql`
         gallery {
           image1 {
             childImageSharp {
-              fluid(maxWidth: 620, maxHeight: 466, jpegQuality: 90) {
-                ...GatsbyImageSharpFluid
+              fluid(maxWidth: 620, maxHeight: 466, quality: 90) {
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
           image2 {
             childImageSharp {
-              fluid(maxWidth: 306, maxHeight: 229, jpegQuality: 90) {
-                ...GatsbyImageSharpFluid
+              fluid(maxWidth: 306, maxHeight: 229, quality: 90) {
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
           image3 {
             childImageSharp {
-              fluid(maxHeight: 229, jpegQuality: 90) {
-                ...GatsbyImageSharpFluid
+              fluid(maxHeight: 229, quality: 90) {
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
           image4 {
             childImageSharp {
-              fluid(maxWidth: 306, maxHeight: 229, jpegQuality: 90) {
-                ...GatsbyImageSharpFluid
+              fluid(maxWidth: 306, maxHeight: 229, quality: 90) {
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
           image5 {
             childImageSharp {
-              fluid(maxWidth: 306, maxHeight: 229, jpegQuality: 90) {
-                ...GatsbyImageSharpFluid
+              fluid(maxWidth: 306, maxHeight: 229, quality: 90) {
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
