@@ -113,7 +113,7 @@ export const query = graphql`
         bannerText
         bannerImage {
           childImageSharp {
-            fluid(maxWidth: 1440, jpegQuality: 100) {
+            fluid(maxWidth: 1440, jpegQuality: 80) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -133,7 +133,7 @@ export const query = graphql`
         excerpt
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 620, maxHeight: 373, jpegQuality: 100) {
+            fluid(maxWidth: 620, maxHeight: 373, jpegQuality: 80) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -144,7 +144,7 @@ export const query = graphql`
         teacher {
           avatar {
             childImageSharp {
-              fluid(maxWidth: 40, jpegQuality: 100) {
+              fluid(maxWidth: 40, jpegQuality: 80) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -166,7 +166,7 @@ export const query = graphql`
         author {
           avatar {
             childImageSharp {
-              fluid(maxWidth: 40, jpegQuality: 100) {
+              fluid(maxWidth: 40, jpegQuality: 80) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -175,7 +175,7 @@ export const query = graphql`
         }
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 373, jpegQuality: 100) {
+            fluid(maxWidth: 373, jpegQuality: 80) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -197,7 +197,7 @@ export const query = graphql`
           name
           avatar {
             childImageSharp {
-              fluid(maxWidth: 40, jpegQuality: 100) {
+              fluid(maxWidth: 40, jpegQuality: 80) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -205,7 +205,7 @@ export const query = graphql`
         }
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 373, jpegQuality: 100) {
+            fluid(maxWidth: 373, jpegQuality: 80) {
               ...GatsbyImageSharpFluid
             }
           }
