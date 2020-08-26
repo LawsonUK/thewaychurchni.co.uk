@@ -91,7 +91,7 @@ export const query = graphql`
         excerpt
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 620, maxHeight: 373, quality: 90) {
+            fluid(maxWidth: 620, maxHeight: 373, quality: 80) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -102,7 +102,7 @@ export const query = graphql`
         teacher {
           avatar {
             childImageSharp {
-              fluid(maxWidth: 40, quality: 90) {
+              fluid(maxWidth: 40, quality: 80) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
@@ -128,7 +128,7 @@ export const query = graphql`
         excerpt
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 620, maxHeight: 373, quality: 90) {
+            fluid(maxWidth: 620, maxHeight: 373, quality: 80) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -139,7 +139,7 @@ export const query = graphql`
         teacher {
           avatar {
             childImageSharp {
-              fluid(maxWidth: 40, quality: 90) {
+              fluid(maxWidth: 40, quality: 80) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
