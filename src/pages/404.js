@@ -71,7 +71,7 @@ export const query = graphql`
       filter: { fluid: { originalName: { eq: "church1.jpg" } } }
     ) {
       nodes {
-        fluid(maxWidth: 640, jpegQuality: 80) {
+        fluid(maxWidth: 640, jpegQuality: 90) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -80,7 +80,7 @@ export const query = graphql`
       filter: { fluid: { originalName: { eq: "church2.jpg" } } }
     ) {
       nodes {
-        fluid(maxWidth: 620, jpegQuality: 80) {
+        fluid(maxWidth: 620, jpegQuality: 90) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -89,7 +89,7 @@ export const query = graphql`
       filter: { fluid: { originalName: { eq: "church3.jpg" } } }
     ) {
       nodes {
-        fluid(maxWidth: 620, jpegQuality: 80) {
+        fluid(maxWidth: 620, jpegQuality: 90) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -98,7 +98,7 @@ export const query = graphql`
       filter: { fluid: { originalName: { eq: "church4.jpg" } } }
     ) {
       nodes {
-        fluid(maxWidth: 620, jpegQuality: 80) {
+        fluid(maxWidth: 620, jpegQuality: 90) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -107,7 +107,7 @@ export const query = graphql`
       filter: { fluid: { originalName: { eq: "church5.jpg" } } }
     ) {
       nodes {
-        fluid(maxWidth: 620, jpegQuality: 80) {
+        fluid(maxWidth: 620, jpegQuality: 90) {
           ...GatsbyImageSharpFluid
         }
       }
