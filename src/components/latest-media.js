@@ -17,7 +17,7 @@ const latestMedia = ({ media }) => {
       <div>
         <div className="flex flex-col">
           <span>{media.media_type.type}</span>
-          <span className="text-sm text-gray-500">{media.publishedOn}</span>
+          <span className="text-sm text-gray-600">{media.publishedOn}</span>
         </div>
         <Link to="/" className="block text-2xl md:text-3xl font-bold mb-4 link">
           {media.title}
