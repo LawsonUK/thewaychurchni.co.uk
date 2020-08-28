@@ -5,6 +5,18 @@ module.exports = {
     author: `@theWayChurchNI`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `The Way Church`,
+        short_name: `The Way Church`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/logo.svg`, // This path is relative to the root of the site.
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -15,6 +27,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-remark-images`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -28,18 +41,6 @@ module.exports = {
             },
           },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `The Way Church`,
-        short_name: `The Way Church`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/logo.svg`, // This path is relative to the root of the site.
       },
     },
     {

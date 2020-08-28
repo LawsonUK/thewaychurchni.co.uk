@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout-main"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
+import ReactMarkdown from "react-markdown"
 
 const BlogPostTemplate = ({ data }) => {
   const post = data.strapiBlogPosts
@@ -10,12 +11,13 @@ const BlogPostTemplate = ({ data }) => {
     <Layout>
       <SEO title="Blog"></SEO>
 
-      <section className="banner max-w-screen-xl m-auto text-center mt-24 mb-8 md:mb-24 flex flex-col pr-4 pl-4 pt-0 xl:p-0">
-        <div className="w-full">
+      <section className="banner max-w-screen-xl m-auto text-center mt-24 mb-8 flex flex-col px-6 pt-0 xl:p-0">
+        <div className="w-full flex flex-col">
           <Link to="/blog" className="link mb-3">
             Blog
           </Link>
-          <h1 className="text-3xl md:text-3xl font-extrabold mt-4 mb-16 text-wayblue">
+          <span className="text-gray-600">{post.publishedOn}</span>
+          <h1 className="text-3xl md:text-3xl font-extrabold mt-4 mb-12 text-wayblue">
             {post.title}
           </h1>
         </div>
@@ -24,7 +26,9 @@ const BlogPostTemplate = ({ data }) => {
           fluid={post.featuredImage.childImageSharp.fluid}
         />
       </section>
-      <article className="max-w-screen-xl m-auto">{post.post}</article>
+      <article className="max-w-screen-xl m-auto px-6">
+        <ReactMarkdown source={post.post} />
+      </article>
     </Layout>
   )
 }
@@ -35,7 +39,7 @@ export const query = graphql`
       strapiId
       title
       excerpt
-      publishedOn
+      publishedOn(formatString: "Do MMM Y")
       slug
       post
       featuredImage {

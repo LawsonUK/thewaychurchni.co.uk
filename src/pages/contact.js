@@ -21,7 +21,7 @@ const ContactPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Contact" />
-      <section className="banner max-w-screen-xl m-auto text-center mt-24 mb-8 md:mb-24 flex flex-col pr-4 pl-4 pt-0 xl:p-0">
+      <section className="banner max-w-screen-xl m-auto text-center mt-24 mb-8 md:mb-24 flex flex-col px-6 pt-0 xl:p-0">
         <div className="w-full">
           <h3 className="mb-3">Contact</h3>
           <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-wayblue">
@@ -84,7 +84,7 @@ const ContactPage = ({ data }) => {
           </ul>
         </div>
       </section>
-      <ul className="gallery max-w-screen-xl m-auto grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 p-4 shadow-lg">
+      <ul className="gallery max-w-screen-xl m-auto grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 p-4 shadow-lg px-6">
         <li className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col">
           <Img className="flex flex-grow" fluid={image1} alt="Image 1" />
         </li>
