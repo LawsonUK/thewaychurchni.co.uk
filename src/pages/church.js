@@ -18,8 +18,6 @@ const ChurchPage = ({ data }) => {
     const html =
       teamCount === 0 ? (
         <li className="flex flex-col md:col-span-2 xl:col-span-1">
-          <div className="rounded flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white pt-8 pb-8 md:pl-8 md:pr-8">
-            <div className="flex items-center mb-6 md:pl-20 md:pr-20 xl:pl-0 xl:pr-0">
           <div className="rounded flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white pt-8 pb-8 md:px-8">
             <div className="flex items-center mb-6 md:px-20 xl:px-0">
               <Img
