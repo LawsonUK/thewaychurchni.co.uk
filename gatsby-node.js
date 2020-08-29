@@ -3,6 +3,19 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+const crypto = require(`crypto`)
+const slugify = require("slugify")
+
+const buildSlug = node => {
+  let slug = slugify(node.title, { lower: true })
+  if (node.categories) {
+    slug += `/${node.categories
+      .split(",")
+      .map(n => _.trim(n))
+      .join("/")}`
+  }
+  return slug
+}
 
 // You can delete this file if you're not using it
 exports.createPages = async ({ graphql, actions }) => {
@@ -62,4 +75,26 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     })
+}
+
+exports.onCreateNode = async ({ node, actions }) => {
+  const { createNode } = actions
+  if (node.internal.type === "StrapiBlogPosts") {
+    createNode({
+      ...node,
+      slug: buildSlug(node),
+      id: node.id + "-markdown",
+      parent: node.id,
+      children: [],
+      internal: {
+        type: "BlogPost",
+        mediaType: "text/markdown",
+        content: node.post,
+        contentDigest: crypto
+          .createHash(`md5`)
+          .update(JSON.stringify(node))
+          .digest(`hex`),
+      },
+    })
+  }
 }
