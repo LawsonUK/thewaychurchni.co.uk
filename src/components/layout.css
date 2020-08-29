@@ -51,7 +51,8 @@ h2 {
   @apply text-3xl font-bold;
 }
 
-.link {
+.link,
+article a {
   @apply text-red-600 font-extrabold pb-1;
 }
 

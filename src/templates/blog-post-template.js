@@ -3,10 +3,10 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout-main"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import ReactMarkdown from "react-markdown"
 
 const BlogPostTemplate = ({ data }) => {
-  const post = data.strapiBlogPosts
+  const post = data.blogPost
+
   return (
     <Layout>
       <SEO title="Blog"></SEO>
@@ -41,7 +41,11 @@ const BlogPostTemplate = ({ data }) => {
         <span>Published On: {post.publishedOn}</span>
       </section>
       <article className=" max-w-screen-lg m-auto px-6">
-        <ReactMarkdown source={post.post} />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: post.childMarkdownRemark.html,
+          }}
+        ></div>
       </article>
     </Layout>
   )
@@ -49,13 +53,15 @@ const BlogPostTemplate = ({ data }) => {
 
 export const query = graphql`
   query PostQuery($slug: String!) {
-    strapiBlogPosts(slug: { eq: $slug }) {
+    blogPost(slug: { eq: $slug }) {
       strapiId
       title
       excerpt
       publishedOn(formatString: "Do MMM Y")
       slug
-      post
+      childMarkdownRemark {
+        html
+      }
       featuredImage {
         childImageSharp {
           fluid(maxWidth: 1280, quality: 80) {

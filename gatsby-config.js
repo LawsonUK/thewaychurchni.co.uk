@@ -25,9 +25,8 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-remark-images`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -36,10 +35,10 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
-              wrapperStyle: fluidResult =>
-                `flex:${_.round(fluidResult.aspectRatio, 2)};`,
             },
           },
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-autolink-headers",
         ],
       },
     },
