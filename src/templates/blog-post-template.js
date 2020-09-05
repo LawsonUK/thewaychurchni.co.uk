@@ -40,7 +40,7 @@ const BlogPostTemplate = ({ data }) => {
         </div>
         <span>Published On: {post.publishedOn}</span>
       </section>
-      <article className=" max-w-screen-lg m-auto px-6">
+      <article className="article max-w-screen-lg m-auto px-6">
         <div
           dangerouslySetInnerHTML={{
             __html: post.childMarkdownRemark.html,

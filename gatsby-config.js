@@ -78,6 +78,7 @@ module.exports = {
           "bg-red-700",
           "bg-pink-700",
           "bg-teal-700",
+          "article",
         ],
       },
     },
