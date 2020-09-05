@@ -24,6 +24,7 @@ pre {
 article img {
   margin: 2rem auto;
   border-radius: 1%;
+  max-width: 100%;
 }
 
 article p:first-child {
