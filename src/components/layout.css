@@ -24,7 +24,13 @@ pre {
 article img {
   margin: 2rem auto;
   border-radius: 1%;
+  width: 100%;
   max-width: 100%;
+}
+
+article p img {
+  max-width: 100%;
+  width: 100%;
 }
 
 article p:first-child {
@@ -35,6 +41,12 @@ article p:first-child {
   article img {
     max-width: 70%;
     margin: 3rem auto;
+    width: 70%;
+  }
+
+  article p img {
+    max-width: 70%;
+    width: 70%;
   }
 }
 
