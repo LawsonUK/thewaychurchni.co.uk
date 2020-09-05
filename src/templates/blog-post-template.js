@@ -64,7 +64,7 @@ export const query = graphql`
       }
       featuredImage {
         childImageSharp {
-          fluid(maxWidth: 1280, quality: 80) {
+          fluid(maxWidth: 1280, quality: 70) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -72,7 +72,7 @@ export const query = graphql`
       author {
         avatar {
           childImageSharp {
-            fluid(maxWidth: 40, quality: 80) {
+            fluid(maxWidth: 40, quality: 70) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

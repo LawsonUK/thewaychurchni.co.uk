@@ -117,7 +117,7 @@ export const query = graphql`
         author {
           avatar {
             childImageSharp {
-              fluid(maxWidth: 40, quality: 80) {
+              fluid(maxWidth: 40, quality: 70) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
@@ -126,7 +126,7 @@ export const query = graphql`
         }
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 542, quality: 80) {
+            fluid(maxWidth: 542, quality: 70) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -147,7 +147,7 @@ export const query = graphql`
           name
           avatar {
             childImageSharp {
-              fluid(maxWidth: 40, quality: 80) {
+              fluid(maxWidth: 40, quality: 70) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
@@ -155,7 +155,7 @@ export const query = graphql`
         }
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 373, quality: 80) {
+            fluid(maxWidth: 373, quality: 70) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

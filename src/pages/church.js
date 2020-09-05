@@ -172,7 +172,7 @@ const ChurchPage = ({ data }) => {
       <section className="bg-light p-4 pt-12 pb-16 md:pt-8 md:pb-16">
         <div className="max-w-screen-xl m-auto">
           <h2 className="text-3xl font-bold text-wayblue mt-0 md:mt-6 md:text-center mb-8">
-            Team
+            The Team
           </h2>
           <ul className="grid gap-4 xl:gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
             {team}
@@ -204,7 +204,7 @@ export const query = graphql`
           body
           image {
             childImageSharp {
-              fluid(maxWidth: 80, quality: 80) {
+              fluid(maxWidth: 80, quality: 70) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
@@ -213,35 +213,35 @@ export const query = graphql`
         gallery {
           image1 {
             childImageSharp {
-              fluid(maxWidth: 620, maxHeight: 466, quality: 80) {
+              fluid(maxWidth: 620, maxHeight: 466, quality: 70) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
           image2 {
             childImageSharp {
-              fluid(maxWidth: 306, maxHeight: 229, quality: 80) {
+              fluid(maxWidth: 306, maxHeight: 229, quality: 70) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
           image3 {
             childImageSharp {
-              fluid(maxHeight: 229, quality: 80) {
+              fluid(maxHeight: 229, quality: 70) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
           image4 {
             childImageSharp {
-              fluid(maxWidth: 306, maxHeight: 229, quality: 80) {
+              fluid(maxWidth: 306, maxHeight: 229, quality: 70) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
           image5 {
             childImageSharp {
-              fluid(maxWidth: 306, maxHeight: 229, quality: 80) {
+              fluid(maxWidth: 306, maxHeight: 229, quality: 70) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }

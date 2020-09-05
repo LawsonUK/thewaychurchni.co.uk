@@ -27,6 +27,7 @@ pre {
   border-radius: 1%;
   width: 100%;
   max-width: 100%;
+  display: block;
 }
 
 article p:first-child {
