@@ -30,8 +30,44 @@ pre {
   display: block;
 }
 
-article p:first-child {
-  @apply text-gray-600;
+.article blockquote {
+  padding: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.article blockquote p:last-child {
+  margin: 0;
+}
+
+.article blockquote::before {
+  content: open-quote;
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+  --text-opacity: 1;
+  color: #54b0b1;
+  color: rgba(84, 176, 177, var(--text-opacity));
+  margin: 15px 0 0 -25px;
+}
+
+.article blockquote::after {
+  content: close-quote;
+  font-size: 3rem;
+  position: absolute;
+  --text-opacity: 1;
+  color: #54b0b1;
+  color: rgba(84, 176, 177, var(--text-opacity));
+  margin: -15px 0 0 10px;
+}
+
+.article code {
+  font-size: 0.85rem;
+}
+
+.article ul {
+  list-style-type: disc;
+  padding: 2rem;
 }
 
 @media only screen and (min-width: 640px) {
