@@ -27,6 +27,7 @@ exports.createPages = async ({ graphql, actions }) => {
           edges {
             node {
               slug
+              title
             }
           }
         }
@@ -34,6 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
           edges {
             node {
               slug
+              title
             }
           }
         }
@@ -48,16 +50,15 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = result.data.posts.edges
   posts &&
     posts.forEach((post, index) => {
-      // const prevPost = posts[index - 1] ? posts[index - 1].node : false
-      // const nextPost = posts[index + 1] ? posts[index + 1].node : false
-
+      const prevPost = posts[index - 1] ? posts[index - 1].node : false
+      const nextPost = posts[index + 1] ? posts[index + 1].node : false
       createPage({
         path: `/blog/${post.node.slug}`,
         component: require.resolve("./src/templates/blog-post-template.js"),
         context: {
           slug: post.node.slug,
-          // prevPost,
-          // nextPost,
+          prevPost,
+          nextPost,
         },
       })
     })

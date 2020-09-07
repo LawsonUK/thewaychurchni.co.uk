@@ -4,8 +4,25 @@ import Layout from "../components/layout-main"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 
-const BlogPostTemplate = ({ data }) => {
+const BlogPostTemplate = ({ data, pageContext }) => {
   const post = data.blogPost
+  const prevPostLink = pageContext.prevPost ? (
+    <Link
+      className="link mb-8 lg:mb-0"
+      to={`/blog/${pageContext.prevPost.slug}`}
+    >
+      {pageContext.prevPost.title}
+    </Link>
+  ) : (
+    ""
+  )
+  const nextPostLink = pageContext.nextPost ? (
+    <Link className="link" to={`/blog/${pageContext.nextPost.slug}`}>
+      {pageContext.nextPost.title}
+    </Link>
+  ) : (
+    ""
+  )
 
   return (
     <Layout>
@@ -47,6 +64,9 @@ const BlogPostTemplate = ({ data }) => {
           }}
         ></div>
       </article>
+      <section className="links max-w-screen-xl m-auto flex flex-col lg:flex-row lg:justify-between text-center px-6 py-6 xl:px-0 pt-16">
+        {prevPostLink} {nextPostLink}
+      </section>
     </Layout>
   )
 }

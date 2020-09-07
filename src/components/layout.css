@@ -33,7 +33,10 @@ pre {
 .article blockquote {
   padding: 2rem;
   position: relative;
-  display: inline-block;
+}
+
+.article blockquote p {
+  display: inline;
 }
 
 .article blockquote p:last-child {
@@ -44,6 +47,7 @@ pre {
   content: open-quote;
   font-size: 3rem;
   position: absolute;
+  display: inline-block;
   top: 0;
   --text-opacity: 1;
   color: #54b0b1;
@@ -55,6 +59,7 @@ pre {
   content: close-quote;
   font-size: 3rem;
   position: absolute;
+  display: inline-block;
   --text-opacity: 1;
   color: #54b0b1;
   color: rgba(84, 176, 177, var(--text-opacity));
