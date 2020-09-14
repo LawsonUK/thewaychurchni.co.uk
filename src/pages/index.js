@@ -115,7 +115,7 @@ export const query = graphql`
         bannerText
         bannerImage {
           childImageSharp {
-            fluid(maxWidth: 1440, quality: 70) {
+            fluid(maxWidth: 1440, quality: 60) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

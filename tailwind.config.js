@@ -10,11 +10,11 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ["Inter", "-apple-system", "BlinkMacSystemFont"],
+      sans: ["Inter", "Open Sans"],
       serif: ["Source Serif Pro", "Georgia", "Cambria"],
       mono: ["SFMono-Regular", "Menlo"],
       display: ["Oswald"],
-      body: ["Open Sans"],
+      body: ["Inter", "Open Sans"],
     },
   },
   variants: {},
