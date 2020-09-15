@@ -8,7 +8,7 @@ import Logo from "./../images/logo.svg"
 
 const Footer = () => {
   return (
-    <footer className="max-w-screen-xl m-auto mt-8 p-4 xl:p-0 xl:pt-4 mb-10">
+    <footer className="max-w-screen-xl m-auto mt-16 p-4 xl:p-0 xl:pt-4 mb-10">
       <div className="md:flex justify-between items-center">
         <div className="flex justify-start items-center mb-5">
           <Link to="/">

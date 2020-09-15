@@ -26,7 +26,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <SEO title="Blog"></SEO>
+      <SEO title={post.title}></SEO>
 
       <section className="banner max-w-screen-xl m-auto text-center mt-24 flex flex-col px-6 pt-0 xl:p-0">
         <div className="w-full flex flex-col">

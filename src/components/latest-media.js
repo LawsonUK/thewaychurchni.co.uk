@@ -19,7 +19,10 @@ const latestMedia = ({ media }) => {
           <span>{media.media_type.type}</span>
           <span className="text-sm text-gray-600">{media.publishedOn}</span>
         </div>
-        <Link to="/" className="block text-2xl md:text-3xl font-bold mb-4 link">
+        <Link
+          to={`/media/${media.slug}`}
+          className="block text-2xl md:text-3xl font-bold mb-4 link"
+        >
           {media.title}
         </Link>
         <pre className="mb-6">
@@ -29,7 +32,7 @@ const latestMedia = ({ media }) => {
         <div>
           {media.videoLink && (
             <Link
-              to="/"
+              to={`/media/${media.slug}`}
               className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
             >
               Video
@@ -44,7 +47,7 @@ const latestMedia = ({ media }) => {
           )}
           {media.audioFile && (
             <Link
-              to="/"
+              to={`/media/${media.slug}`}
               className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-400 text-yellow-800 cursor-pointer items-center"
             >
               Audio

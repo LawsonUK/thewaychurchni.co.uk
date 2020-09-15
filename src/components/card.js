@@ -3,18 +3,16 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 
 const card = ({ data, media = false }) => {
+  const url = media ? `/media/${data.slug}` : `/blog/${data.slug}`
   return (
     <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
-      <Link to={`/blog/${data.slug}`}>
+      <Link to={url}>
         <Img
           className="w-full h-64 mb-4 rounded"
           fluid={data.featuredImage.childImageSharp.fluid}
         />
       </Link>
-      <Link
-        className="text-xl font-bold block text-red-500 mb-2"
-        to={`/blog/${data.slug}`}
-      >
+      <Link className="text-xl font-bold block text-red-500 mb-2" to={url}>
         {data.title}
       </Link>
       <span className="text-gray-600">{data.publishedOn}</span>
@@ -25,7 +23,7 @@ const card = ({ data, media = false }) => {
         <>
           <div className="flex mb-8">
             <Link
-              to="/"
+              to={url}
               className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
             >
               Video
@@ -38,7 +36,7 @@ const card = ({ data, media = false }) => {
               </svg>
             </Link>
             <Link
-              to="/"
+              to={url}
               className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-400 text-yellow-800 cursor-pointer items-center"
             >
               Audio
