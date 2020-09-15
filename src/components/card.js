@@ -15,7 +15,12 @@ const card = ({ data, media = false }) => {
       <Link className="text-xl font-bold block text-red-500 mb-2" to={url}>
         {data.title}
       </Link>
-      <span className="text-gray-600">{data.publishedOn}</span>
+      {media && (
+        <span className="text-sm text-gray-600">{data.media_type.type}</span>
+      )}
+      <span className="text-sm text-gray-600">
+        Published On: {data.publishedOn}
+      </span>
       <pre className="mt-2 mb-8">
         {data.excerpt.split(" ").splice(0, 20).join(" ")}...
       </pre>

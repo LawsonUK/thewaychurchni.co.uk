@@ -6,12 +6,30 @@ import ReactPlayer from "react-player/lazy"
 import Img from "gatsby-image"
 import ReactMarkdown from "react-markdown"
 
-const MediaTemplate = ({ data }) => {
+const MediaTemplate = ({ data, pageContext }) => {
   const media = data.strapiMediaPosts
+  const prevMediaLink = pageContext.prevMedia ? (
+    <Link
+      className="link mb-8 lg:mb-0"
+      to={`/media/${pageContext.prevMedia.slug}`}
+    >
+      {pageContext.prevMedia.title}
+    </Link>
+  ) : (
+    ""
+  )
+  const nextMediaLink = pageContext.nextMedia ? (
+    <Link className="link" to={`/media/${pageContext.nextMedia.slug}`}>
+      {pageContext.nextMedia.title}
+    </Link>
+  ) : (
+    ""
+  )
+
   return (
     <Layout>
       <SEO title={media.title} />
-      <section className="banner max-w-screen-xl m-auto text-center mt-24 mb-8 flex flex-col px-6 pt-0 xl:p-0">
+      <section className="banner max-w-screen-xl m-auto text-center mt-24 mb-2 flex flex-col px-6 pt-0 xl:p-0">
         <div className="w-full">
           <Link to="/media" className="link mb-3">
             Media
@@ -43,7 +61,6 @@ const MediaTemplate = ({ data }) => {
             className="react-player"
             width="100%"
             height="100%"
-            controls="true"
             config={{
               youtube: {
                 playerVars: { showinfo: 1 },
@@ -58,6 +75,9 @@ const MediaTemplate = ({ data }) => {
       <article className="article max-w-screen-lg m-auto px-6">
         <ReactMarkdown source={media.description} />
       </article>
+      <section className="links max-w-screen-xl m-auto flex flex-col lg:flex-row lg:justify-between text-center px-6 py-6 xl:px-0 pt-16">
+        {prevMediaLink} {nextMediaLink}
+      </section>
     </Layout>
   )
 }

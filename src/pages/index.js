@@ -73,7 +73,9 @@ const IndexPage = ({ data }) => {
                   >
                     {firstPost.title}
                   </Link>
-                  <span className="text-gray-600">{firstPost.publishedOn}</span>
+                  <span className="text-gray-600 text-sm">
+                    Published On: {firstPost.publishedOn}
+                  </span>
                   <pre className="mt-2 mb-8">
                     {firstPost.excerpt.split(" ").splice(0, 20).join(" ")}...{" "}
                   </pre>

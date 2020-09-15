@@ -68,11 +68,15 @@ exports.createPages = async ({ graphql, actions }) => {
 
   medias &&
     medias.forEach((media, index) => {
+      const prevMedia = medias[index - 1] ? medias[index - 1].node : false
+      const nextMedia = medias[index + 1] ? medias[index + 1].node : false
       createPage({
         path: `/media/${media.node.slug}`,
         component: require.resolve("./src/templates/media-template.js"),
         context: {
           slug: media.node.slug,
+          prevMedia,
+          nextMedia,
         },
       })
     })

@@ -15,16 +15,18 @@ const latestMedia = ({ media }) => {
         </Link>
       </div>
       <div>
-        <div className="flex flex-col">
-          <span>{media.media_type.type}</span>
-          <span className="text-sm text-gray-600">{media.publishedOn}</span>
-        </div>
         <Link
           to={`/media/${media.slug}`}
-          className="block text-2xl md:text-3xl font-bold mb-4 link"
+          className="block text-2xl md:text-3xl font-bold link"
         >
           {media.title}
         </Link>
+        <div className="flex flex-col mb-2">
+          <span className="text-sm text-gray-600">{media.media_type.type}</span>
+          <span className="text-sm text-gray-600">
+            Published On: {media.publishedOn}
+          </span>
+        </div>
         <pre className="mb-6">
           {media.excerpt.split(" ").splice(0, 20).join(" ")}...
         </pre>
