@@ -35,9 +35,9 @@ const Footer = () => {
                 className="link"
                 activeClassName="link-active"
                 partiallyActive={true}
-                to="/blog"
+                to="/bim-newlog"
               >
-                Blog
+                I'm New
               </Link>
             </li>
             <li className="mr-8">

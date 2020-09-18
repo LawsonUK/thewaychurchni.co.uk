@@ -87,19 +87,21 @@ module.exports = {
       options: {
         apiURL: `https://thewaychurch.herokuapp.com`,
         queryLimit: 1000, // Default to 100
-        contentTypes: [`blog-posts`, `media-posts`, `media-types`],
+        contentTypes: [`media-posts`, `media-types`],
         singleTypes: [
           `home-page`,
           `live-page`,
           `church-page`,
           `contact-page`,
-          `blog-page`,
           `media-page`,
         ],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100,
+      },
+    },
   ],
 }

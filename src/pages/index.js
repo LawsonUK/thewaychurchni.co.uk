@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
 import LatestMedia from "../components/latest-media"
 import Card from "../components/card"
 
@@ -11,8 +10,7 @@ import BackgroundImage from "gatsby-background-image"
 const IndexPage = ({ data }) => {
   const indexPage = data.indexpage.nodes[0] ? data.indexpage.nodes[0] : false
   const message = data.message.nodes[0] ? data.message.nodes[0] : false
-  const firstPost = data.firstPost.nodes[0] ? data.firstPost.nodes[0] : false
-  const posts = data.posts.nodes ? data.posts.nodes : false
+  const medias = data.media.nodes ? data.media.nodes : false
 
   return (
     <Layout absolute="true">
@@ -53,53 +51,15 @@ const IndexPage = ({ data }) => {
         <section className="latest-blog max-w-screen-xl m-auto p-6 pt-16 pb-16 xl:pl-0 xl:pr-0">
           <div className="flex justify-between items-center mb-8 lg:mb-12">
             <Link className="link text-red-600" to="/blog">
-              <h2 className="text-2xl font-bold">Latest from the Blog</h2>
+              <h2 className="text-2xl font-bold">Featured Media</h2>
             </Link>
           </div>
           <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
-            {firstPost && (
-              <li className="flex flex-col md:col-span-2 xl:col-span-1">
-                <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
-                  <Link to={`/blog/${firstPost.slug}`}>
-                    <Img
-                      className="w-full h-64 mb-4 rounded"
-                      fluid={firstPost.featuredImage.childImageSharp.fluid}
-                    />
-                  </Link>
-
-                  <Link
-                    className="text-xl font-bold block text-red-500 mb-2"
-                    to={`/blog/${firstPost.slug}`}
-                  >
-                    {firstPost.title}
-                  </Link>
-                  <span className="text-gray-600 text-sm">
-                    Published On: {firstPost.publishedOn}
-                  </span>
-                  <pre className="mt-2 mb-8">
-                    {firstPost.excerpt.split(" ").splice(0, 20).join(" ")}...{" "}
-                  </pre>
-                  <div className="flex items-center mb-3">
-                    <span>
-                      <Img
-                        className="rounded-full w-10 mr-4"
-                        fluid={firstPost.author.avatar.childImageSharp.fluid}
-                        alt={firstPost.author.name}
-                      />
-                    </span>
-                    <span className="text-gray-700 font-bold" to="/">
-                      {firstPost.author.name}
-                    </span>
-                  </div>
-                </div>
-              </li>
-            )}
-
-            {posts &&
-              posts.map(post => {
+            {medias &&
+              medias.map(media => {
                 return (
-                  <li className="flex flex-col" key={post.strapiId}>
-                    <Card data={post} />
+                  <li className="flex flex-col" key={media.strapiId}>
+                    <Card data={media} media={true} />
                   </li>
                 )
               })}
@@ -160,45 +120,29 @@ export const query = graphql`
         }
       }
     }
-    firstPost: allStrapiBlogPosts(
-      limit: 1
-      sort: { fields: publishedOn, order: DESC }
-    ) {
-      nodes {
-        slug
-        title
-        author {
-          avatar {
-            childImageSharp {
-              fluid(maxWidth: 40, quality: 70) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-          name
-        }
-        featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 373, quality: 70) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-        publishedOn(formatString: "Do MMM Y")
-        excerpt
-      }
-    }
-    posts: allStrapiBlogPosts(
-      limit: 2
-      sort: { fields: publishedOn, order: DESC }
+    media: allStrapiMediaPosts(
+      sort: { order: DESC, fields: publishedOn }
       skip: 1
     ) {
       nodes {
         strapiId
-        slug
         title
-        author {
-          name
+        videoLink
+        publishedOn(formatString: "Do MMM Y")
+        slug
+        description
+        excerpt
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 620, maxHeight: 373, quality: 70) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        audioFile {
+          publicURL
+        }
+        teacher {
           avatar {
             childImageSharp {
               fluid(maxWidth: 40, quality: 70) {
@@ -206,16 +150,11 @@ export const query = graphql`
               }
             }
           }
+          name
         }
-        featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 373, quality: 70) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
+        media_type {
+          type
         }
-        publishedOn(formatString: "Do MMM Y")
-        excerpt
       }
     }
   }

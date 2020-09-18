@@ -6,6 +6,7 @@
 
 body {
   color: #555;
+  font-family: Inter, Open Sans, -apple-system, BlinkMacSystemFont;
 }
 
 h1,
@@ -18,7 +19,7 @@ h4 {
 pre {
   line-height: 1.75rem;
   white-space: pre-wrap;
-  font-family: Inter, -apple-system, BlinkMacSystemFont;
+  font-family: Inter, Open Sans, -apple-system, BlinkMacSystemFont;
 }
 
 .article img,

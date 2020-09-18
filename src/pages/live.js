@@ -28,7 +28,6 @@ const LivePage = () => {
             className="react-player"
             width="100%"
             height="100%"
-            controls="true"
             config={{
               youtube: {
                 playerVars: { showinfo: 1 },

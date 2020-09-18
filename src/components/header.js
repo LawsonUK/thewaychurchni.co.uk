@@ -1,9 +1,17 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
 import Logo from "./../images/logo.svg"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const Header = ({ absolute, live, headerText }) => {
+  const [aboutMenu, setAboutMenu] = useState(false)
+
+  const handleAboutMenu = e => {
+    e.preventDefault()
+    setAboutMenu(!aboutMenu)
+  }
+
   const liveMenuItem = (
     <li className="mr-6 md:mr-4 lg:mr-8 flex">
       <Link
@@ -50,24 +58,48 @@ const Header = ({ absolute, live, headerText }) => {
         <nav className="hidden md:flex ml-24">
           <ul className="flex text-sm lg:text-base mt-2 h-8">
             {live && liveMenuItem}
-            <li className="mr-8 md:mr-6 lg:mr-8">
+            <li className="mr-8 md:mr-6 lg:mr-8 relative">
               <Link
                 className="link"
                 activeClassName="link-active"
                 partiallyActive={true}
-                to="/church"
+                to="/about"
+                onClick={handleAboutMenu}
               >
-                Church
+                About
               </Link>
+              {aboutMenu && (
+                <ul className="absolute w-40 bg-white shadow-md px-6 py-4">
+                  <li className="mb-4">
+                    <AnchorLink
+                      className="link"
+                      to="/about#our-story"
+                      onClick={handleAboutMenu}
+                    >
+                      Our Story
+                    </AnchorLink>
+                  </li>
+                  <li className="mb-4">
+                    <AnchorLink className="link" to="/about#core-values">
+                      Core Values
+                    </AnchorLink>
+                  </li>
+                  <li>
+                    <AnchorLink className="link" to="/about#eldership">
+                      Eldership
+                    </AnchorLink>
+                  </li>
+                </ul>
+              )}
             </li>
             <li className="mr-8 md:mr-6 lg:mr-8">
               <Link
                 className="link"
                 activeClassName="link-active"
                 partiallyActive={true}
-                to="/blog"
+                to="/im-new"
               >
-                Blog
+                I'm New
               </Link>
             </li>
             <li className="mr-8 md:mr-6 lg:mr-8">
@@ -107,9 +139,9 @@ const Header = ({ absolute, live, headerText }) => {
               className="link"
               activeClassName="link-active"
               partiallyActive={true}
-              to="/church"
+              to="/about"
             >
-              Church
+              About
             </Link>
           </li>
           <li className="mr-6">
@@ -117,9 +149,9 @@ const Header = ({ absolute, live, headerText }) => {
               className="link"
               activeClassName="link-active"
               partiallyActive={true}
-              to="/blog"
+              to="/im-new"
             >
-              Blog
+              I'm New
             </Link>
           </li>
           <li className="mr-6">

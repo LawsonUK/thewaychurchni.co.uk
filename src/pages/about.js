@@ -4,9 +4,9 @@ import Layout from "../components/layout-main"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 
-const ChurchPage = ({ data }) => {
-  const churchPage = data.churchPage.nodes[0]
-  const gallery = churchPage.gallery[0]
+const AboutPage = ({ data }) => {
+  const aboutPage = data.aboutPage.nodes[0]
+  const gallery = aboutPage.gallery[0]
   const image1 = gallery.image1.childImageSharp.fluid
   const image2 = gallery.image2.childImageSharp.fluid
   const image3 = gallery.image3.childImageSharp.fluid
@@ -14,10 +14,13 @@ const ChurchPage = ({ data }) => {
   const image5 = gallery.image5.childImageSharp.fluid
 
   let teamCount = 0
-  const team = churchPage.team.map(member => {
+  const team = aboutPage.team.map(member => {
     const html =
       teamCount === 0 ? (
-        <li className="flex flex-col md:col-span-2 xl:col-span-1">
+        <li
+          key={member.id}
+          className="flex flex-col md:col-span-2 xl:col-span-1"
+        >
           <div className="rounded flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white pt-8 pb-8 md:px-8">
             <div className="flex items-center mb-6 md:px-20 xl:px-0">
               <Img
@@ -33,7 +36,7 @@ const ChurchPage = ({ data }) => {
           </div>
         </li>
       ) : (
-        <li className="flex flex-col">
+        <li key={member.id} className="flex flex-col">
           <div className="rounded flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white pt-8 pb-8 md:pl-8 md:pr-8">
             <div className="flex items-center mb-6">
               <Img
@@ -55,19 +58,19 @@ const ChurchPage = ({ data }) => {
   let leftColBeliefs = false
   let rightColBeliefs = false
 
-  if (churchPage.whatWeBelieve) {
-    halfCount = churchPage.whatWeBelieve.length / 2 + 1
+  if (aboutPage.whatWeBelieve) {
+    halfCount = aboutPage.whatWeBelieve.length / 2 + 1
   }
 
   if (halfCount > 0) {
     let countLeft = 0
-    leftColBeliefs = churchPage.whatWeBelieve.map(belief => {
+    leftColBeliefs = aboutPage.whatWeBelieve.map(belief => {
       const html =
         countLeft <= halfCount ? (
-          <>
+          <div key={belief.id}>
             <h3 className="text-xl mb-4 mt-4">{belief.title}</h3>
             <pre>{belief.text}</pre>
-          </>
+          </div>
         ) : (
           ""
         )
@@ -77,13 +80,13 @@ const ChurchPage = ({ data }) => {
     })
 
     let countRight = 0
-    rightColBeliefs = churchPage.whatWeBelieve.map(belief => {
+    rightColBeliefs = aboutPage.whatWeBelieve.map(belief => {
       const html =
         countRight > halfCount ? (
-          <>
+          <div key={belief.id}>
             <h3 className="text-xl mb-4 mt-4">{belief.title}</h3>
             <pre>{belief.text}</pre>
-          </>
+          </div>
         ) : (
           ""
         )
@@ -95,12 +98,15 @@ const ChurchPage = ({ data }) => {
 
   return (
     <Layout absolute="true">
-      <SEO title="Church" />
-      <section className="banner text-center mt-24 mb-8 flex flex-col max-w-screen-xl m-auto">
+      <SEO title="About" />
+      <section
+        id="our-story"
+        className="banner text-center mt-24 mb-8 flex flex-col max-w-screen-xl m-auto"
+      >
         <div className="w-full">
-          <h3 className="mb-3 ">Church</h3>
+          <h3 className="mb-3 ">About</h3>
           <h1 className="text-3xl md:text-4xl font-extrabold mb-12 text-wayblue">
-            {churchPage.title}
+            {aboutPage.title}
           </h1>
         </div>
 
@@ -109,35 +115,35 @@ const ChurchPage = ({ data }) => {
             <Img
               className="flex flex-grow"
               fluid={image1}
-              alt="Jonathan Carson"
+              alt="banner image 1"
             />
           </li>
           <li className="bg-red-600 rounded overflow-hidden flex flex-col">
             <Img
               className="flex flex-grow"
               fluid={image2}
-              alt="Jonathan Carson"
+              alt="banner image 2"
             />
           </li>
           <li className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1">
             <Img
               className="flex flex-grow"
               fluid={image3}
-              alt="Jonathan Carson"
+              alt="banner image 3"
             />
           </li>
           <li className="bg-red-200 rounded overflow-hidden flex flex-col">
             <Img
               className="flex flex-grow"
               fluid={image4}
-              alt="Jonathan Carson"
+              alt="banner image 4"
             />
           </li>
           <li className="bg-red-100 rounded overflow-hidden flex flex-col">
             <Img
               className="flex flex-grow"
               fluid={image5}
-              alt="Jonathan Carson"
+              alt="banner image 5"
             />
           </li>
         </ul>
@@ -145,15 +151,18 @@ const ChurchPage = ({ data }) => {
 
       <section className="flex flex-col lg:max-w-4xl lg:ml-auto lg:mr-auto lg:mt-12 p-4 px-6 lg:p-12 pb-12 lg:mb-16 shadow-lg">
         <div>
-          <h2 className="mb-4 text-wayblue">{churchPage.ourStoryTitle}</h2>
-          <pre>{churchPage.ourStoryText}</pre>
+          <h2 className="mb-4 text-wayblue">{aboutPage.ourStoryTitle}</h2>
+          <pre>{aboutPage.ourStoryText}</pre>
         </div>
       </section>
 
-      <section className="flex flex-col mb-4 lg:mb-16 bg-light px-6">
+      <section
+        id="core-values"
+        className="flex flex-col mb-4 lg:mb-16 bg-light px-6"
+      >
         <div className="max-w-screen-xl ml-auto mr-auto pb-20">
           <h2 className="mt-12 lg:mt-16 mb-4 xl:pl-0 text-wayblue lg:max-w-4xl">
-            {churchPage.beliefsTitle}
+            {aboutPage.beliefsTitle}
           </h2>
           <div className="lg:m-auto xl:p-0 grid grid-cols-1 md:grid-cols-2 md:gap-16 lg:gap-24">
             <div>{leftColBeliefs}</div>
@@ -164,15 +173,18 @@ const ChurchPage = ({ data }) => {
       <section>
         <div className="flex flex-col lg:max-w-4xl lg:ml-auto lg:mr-auto mt-12 p-4 px-6 pb-24 lg:p-12 lg:mb-16 shadow-lg">
           <h2 className="mb-4 text-wayblue xl:text-center xl:pb-8">
-            {churchPage.whatToExpectTitle}
+            {aboutPage.whatToExpectTitle}
           </h2>
-          <pre>{churchPage.whatToExpectText}</pre>
+          <pre>{aboutPage.whatToExpectText}</pre>
         </div>
       </section>
-      <section className="bg-light p-4 pt-12 pb-16 md:pt-8 md:pb-16">
+      <section
+        id="eldership"
+        className="bg-light p-4 pt-12 pb-16 md:pt-8 md:pb-16"
+      >
         <div className="max-w-screen-xl m-auto">
           <h2 className="text-3xl font-bold text-wayblue mt-0 md:mt-6 md:text-center mb-8">
-            The Team
+            Eldership
           </h2>
           <ul className="grid gap-4 xl:gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
             {team}
@@ -185,7 +197,7 @@ const ChurchPage = ({ data }) => {
 
 export const query = graphql`
   {
-    churchPage: allStrapiChurchPage {
+    aboutPage: allStrapiChurchPage {
       nodes {
         ourStoryText
         ourStoryTitle
@@ -252,4 +264,4 @@ export const query = graphql`
   }
 `
 
-export default ChurchPage
+export default AboutPage
