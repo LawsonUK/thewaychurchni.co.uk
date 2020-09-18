@@ -121,6 +121,7 @@ export const query = graphql`
       }
     }
     media: allStrapiMediaPosts(
+      limit: 2
       sort: { order: DESC, fields: publishedOn }
       skip: 1
     ) {

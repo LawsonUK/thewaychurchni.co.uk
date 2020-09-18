@@ -69,13 +69,9 @@ const Header = ({ absolute, live, headerText }) => {
                 About
               </Link>
               {aboutMenu && (
-                <ul className="absolute w-40 bg-white shadow-md px-6 py-4">
+                <ul className="absolute w-40 bg-white shadow-md px-6 py-4 rounded mt-2">
                   <li className="mb-4">
-                    <AnchorLink
-                      className="link"
-                      to="/about#our-story"
-                      onClick={handleAboutMenu}
-                    >
+                    <AnchorLink className="link" to="/about#our-story">
                       Our Story
                     </AnchorLink>
                   </li>
