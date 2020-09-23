@@ -198,8 +198,6 @@ export const query = graphql`
           title
           id
         }
-        whatToExpectText
-        whatToExpectTitle
         title
         team {
           id

@@ -94,6 +94,7 @@ module.exports = {
           `church-page`,
           `contact-page`,
           `media-page`,
+          `im-new-page`,
         ],
       },
     },
