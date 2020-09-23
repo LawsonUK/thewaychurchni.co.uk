@@ -25,9 +25,9 @@ const Footer = () => {
                 className="link"
                 activeClassName="link-active"
                 partiallyActive={true}
-                to="/church"
+                to="/about"
               >
-                Church
+                About
               </Link>
             </li>
             <li className="mr-8">
@@ -35,7 +35,7 @@ const Footer = () => {
                 className="link"
                 activeClassName="link-active"
                 partiallyActive={true}
-                to="/bim-newlog"
+                to="/im-new"
               >
                 I'm New
               </Link>

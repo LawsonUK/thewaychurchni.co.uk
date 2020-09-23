@@ -101,7 +101,7 @@ const AboutPage = ({ data }) => {
       <SEO title="About" />
       <section
         id="our-story"
-        className="banner text-center mt-24 mb-8 flex flex-col max-w-screen-xl m-auto"
+        className="banner text-center mt-24 mb-20 flex flex-col max-w-screen-xl m-auto"
       >
         <div className="w-full">
           <h3 className="mb-3 ">About</h3>
@@ -149,17 +149,16 @@ const AboutPage = ({ data }) => {
         </ul>
       </section>
 
-      <section className="flex flex-col lg:max-w-4xl lg:ml-auto lg:mr-auto lg:mt-12 p-4 px-6 lg:p-12 pb-12 lg:mb-16 shadow-lg">
-        <div>
-          <h2 className="mb-4 text-wayblue">{aboutPage.ourStoryTitle}</h2>
-          <pre>{aboutPage.ourStoryText}</pre>
-        </div>
-      </section>
+      <div className="w-full ml-auto mr-auto py-8 bg-light">
+        <section className="flex flex-col lg:max-w-4xl lg:ml-auto lg:mr-auto lg:mt-12 p-4 px-6 lg:p-12 pb-12 lg:mb-16 shadow-lg bg-white">
+          <div>
+            <h2 className="mb-4 text-wayblue">{aboutPage.ourStoryTitle}</h2>
+            <pre>{aboutPage.ourStoryText}</pre>
+          </div>
+        </section>
+      </div>
 
-      <section
-        id="core-values"
-        className="flex flex-col mb-4 lg:mb-16 bg-light px-6"
-      >
+      <section id="core-values" className="flex flex-col mb-4 lg:mb-16 px-6">
         <div className="max-w-screen-xl ml-auto mr-auto pb-20">
           <h2 className="mt-12 lg:mt-16 mb-4 xl:pl-0 text-wayblue lg:max-w-4xl">
             {aboutPage.beliefsTitle}
@@ -168,14 +167,6 @@ const AboutPage = ({ data }) => {
             <div>{leftColBeliefs}</div>
             <div>{rightColBeliefs}</div>
           </div>
-        </div>
-      </section>
-      <section>
-        <div className="flex flex-col lg:max-w-4xl lg:ml-auto lg:mr-auto mt-12 p-4 px-6 pb-24 lg:p-12 lg:mb-16 shadow-lg">
-          <h2 className="mb-4 text-wayblue xl:text-center xl:pb-8">
-            {aboutPage.whatToExpectTitle}
-          </h2>
-          <pre>{aboutPage.whatToExpectText}</pre>
         </div>
       </section>
       <section
