@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => {
             </h1>
             <div className="absolute">
               <Link
-                to="/church"
+                to="/about"
                 className="text-gray-100 bg-red-500 pt-3 pb-3 pl-6 pr-6 rounded shadow-md mr-4"
               >
                 Learn more
