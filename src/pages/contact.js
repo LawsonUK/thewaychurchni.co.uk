@@ -31,13 +31,16 @@ const ContactPage = ({ data }) => {
         </div>
       </section>
       <section className="contact-details max-w-screen-xl m-auto grid md:grid-cols-3 text-center">
-        <div className="mb-12">
+        <div className="mb-12 flex flex-col">
           <h3 className="text-black text-2xl font-bold mb-4">Details</h3>
           <a
-            className="link"
+            className="link mb-2"
             href={"mailto:" + contactPage.email + "?subject=Hi There"}
           >
             {contactPage.email}
+          </a>
+          <a href={"tel:" + contactPage.telephone + ""} className="link">
+            {contactPage.telephone}
           </a>
         </div>
         <div className="mb-12">
@@ -112,6 +115,7 @@ export const query = graphql`
         title
         subTitle
         email
+        telephone
         address
         directionsLink
         twitterLink

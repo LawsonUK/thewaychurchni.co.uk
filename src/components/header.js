@@ -130,15 +130,35 @@ const Header = ({ absolute, live, headerText }) => {
       >
         <ul className="flex text-sm md:text-base">
           {live && liveMenuItem}
-          <li className="mr-6">
+          <li className="mr-6 relative">
             <Link
               className="link"
               activeClassName="link-active"
               partiallyActive={true}
               to="/about"
+              onClick={handleAboutMenu}
             >
               About
             </Link>
+            {aboutMenu && (
+              <ul className="absolute w-40 bg-white shadow-md px-6 py-4 rounded mt-2">
+                <li className="mb-4">
+                  <AnchorLink className="link" to="/about#our-story">
+                    Our Story
+                  </AnchorLink>
+                </li>
+                <li className="mb-4">
+                  <AnchorLink className="link" to="/about#core-values">
+                    Core Values
+                  </AnchorLink>
+                </li>
+                <li>
+                  <AnchorLink className="link" to="/about#eldership">
+                    Eldership
+                  </AnchorLink>
+                </li>
+              </ul>
+            )}
           </li>
           <li className="mr-6">
             <Link

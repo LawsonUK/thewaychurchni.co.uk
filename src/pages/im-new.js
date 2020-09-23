@@ -5,7 +5,6 @@ import SEO from "../components/seo"
 import Img from "gatsby-image"
 
 const imNewPage = ({ data }) => {
-  debugger
   const imNewPage = data.imNewPage.nodes[0]
   const gallery = imNewPage.gallery
   const image1 = gallery.image1.childImageSharp.fluid
