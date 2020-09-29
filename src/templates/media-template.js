@@ -13,12 +13,14 @@ const MediaTemplate = ({ data, pageContext, location }) => {
   const [format, setFormat] = useState(
     location.state.format ? location.state.format : "Video"
   )
+
   const [url, setUrl] = useState(
     format === "Video" ? media.videoLink : media.audioFile.publicURL
   )
 
   const handlePlayer = event => {
     event.preventDefault()
+
     const format =
       event.currentTarget.outerText === "Video"
         ? event.currentTarget.outerText
@@ -32,8 +34,9 @@ const MediaTemplate = ({ data, pageContext, location }) => {
       format === "Video"
         ? media.videoLink
         : "https://www.youtube.com/watch?v=-PiEgdMdJ88"
+
     setUrl(url)
-  }, [format])
+  }, [format, media])
 
   const prevMediaLink = pageContext.prevMedia ? (
     <Link
@@ -82,7 +85,7 @@ const MediaTemplate = ({ data, pageContext, location }) => {
         <span className="py-4">Published On: {media.publishedOn}</span>
         <div className="mt-4 mb-12">
           {media.videoLink && (
-            <a
+            <button
               onClick={handlePlayer}
               className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center cursor-pointer"
             >
@@ -94,10 +97,10 @@ const MediaTemplate = ({ data, pageContext, location }) => {
               >
                 <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
               </svg>
-            </a>
+            </button>
           )}
           {media.audioFile && (
-            <a
+            <button
               onClick={handlePlayer}
               className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-400 text-yellow-800 cursor-pointer items-center"
             >
@@ -113,7 +116,7 @@ const MediaTemplate = ({ data, pageContext, location }) => {
                   clipRule="evenodd"
                 ></path>
               </svg>
-            </a>
+            </button>
           )}
         </div>
       </section>
