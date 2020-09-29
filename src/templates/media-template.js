@@ -7,7 +7,6 @@ import Img from "gatsby-image"
 import ReactMarkdown from "react-markdown"
 
 const MediaTemplate = ({ data, pageContext, location }) => {
-  debugger
   const media = data.strapiMediaPosts
 
   // check if location contains a format parameter
@@ -29,7 +28,6 @@ const MediaTemplate = ({ data, pageContext, location }) => {
   }
 
   useEffect(() => {
-    debugger
     const url =
       format === "Video"
         ? media.videoLink
