@@ -87,11 +87,14 @@ export const query = graphql`
     message: allStrapiMediaPosts(
       limit: 1
       sort: { order: DESC, fields: publishedOn }
+      filter: { published: { eq: true } }
     ) {
       nodes {
         title
         videoLink
         publishedOn(formatString: "Do MMM Y")
+        published
+        featured
         slug
         description
         excerpt
@@ -123,13 +126,15 @@ export const query = graphql`
     media: allStrapiMediaPosts(
       limit: 2
       sort: { order: DESC, fields: publishedOn }
-      skip: 1
+      filter: { published: { eq: true }, featured: { eq: true } }
     ) {
       nodes {
         strapiId
         title
         videoLink
         publishedOn(formatString: "Do MMM Y")
+        published
+        featured
         slug
         description
         excerpt

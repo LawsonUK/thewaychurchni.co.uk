@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/layout-main"
 import SEO from "../components/seo"
 import { graphql, Link } from "gatsby"
@@ -6,8 +6,37 @@ import ReactPlayer from "react-player/lazy"
 import Img from "gatsby-image"
 import ReactMarkdown from "react-markdown"
 
-const MediaTemplate = ({ data, pageContext }) => {
+const MediaTemplate = ({ data, pageContext, location }) => {
+  debugger
   const media = data.strapiMediaPosts
+
+  // check if location contains a format parameter
+  const [format, setFormat] = useState(
+    location.state.format ? location.state.format : "Video"
+  )
+  const [url, setUrl] = useState(
+    format === "Video" ? media.videoLink : media.audioFile.publicURL
+  )
+
+  const handlePlayer = event => {
+    event.preventDefault()
+    const format =
+      event.currentTarget.outerText === "Video"
+        ? event.currentTarget.outerText
+        : "Audio"
+
+    setFormat(format)
+  }
+
+  useEffect(() => {
+    debugger
+    const url =
+      format === "Video"
+        ? media.videoLink
+        : "https://www.youtube.com/watch?v=-PiEgdMdJ88"
+    setUrl(url)
+  }, [format])
+
   const prevMediaLink = pageContext.prevMedia ? (
     <Link
       className="link mb-8 lg:mb-0"
@@ -39,7 +68,7 @@ const MediaTemplate = ({ data, pageContext }) => {
           </h1>
         </div>
       </section>
-      <section className="max-w-screen-xl m-auto flex justify-center px-6 items-center mb-12 flex-col sm:flex-row text-sm">
+      <section className="max-w-screen-xl m-auto flex justify-center px-6 items-center flex-col text-sm">
         <div className="flex items-center justify-center mb-6 sm:mb-0 mr-6">
           <span>
             <Img
@@ -52,25 +81,66 @@ const MediaTemplate = ({ data, pageContext }) => {
             {media.teacher.name}
           </span>
         </div>
-        <span>Published On: {media.publishedOn}</span>
+        <span className="py-4">Published On: {media.publishedOn}</span>
+        <div className="mt-4 mb-12">
+          {media.videoLink && (
+            <a
+              onClick={handlePlayer}
+              className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center cursor-pointer"
+            >
+              Video
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="video-camera w-4 h-4 ml-1"
+              >
+                <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
+              </svg>
+            </a>
+          )}
+          {media.audioFile && (
+            <a
+              onClick={handlePlayer}
+              className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-400 text-yellow-800 cursor-pointer items-center"
+            >
+              Audio
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="microphone w-4 h-4 ml-1"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          )}
+        </div>
       </section>
       <section className="player pt-12 pb-12 bg-light mb-16">
-        <div className="max-w-4xl m-auto pl-4 pr-4 player-wrapper">
-          <ReactPlayer
-            url={media.videoLink}
-            className="react-player"
-            width="100%"
-            height="100%"
-            config={{
-              youtube: {
-                playerVars: { showinfo: 1 },
-              },
-              facebook: {
-                appId: "",
-              },
-            }}
-          />
-        </div>
+        {format && (
+          <div className="max-w-4xl m-auto pl-4 pr-4 player-wrapper">
+            <ReactPlayer
+              key={url}
+              url={url}
+              className="react-player"
+              width="100%"
+              height="100%"
+              config={{
+                youtube: {
+                  playerVars: {
+                    showinfo: 1,
+                  },
+                },
+                facebook: {
+                  appId: "",
+                },
+              }}
+            />
+          </div>
+        )}
       </section>
       <article className="article max-w-screen-lg m-auto px-6">
         <ReactMarkdown source={media.description} />

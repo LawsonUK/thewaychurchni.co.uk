@@ -27,36 +27,42 @@ const card = ({ data, media = false }) => {
       {media ? (
         <>
           <div className="flex mb-8">
-            <Link
-              to={url}
-              className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
-            >
-              Video
-              <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="video-camera w-4 h-4 ml-1"
+            {data.videoLink && (
+              <Link
+                to={url}
+                className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-400 text-green-800 mr-4 items-center"
+                state={{ format: "Video" }}
               >
-                <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
-              </svg>
-            </Link>
-            <Link
-              to={url}
-              className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-400 text-yellow-800 cursor-pointer items-center"
-            >
-              Audio
-              <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="microphone w-4 h-4 ml-1"
+                Video
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="video-camera w-4 h-4 ml-1"
+                >
+                  <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
+                </svg>
+              </Link>
+            )}
+            {data.audioFile && (
+              <Link
+                to={url}
+                className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-400 text-yellow-800 cursor-pointer items-center"
+                state={{ format: "Audio" }}
               >
-                <path
-                  fillRule="evenodd"
-                  d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </Link>
+                Audio
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="microphone w-4 h-4 ml-1"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              </Link>
+            )}
           </div>
           <div className="flex items-center mb-3">
             <span>
