@@ -18,8 +18,10 @@ import {
 
 const MediaTemplate = ({ data, pageContext, location }) => {
   const media = data.strapiMediaPosts
-  const stateFormat =
-    location && location.state.format ? location.state.format : "Video"
+  let stateFormat = "Video"
+  if (typeof location.state.format != "undefined") {
+    stateFormat = location.state.format
+  }
   // check if location contains a format parameter
   const [format, setFormat] = useState(stateFormat)
 
