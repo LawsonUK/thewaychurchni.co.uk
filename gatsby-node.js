@@ -1,12 +1,14 @@
+const fetch = require(`node-fetch`)
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const result = await graphql(
+  const results = await graphql(
     `
       {
         media: allStrapiMediaPosts {
           edges {
             node {
-              id
+              strapiId
               slug
               title
             }
@@ -16,26 +18,29 @@ exports.createPages = async ({ graphql, actions }) => {
     `
   )
 
-  if (result.errors) {
-    throw result.errors
+  if (results.errors) {
+    throw results.errors
   }
 
   // Create media pages
-  const medias = result.data.media.edges
+  const medias = results.data.media.edges
 
-  medias &&
-    medias.forEach(async (media, index) => {
+  if (medias) {
+    const promises = medias.map(async (media, index) => {
       const prevMedia = medias[index - 1] ? medias[index - 1].node : false
       const nextMedia = medias[index + 1] ? medias[index + 1].node : false
 
       // fetch any audio file url.
-      let audioUrl = ""
-      if (media.audioFile) {
-        json = await fetch(
-          `https://thewaychurch.herokuapp.com/media-posts/${media.id}`
+      let response
+      let audioUrl
+      try {
+        response = await fetch(
+          `https://thewaychurch.herokuapp.com/media-posts/${media.node.strapiId}`
         )
-        data = json.json()
-        audioUrl = data.audioFile.url
+        const data = await response.json()
+        audioUrl = data.audioFile ? data.audioFile.url : ""
+      } catch (error) {
+        console.log(error)
       }
 
       createPage({
@@ -49,4 +54,6 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     })
+    await Promise.all(promises)
+  }
 }

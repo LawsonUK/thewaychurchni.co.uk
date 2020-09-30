@@ -30,13 +30,9 @@ const MediaTemplate = ({ data, pageContext, location }) => {
   }
 
   useEffect(() => {
-    const url =
-      format === "Video"
-        ? media.videoLink
-        : "https://www.youtube.com/watch?v=-PiEgdMdJ88"
-
+    const url = format === "Video" ? media.videoLink : pageContext.audioUrl
     setUrl(url)
-  }, [format, media])
+  }, [format, media, pageContext.audioUrl])
 
   const prevMediaLink = pageContext.prevMedia ? (
     <Link
@@ -121,7 +117,7 @@ const MediaTemplate = ({ data, pageContext, location }) => {
         </div>
       </section>
       <section className="player pt-12 pb-12 bg-light mb-16">
-        {format && (
+        {format === "Video" ? (
           <div className="max-w-4xl m-auto pl-4 pr-4 player-wrapper">
             <ReactPlayer
               key={url}
@@ -135,11 +131,12 @@ const MediaTemplate = ({ data, pageContext, location }) => {
                     showinfo: 1,
                   },
                 },
-                facebook: {
-                  appId: "",
-                },
               }}
             />
+          </div>
+        ) : (
+          <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center">
+            <audio controls="true" src={url} className="w-full"></audio>
           </div>
         )}
       </section>
