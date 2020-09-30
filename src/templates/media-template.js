@@ -5,14 +5,23 @@ import { graphql, Link } from "gatsby"
 import ReactPlayer from "react-player/lazy"
 import Img from "gatsby-image"
 import ReactMarkdown from "react-markdown"
+import {
+  EmailShareButton,
+  EmailIcon,
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+} from "react-share"
 
 const MediaTemplate = ({ data, pageContext, location }) => {
   const media = data.strapiMediaPosts
-
+  const stateFormat =
+    location && location.state.format ? location.state.format : "Video"
   // check if location contains a format parameter
-  const [format, setFormat] = useState(
-    location.state.format ? location.state.format : "Video"
-  )
+  const [format, setFormat] = useState(stateFormat)
 
   const [url, setUrl] = useState(
     format === "Video" ? media.videoLink : media.audioFile.publicURL
@@ -79,6 +88,32 @@ const MediaTemplate = ({ data, pageContext, location }) => {
           </span>
         </div>
         <span className="py-4">Published On: {media.publishedOn}</span>
+        <div>
+          <EmailShareButton
+            url={`https://www.thewaychurchni.co.uk/media/${media.slug}`}
+            quote={media.title}
+          >
+            <EmailIcon size={32} round={true} />
+          </EmailShareButton>
+          <TwitterShareButton
+            url={`https://www.thewaychurchni.co.uk/media/${media.slug}`}
+            quote={media.title}
+          >
+            <TwitterIcon size={32} round={true} />
+          </TwitterShareButton>
+          <FacebookShareButton
+            url={`https://www.thewaychurchni.co.uk/media/${media.slug}`}
+            quote={media.title}
+          >
+            <FacebookIcon size={32} round={true} />
+          </FacebookShareButton>
+          <WhatsappShareButton
+            url={`https://www.thewaychurchni.co.uk/media/${media.slug}`}
+            quote={media.title}
+          >
+            <WhatsappIcon size={32} round={true} />
+          </WhatsappShareButton>
+        </div>
         <div className="mt-4 mb-12">
           {media.videoLink && (
             <button
