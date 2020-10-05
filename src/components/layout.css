@@ -22,6 +22,11 @@ pre {
   font-family: Inter, Open Sans, -apple-system, BlinkMacSystemFont;
 }
 
+.logo {
+  width: 78px;
+  background-color: transparent;
+}
+
 .article img,
 .article p img {
   margin: 2rem auto;

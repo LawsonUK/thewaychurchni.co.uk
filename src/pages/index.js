@@ -23,7 +23,10 @@ const IndexPage = ({ data }) => {
       >
         <div className="absolute top-0 bottom-0 right-0 left-0 bg-white opacity-50 z-0 transition-opacity duration-200 lg:opacity-0"></div>
         <section className="banner max-w-screen-xl m-auto flex flex-grow p-4 xl:p-0 relative z-10">
-          <div className="pl-4 pr-4 xl:pl-0 xl:pr-0 mt-16 sm:mt-0">
+          <div
+            className="pl-4 pr-4 xl:pl-0 xl:pr-0 mt-16 sm:mt-0"
+            data-aos="fade-up"
+          >
             <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold mb-8 mt-10">
               <pre className="heading font-sans">{indexPage.bannerText}</pre>
             </h1>

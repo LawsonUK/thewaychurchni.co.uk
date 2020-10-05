@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="md:flex justify-between items-center">
         <div className="flex justify-start items-center mb-5">
           <Link to="/">
-            <Logo />
+            <Logo className="w-20" />
           </Link>
           <span className="mt-10 ml-2 text-xs">
             Proclaiming Jesus as the way and living as people of the way

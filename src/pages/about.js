@@ -18,6 +18,7 @@ const AboutPage = ({ data }) => {
     const html =
       teamCount === 0 ? (
         <li
+          data-aos="fade-up"
           key={member.id}
           className="flex flex-col md:col-span-2 xl:col-span-1"
         >
@@ -36,7 +37,7 @@ const AboutPage = ({ data }) => {
           </div>
         </li>
       ) : (
-        <li key={member.id} className="flex flex-col">
+        <li data-aos="fade-up" key={member.id} className="flex flex-col">
           <div className="rounded flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white pt-8 pb-8 md:pl-8 md:pr-8">
             <div className="flex items-center mb-6">
               <Img
@@ -67,7 +68,7 @@ const AboutPage = ({ data }) => {
     leftColBeliefs = aboutPage.whatWeBelieve.map(belief => {
       const html =
         countLeft <= halfCount ? (
-          <div key={belief.id}>
+          <div key={belief.id} data-aos="fade-right">
             <h3 className="text-xl mb-4 mt-4">{belief.title}</h3>
             <pre>{belief.text}</pre>
           </div>
@@ -83,7 +84,7 @@ const AboutPage = ({ data }) => {
     rightColBeliefs = aboutPage.whatWeBelieve.map(belief => {
       const html =
         countRight > halfCount ? (
-          <div key={belief.id}>
+          <div key={belief.id} data-aos="fade-right">
             <h3 className="text-xl mb-4 mt-4">{belief.title}</h3>
             <pre>{belief.text}</pre>
           </div>
@@ -111,35 +112,50 @@ const AboutPage = ({ data }) => {
         </div>
 
         <ul className="gallery grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full p-4 shadow-lg px-6">
-          <li className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col">
+          <li
+            data-aos="fade-right"
+            className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col"
+          >
             <Img
               className="flex flex-grow"
               fluid={image1}
               alt="banner image 1"
             />
           </li>
-          <li className="bg-red-600 rounded overflow-hidden flex flex-col">
+          <li
+            data-aos="fade-left"
+            className="bg-red-600 rounded overflow-hidden flex flex-col"
+          >
             <Img
               className="flex flex-grow"
               fluid={image2}
               alt="banner image 2"
             />
           </li>
-          <li className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1">
+          <li
+            data-aos="fade-left"
+            className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1"
+          >
             <Img
               className="flex flex-grow"
               fluid={image3}
               alt="banner image 3"
             />
           </li>
-          <li className="bg-red-200 rounded overflow-hidden flex flex-col">
+          <li
+            data-aos="fade-left"
+            className="bg-red-200 rounded overflow-hidden flex flex-col"
+          >
             <Img
               className="flex flex-grow"
               fluid={image4}
               alt="banner image 4"
             />
           </li>
-          <li className="bg-red-100 rounded overflow-hidden flex flex-col">
+          <li
+            data-aos="fade-left"
+            className="bg-red-100 rounded overflow-hidden flex flex-col"
+          >
             <Img
               className="flex flex-grow"
               fluid={image5}
@@ -150,7 +166,10 @@ const AboutPage = ({ data }) => {
       </section>
 
       <div className="w-full ml-auto mr-auto py-8 bg-light">
-        <section className="flex flex-col lg:max-w-4xl lg:ml-auto lg:mr-auto lg:mt-12 p-4 px-6 lg:p-12 pb-12 lg:mb-16 shadow-lg bg-white">
+        <section
+          data-aos="fade-up"
+          className="flex flex-col lg:max-w-4xl lg:ml-auto lg:mr-auto lg:mt-12 p-4 px-6 lg:p-12 pb-12 lg:mb-16 shadow-lg bg-white"
+        >
           <div>
             <h2 className="mb-4 text-wayblue">{aboutPage.ourStoryTitle}</h2>
             <pre>{aboutPage.ourStoryText}</pre>

@@ -28,35 +28,50 @@ const imNewPage = ({ data }) => {
         </div>
 
         <ul className="gallery grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full p-4 shadow-lg px-6">
-          <li className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col">
+          <li
+            data-aos="fade-right"
+            className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col"
+          >
             <Img
               className="flex flex-grow"
               fluid={image1}
               alt="banner image 1"
             />
           </li>
-          <li className="bg-red-600 rounded overflow-hidden flex flex-col">
+          <li
+            data-aos="fade-left"
+            className="bg-red-600 rounded overflow-hidden flex flex-col"
+          >
             <Img
               className="flex flex-grow"
               fluid={image2}
               alt="banner image 2"
             />
           </li>
-          <li className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1">
+          <li
+            data-aos="fade-left"
+            className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1"
+          >
             <Img
               className="flex flex-grow"
               fluid={image3}
               alt="banner image 3"
             />
           </li>
-          <li className="bg-red-200 rounded overflow-hidden flex flex-col">
+          <li
+            data-aos="fade-left"
+            className="bg-red-200 rounded overflow-hidden flex flex-col"
+          >
             <Img
               className="flex flex-grow"
               fluid={image4}
               alt="banner image 4"
             />
           </li>
-          <li className="bg-red-100 rounded overflow-hidden flex flex-col">
+          <li
+            data-aos="fade-left"
+            className="bg-red-100 rounded overflow-hidden flex flex-col"
+          >
             <Img
               className="flex flex-grow"
               fluid={image5}
@@ -66,7 +81,10 @@ const imNewPage = ({ data }) => {
         </ul>
       </section>
       <section className="w-full ml-auto mr-auto py-8 bg-light">
-        <div className="flex flex-col lg:max-w-4xl lg:ml-auto lg:mr-auto md:mt-12 p-12 px-6 pb-24 lg:p-12 lg:mb-16 shadow-lg bg-white">
+        <div
+          data-aos="fade-up"
+          className="flex flex-col lg:max-w-4xl lg:ml-auto lg:mr-auto md:mt-12 p-12 px-6 pb-24 lg:p-12 lg:mb-16 shadow-lg bg-white"
+        >
           <pre>{imNewPage.whatToExpectText}</pre>
         </div>
       </section>

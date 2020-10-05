@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
-import Logo from "./../images/logo.svg"
+import Logo from "../components/logo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const Header = ({ absolute, live, headerText }) => {
@@ -51,8 +51,8 @@ const Header = ({ absolute, live, headerText }) => {
       <header
         className={`p-4 flex relative justify-between items-center max-w-screen-xl m-auto xl:p-0 xl:pt-4`}
       >
-        <Link className="-mt-4 " to="/">
-          <Logo />
+        <Link className="-mt-4 w-24" to="/">
+          <Logo className="logo" />
         </Link>
 
         <nav className="hidden md:flex ml-24">
@@ -71,9 +71,9 @@ const Header = ({ absolute, live, headerText }) => {
               {aboutMenu && (
                 <ul className="absolute w-40 bg-white shadow-md px-6 py-4 rounded mt-2">
                   <li className="mb-4">
-                    <AnchorLink className="link" to="/about#our-story">
+                    <Link className="link" to="/about">
                       Our Story
-                    </AnchorLink>
+                    </Link>
                   </li>
                   <li className="mb-4">
                     <AnchorLink className="link" to="/about#core-values">
@@ -143,9 +143,9 @@ const Header = ({ absolute, live, headerText }) => {
             {aboutMenu && (
               <ul className="absolute w-40 bg-white shadow-md px-6 py-4 rounded mt-2">
                 <li className="mb-4">
-                  <AnchorLink className="link" to="/about#our-story">
+                  <Link className="link" to="/about">
                     Our Story
-                  </AnchorLink>
+                  </Link>
                 </li>
                 <li className="mb-4">
                   <AnchorLink className="link" to="/about#core-values">

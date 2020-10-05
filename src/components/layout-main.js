@@ -4,9 +4,19 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
+
+import AOS from "aos"
+import "aos/dist/aos.css"
 import "./layout.css"
 
 const LayoutMain = ({ children }) => {
+  AOS.init({
+    once: true,
+    delay: 300,
+    offset: 0,
+    duration: 700,
+  })
+
   const data = useStaticQuery(graphql`
     query SiteTitleQueryMain {
       site {
