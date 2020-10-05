@@ -19,12 +19,17 @@ import {
 const MediaTemplate = ({ data, pageContext, location }) => {
   const media = data.strapiMediaPosts
   let stateFormat = "Video"
+  // check audio exists
   if (location) {
     if (location.state) {
       if (location.state.format) {
         stateFormat = location.state.format
       }
     }
+  }
+  // check video exists
+  if (!media.videoLink) {
+    stateFormat = "Audio"
   }
   // check if location contains a format parameter
   const [format, setFormat] = useState(stateFormat)
@@ -148,7 +153,9 @@ const MediaTemplate = ({ data, pageContext, location }) => {
           </div>
         ) : (
           <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center">
-            <audio controls="true" src={url} className="w-full"></audio>
+            <audio controls="true" src={url} className="w-full">
+              <track kind="captions" src="" srclang="en"></track>
+            </audio>
           </div>
         )}
         <div className="max-w-4xl m-auto mt-8 flex justify-center items-center">
