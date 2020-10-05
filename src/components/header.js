@@ -52,7 +52,7 @@ const Header = ({ absolute, live, headerText }) => {
         className={`p-4 flex relative justify-between items-center max-w-screen-xl m-auto xl:p-0 xl:pt-4`}
       >
         <Link className="-mt-4" to="/">
-          <Logo className="logo w-24" />
+          <Logo className="logo" />
         </Link>
 
         <nav className="hidden md:flex ml-24">
