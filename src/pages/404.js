@@ -7,7 +7,8 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 
 const NotFoundPage = ({ data }) => {
-  const gallery = data.notFoundPage.gallery
+  const notFoundPage = data.notFoundPage.nodes[0]
+  const gallery = notFoundPage.gallery
   const image1 = gallery.image1.childImageSharp.fluid
   const image2 = gallery.image2.childImageSharp.fluid
   const image3 = gallery.image3.childImageSharp.fluid
