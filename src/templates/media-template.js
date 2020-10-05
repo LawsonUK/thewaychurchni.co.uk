@@ -80,47 +80,78 @@ const MediaTemplate = ({ data, pageContext, location }) => {
           </h1>
         </div>
       </section>
-      <section className="max-w-screen-xl m-auto flex justify-center px-6 items-center flex-col text-sm">
-        <div className="flex items-center justify-center mb-6 sm:mb-0 mr-6">
-          <span>
-            <Img
-              className="rounded-full w-10 mr-4"
-              fluid={media.teacher.avatar.childImageSharp.fluid}
-              alt={media.teacher.name}
-            />
-          </span>
-          <span className="text-gray-700 font-bold" to="/">
-            {media.teacher.name}
-          </span>
+      <section className="max-w-screen-xl m-auto flex justify-around items-center flex-col sm:flex-row text-sm mb-8">
+        <div>
+          <div className="flex items-center justify-center mb-2 sm:mb-0 mr-6">
+            <span>
+              <Img
+                className="rounded-full w-10 mr-4"
+                fluid={media.teacher.avatar.childImageSharp.fluid}
+                alt={media.teacher.name}
+              />
+            </span>
+            <span className="text-gray-700 font-bold" to="/">
+              {media.teacher.name}
+            </span>
+          </div>
         </div>
+
         <span className="py-4">Published On: {media.publishedOn}</span>
         <div>
           <EmailShareButton
             url={`https://www.thewaychurchni.co.uk/media/${media.slug}`}
-            quote={media.title}
+            subject={media.title}
+            body={media.description}
+            className="mr-2"
           >
             <EmailIcon size={32} round={true} />
           </EmailShareButton>
           <TwitterShareButton
             url={`https://www.thewaychurchni.co.uk/media/${media.slug}`}
-            quote={media.title}
+            title={media.title}
+            className="mr-2"
           >
             <TwitterIcon size={32} round={true} />
           </TwitterShareButton>
           <FacebookShareButton
             url={`https://www.thewaychurchni.co.uk/media/${media.slug}`}
             quote={media.title}
+            className="mr-2"
           >
             <FacebookIcon size={32} round={true} />
           </FacebookShareButton>
           <WhatsappShareButton
             url={`https://www.thewaychurchni.co.uk/media/${media.slug}`}
-            quote={media.title}
+            title={media.title}
           >
             <WhatsappIcon size={32} round={true} />
           </WhatsappShareButton>
         </div>
-        <div className="mt-4 mb-12">
+      </section>
+      <section className="player pt-12 pb-12 bg-light mb-16">
+        {format === "Video" ? (
+          <div className="max-w-4xl m-auto pl-4 pr-4 player-wrapper">
+            <ReactPlayer
+              key={url}
+              url={url}
+              className="react-player"
+              width="100%"
+              height="100%"
+              config={{
+                youtube: {
+                  playerVars: {
+                    showinfo: 1,
+                  },
+                },
+              }}
+            />
+          </div>
+        ) : (
+          <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center">
+            <audio controls="true" src={url} className="w-full"></audio>
+          </div>
+        )}
+        <div className="max-w-4xl m-auto mt-8 flex justify-center items-center">
           {media.videoLink && (
             <button
               onClick={handlePlayer}
@@ -156,30 +187,6 @@ const MediaTemplate = ({ data, pageContext, location }) => {
             </button>
           )}
         </div>
-      </section>
-      <section className="player pt-12 pb-12 bg-light mb-16">
-        {format === "Video" ? (
-          <div className="max-w-4xl m-auto pl-4 pr-4 player-wrapper">
-            <ReactPlayer
-              key={url}
-              url={url}
-              className="react-player"
-              width="100%"
-              height="100%"
-              config={{
-                youtube: {
-                  playerVars: {
-                    showinfo: 1,
-                  },
-                },
-              }}
-            />
-          </div>
-        ) : (
-          <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center">
-            <audio controls="true" src={url} className="w-full"></audio>
-          </div>
-        )}
       </section>
       <article className="article max-w-screen-lg m-auto px-6">
         <ReactMarkdown source={media.description} />
