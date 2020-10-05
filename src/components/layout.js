@@ -9,12 +9,14 @@ import "aos/dist/aos.css"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  AOS.init({
-    once: true,
-    delay: 100,
-    offset: 0,
-    duration: 700,
-  })
+  if (process.isClient) {
+    AOS.init({
+      once: true,
+      delay: 100,
+      offset: 0,
+      duration: 700,
+    })
+  }
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
