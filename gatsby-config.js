@@ -104,5 +104,11 @@ module.exports = {
         offset: -100,
       },
     },
+    {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+        threshold: 0.1, // Percentage of an element's area that needs to be visible to launch animation
+      },
+    },
   ],
 }

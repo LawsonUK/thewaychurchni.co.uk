@@ -135,10 +135,7 @@ const MediaTemplate = ({ data, pageContext, location }) => {
       </section>
       <section className="player pt-12 pb-12 bg-light mb-16">
         {format === "Video" ? (
-          <div
-            data-aos="fade-up"
-            className="max-w-4xl m-auto pl-4 pr-4 player-wrapper"
-          >
+          <div className="max-w-4xl m-auto pl-4 pr-4 player-wrapper">
             <ReactPlayer
               key={url}
               url={url}
@@ -155,17 +152,14 @@ const MediaTemplate = ({ data, pageContext, location }) => {
             />
           </div>
         ) : (
-          <div
-            data-aos="fade-up"
-            className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center"
-          >
+          <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center">
             <audio controls="true" src={url} className="w-full">
               <track kind="captions" src="" srclang="en"></track>
             </audio>
           </div>
         )}
         <div
-          data-aos="fade-up"
+          data-sal="fade"
           className="max-w-4xl m-auto mt-8 flex justify-center items-center"
         >
           {media.videoLink && (

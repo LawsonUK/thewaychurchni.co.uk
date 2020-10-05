@@ -5,7 +5,12 @@ import Img from "gatsby-image"
 const latestMedia = ({ media }) => {
   return (
     <section className="featured-message max-w-screen-xl m-auto grid gap-12 xl:gap-24 sm:grid-cols-2 p-6 pt-16 pb-16 xl:pl-0 xl:pr-0">
-      <div data-aos="fade-right">
+      <div
+        data-sal="slide-right"
+        data-sal-delay="0"
+        data-sal-duration="700"
+        data-sal-easing="ease"
+      >
         <Link to={`/media/${media.slug}`}>
           <Img
             className="rounded"
@@ -14,7 +19,12 @@ const latestMedia = ({ media }) => {
           />
         </Link>
       </div>
-      <div data-aos="fade-left">
+      <div
+        data-sal="slide-left"
+        data-sal-delay="0"
+        data-sal-duration="700"
+        data-sal-easing="ease"
+      >
         <Link
           to={`/media/${media.slug}`}
           className="block text-2xl md:text-3xl font-bold link"

@@ -29,7 +29,10 @@ const imNewPage = ({ data }) => {
 
         <ul className="gallery grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full p-4 shadow-lg px-6">
           <li
-            data-aos="fade-right"
+            data-sal="slide-right"
+            data-sal-delay="100"
+            data-sal-duration="700"
+            data-sal-easing="ease"
             className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col"
           >
             <Img
@@ -39,7 +42,10 @@ const imNewPage = ({ data }) => {
             />
           </li>
           <li
-            data-aos="fade-left"
+            data-sal="slide-left"
+            data-sal-delay="100"
+            data-sal-duration="700"
+            data-sal-easing="ease"
             className="bg-red-600 rounded overflow-hidden flex flex-col"
           >
             <Img
@@ -49,7 +55,10 @@ const imNewPage = ({ data }) => {
             />
           </li>
           <li
-            data-aos="fade-left"
+            data-sal="slide-left"
+            data-sal-delay="100"
+            data-sal-duration="700"
+            data-sal-easing="ease"
             className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1"
           >
             <Img
@@ -59,7 +68,10 @@ const imNewPage = ({ data }) => {
             />
           </li>
           <li
-            data-aos="fade-left"
+            data-sal="slide-left"
+            data-sal-delay="100"
+            data-sal-duration="700"
+            data-sal-easing="ease"
             className="bg-red-200 rounded overflow-hidden flex flex-col"
           >
             <Img
@@ -69,7 +81,10 @@ const imNewPage = ({ data }) => {
             />
           </li>
           <li
-            data-aos="fade-left"
+            data-sal="slide-left"
+            data-sal-delay="100"
+            data-sal-duration="700"
+            data-sal-easing="ease"
             className="bg-red-100 rounded overflow-hidden flex flex-col"
           >
             <Img
@@ -82,7 +97,7 @@ const imNewPage = ({ data }) => {
       </section>
       <section className="w-full ml-auto mr-auto py-8 bg-light">
         <div
-          data-aos="fade-up"
+          data-sal="fade"
           className="flex flex-col lg:max-w-4xl lg:ml-auto lg:mr-auto md:mt-12 p-12 px-6 pb-24 lg:p-12 lg:mb-16 shadow-lg bg-white"
         >
           <pre>{imNewPage.whatToExpectText}</pre>

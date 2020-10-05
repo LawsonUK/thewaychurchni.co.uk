@@ -31,7 +31,13 @@ const ContactPage = ({ data }) => {
         </div>
       </section>
       <section className="contact-details max-w-screen-xl m-auto grid md:grid-cols-3 text-center">
-        <div data-aos="fade-up" className="mb-12 flex flex-col">
+        <div
+          data-sal="slide-up"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
+          className="mb-12 flex flex-col"
+        >
           <h3 className="text-black text-2xl font-bold mb-4">Details</h3>
           <a
             className="link mb-2"
@@ -43,7 +49,13 @@ const ContactPage = ({ data }) => {
             {contactPage.telephone}
           </a>
         </div>
-        <div data-aos="fade-up" className="mb-12">
+        <div
+          data-sal="slide-up"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
+          className="mb-12"
+        >
           <h3 className="text-2xl font-bold mb-4 text-black">Visit Us</h3>
           <pre>{contactPage.address}</pre>
           <a
@@ -55,7 +67,13 @@ const ContactPage = ({ data }) => {
             Get Directions
           </a>
         </div>
-        <div data-aos="fade-up" className="mb-12">
+        <div
+          data-sal="slide-up"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
+          className="mb-12"
+        >
           <h3 className="text-black text-2xl font-bold mb-4">
             Connect with us
           </h3>
@@ -89,31 +107,46 @@ const ContactPage = ({ data }) => {
       </section>
       <ul className="gallery max-w-screen-xl m-auto grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 p-4 shadow-lg px-6">
         <li
-          data-aos="fade-right"
+          data-sal="slide-right"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
           className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col"
         >
           <Img className="flex flex-grow" fluid={image1} alt="Image 1" />
         </li>
         <li
-          data-aos="fade-left"
+          data-sal="slide-left"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
           className="bg-red-600 rounded overflow-hidden flex flex-col"
         >
           <Img className="flex flex-grow" fluid={image2} alt="Image 2" />
         </li>
         <li
-          data-aos="fade-left"
+          data-sal="slide-left"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
           className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1"
         >
           <Img className="flex flex-grow" fluid={image3} alt="Image 3" />
         </li>
         <li
-          data-aos="fade-left"
+          data-sal="slide-left"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
           className="bg-red-200 rounded overflow-hidden flex flex-col"
         >
           <Img className="flex flex-grow" fluid={image4} alt="Image 4" />
         </li>
         <li
-          data-aos="fade-left"
+          data-sal="slide-left"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
           className="bg-red-100 rounded overflow-hidden flex flex-col"
         >
           <Img className="flex flex-grow" fluid={image5} alt="Image 5" />

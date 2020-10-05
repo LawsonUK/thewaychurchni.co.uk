@@ -7,11 +7,12 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 
 const NotFoundPage = ({ data }) => {
-  const church1Url = data.church1.nodes[0].fluid
-  const church2Url = data.church2.nodes[0].fluid
-  const church3Url = data.church3.nodes[0].fluid
-  const church4Url = data.church4.nodes[0].fluid
-  const church5Url = data.church5.nodes[0].fluid
+  const gallery = data.notFoundPage.gallery
+  const image1 = gallery.image1.childImageSharp.fluid
+  const image2 = gallery.image2.childImageSharp.fluid
+  const image3 = gallery.image3.childImageSharp.fluid
+  const image4 = gallery.image4.childImageSharp.fluid
+  const image5 = gallery.image5.childImageSharp.fluid
   return (
     <Layout>
       <SEO title="404: Not found" />
@@ -28,35 +29,35 @@ const NotFoundPage = ({ data }) => {
         <li className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col">
           <Img
             className="flex flex-grow"
-            fluid={church1Url}
+            fluid={image1}
             alt="Jonathan Carson"
           />
         </li>
         <li className="bg-red-600 rounded overflow-hidden flex flex-col">
           <Img
             className="flex flex-grow"
-            fluid={church2Url}
+            fluid={image2}
             alt="Jonathan Carson"
           />
         </li>
         <li className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1">
           <Img
             className="flex flex-grow"
-            fluid={church3Url}
+            fluid={image3}
             alt="Jonathan Carson"
           />
         </li>
         <li className="bg-red-200 rounded overflow-hidden flex flex-col">
           <Img
             className="flex flex-grow"
-            fluid={church4Url}
+            fluid={image4}
             alt="Jonathan Carson"
           />
         </li>
         <li className="bg-red-100 rounded overflow-hidden flex flex-col">
           <Img
             className="flex flex-grow"
-            fluid={church5Url}
+            fluid={image5}
             alt="Jonathan Carson"
           />
         </li>
@@ -67,48 +68,44 @@ const NotFoundPage = ({ data }) => {
 
 export const query = graphql`
   {
-    church1: allImageSharp(
-      filter: { fluid: { originalName: { eq: "church1.jpg" } } }
-    ) {
+    notFoundPage: allStrapiContactPage {
       nodes {
-        fluid(maxWidth: 640, quality: 70) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    church2: allImageSharp(
-      filter: { fluid: { originalName: { eq: "church2.jpg" } } }
-    ) {
-      nodes {
-        fluid(maxWidth: 620, quality: 70) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    church3: allImageSharp(
-      filter: { fluid: { originalName: { eq: "church3.jpg" } } }
-    ) {
-      nodes {
-        fluid(maxWidth: 620, quality: 70) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    church4: allImageSharp(
-      filter: { fluid: { originalName: { eq: "church4.jpg" } } }
-    ) {
-      nodes {
-        fluid(maxWidth: 620, quality: 70) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    church5: allImageSharp(
-      filter: { fluid: { originalName: { eq: "church5.jpg" } } }
-    ) {
-      nodes {
-        fluid(maxWidth: 620, quality: 70) {
-          ...GatsbyImageSharpFluid_withWebp
+        gallery {
+          image1 {
+            childImageSharp {
+              fluid(maxWidth: 620, maxHeight: 466, quality: 70) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+          image2 {
+            childImageSharp {
+              fluid(maxWidth: 306, maxHeight: 229, quality: 70) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+          image3 {
+            childImageSharp {
+              fluid(maxHeight: 229, quality: 70) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+          image4 {
+            childImageSharp {
+              fluid(maxWidth: 306, maxHeight: 229, quality: 70) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+          image5 {
+            childImageSharp {
+              fluid(maxWidth: 306, maxHeight: 229, quality: 70) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
         }
       }
     }

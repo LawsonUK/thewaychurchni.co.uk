@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
-import Logo from "../components/logo"
+import Logo from "./../images/logo.svg"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const Header = ({ absolute, live, headerText }) => {
@@ -51,8 +51,8 @@ const Header = ({ absolute, live, headerText }) => {
       <header
         className={`p-4 flex relative justify-between items-center max-w-screen-xl m-auto xl:p-0 xl:pt-4`}
       >
-        <Link className="-mt-4 w-24" to="/">
-          <Logo className="logo" />
+        <Link className="-mt-4" to="/">
+          <Logo className="logo w-24" />
         </Link>
 
         <nav className="hidden md:flex ml-24">

@@ -18,7 +18,10 @@ const AboutPage = ({ data }) => {
     const html =
       teamCount === 0 ? (
         <li
-          data-aos="fade-up"
+          data-sal="slide-up"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
           key={member.id}
           className="flex flex-col md:col-span-2 xl:col-span-1"
         >
@@ -37,7 +40,14 @@ const AboutPage = ({ data }) => {
           </div>
         </li>
       ) : (
-        <li data-aos="fade-up" key={member.id} className="flex flex-col">
+        <li
+          data-sal="slide-up"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
+          key={member.id}
+          className="flex flex-col"
+        >
           <div className="rounded flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white pt-8 pb-8 md:pl-8 md:pr-8">
             <div className="flex items-center mb-6">
               <Img
@@ -68,7 +78,7 @@ const AboutPage = ({ data }) => {
     leftColBeliefs = aboutPage.whatWeBelieve.map(belief => {
       const html =
         countLeft <= halfCount ? (
-          <div key={belief.id} data-aos="fade-right">
+          <div key={belief.id} data-sal="fade">
             <h3 className="text-xl mb-4 mt-4">{belief.title}</h3>
             <pre>{belief.text}</pre>
           </div>
@@ -84,7 +94,7 @@ const AboutPage = ({ data }) => {
     rightColBeliefs = aboutPage.whatWeBelieve.map(belief => {
       const html =
         countRight > halfCount ? (
-          <div key={belief.id} data-aos="fade-right">
+          <div key={belief.id} data-sal="fade">
             <h3 className="text-xl mb-4 mt-4">{belief.title}</h3>
             <pre>{belief.text}</pre>
           </div>
@@ -113,7 +123,10 @@ const AboutPage = ({ data }) => {
 
         <ul className="gallery grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full p-4 shadow-lg px-6">
           <li
-            data-aos="fade-right"
+            data-sal="slide-right"
+            data-sal-delay="100"
+            data-sal-duration="700"
+            data-sal-easing="ease"
             className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col"
           >
             <Img
@@ -123,7 +136,10 @@ const AboutPage = ({ data }) => {
             />
           </li>
           <li
-            data-aos="fade-left"
+            data-sal="slide-left"
+            data-sal-delay="100"
+            data-sal-duration="700"
+            data-sal-easing="ease"
             className="bg-red-600 rounded overflow-hidden flex flex-col"
           >
             <Img
@@ -133,7 +149,10 @@ const AboutPage = ({ data }) => {
             />
           </li>
           <li
-            data-aos="fade-left"
+            data-sal="slide-left"
+            data-sal-delay="100"
+            data-sal-duration="700"
+            data-sal-easing="ease"
             className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1"
           >
             <Img
@@ -143,7 +162,10 @@ const AboutPage = ({ data }) => {
             />
           </li>
           <li
-            data-aos="fade-left"
+            data-sal="slide-left"
+            data-sal-delay="100"
+            data-sal-duration="700"
+            data-sal-easing="ease"
             className="bg-red-200 rounded overflow-hidden flex flex-col"
           >
             <Img
@@ -153,7 +175,10 @@ const AboutPage = ({ data }) => {
             />
           </li>
           <li
-            data-aos="fade-left"
+            data-sal="slide-left"
+            data-sal-delay="100"
+            data-sal-duration="700"
+            data-sal-easing="ease"
             className="bg-red-100 rounded overflow-hidden flex flex-col"
           >
             <Img
@@ -167,7 +192,7 @@ const AboutPage = ({ data }) => {
 
       <div className="w-full ml-auto mr-auto py-8 bg-light">
         <section
-          data-aos="fade-up"
+          data-sal="fade"
           className="flex flex-col lg:max-w-4xl lg:ml-auto lg:mr-auto lg:mt-12 p-4 px-6 lg:p-12 pb-12 lg:mb-16 shadow-lg bg-white"
         >
           <div>
