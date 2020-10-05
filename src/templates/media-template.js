@@ -74,7 +74,11 @@ const MediaTemplate = ({ data, pageContext, location }) => {
 
   return (
     <Layout>
-      <SEO title={media.title} />
+      <SEO
+        title={media.title}
+        image={pageContext.featuredImage}
+        description={media.excerpt}
+      />
       <section className="banner max-w-screen-xl m-auto text-center mt-24 mb-2 flex flex-col px-6 pt-0 xl:p-0">
         <div className="w-full">
           <Link to="/media" className="link mb-3">
@@ -219,6 +223,7 @@ export const query = graphql`
         type
       }
       description
+      excerpt
       audioFile {
         publicURL
       }
