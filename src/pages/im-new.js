@@ -98,7 +98,7 @@ const imNewPage = ({ data }) => {
       <section className="w-full ml-auto mr-auto py-8 bg-light">
         <div
           data-sal="fade"
-          className="flex flex-col lg:max-w-4xl lg:ml-auto lg:mr-auto md:mt-12 p-12 px-6 pb-24 lg:p-12 lg:mb-16 shadow-lg bg-white"
+          className="flex flex-col lg:max-w-4xl lg:ml-auto lg:mr-auto p-12 px-6 lg:p-12 mb-8 shadow-lg bg-white"
         >
           <pre>{imNewPage.whatToExpectText}</pre>
         </div>

@@ -112,7 +112,7 @@ const AboutPage = ({ data }) => {
       <SEO title="About" />
       <section
         id="our-story"
-        className="banner text-center mt-24 mb-20 flex flex-col max-w-screen-xl m-auto"
+        className="banner text-center mt-24 flex flex-col max-w-screen-xl m-auto"
       >
         <div className="w-full">
           <h3 className="mb-3 ">About</h3>
@@ -193,7 +193,7 @@ const AboutPage = ({ data }) => {
       <div className="w-full ml-auto mr-auto py-8 bg-light">
         <section
           data-sal="fade"
-          className="flex flex-col lg:max-w-4xl lg:ml-auto lg:mr-auto lg:mt-12 p-4 px-6 lg:p-12 pb-12 lg:mb-16 shadow-lg bg-white"
+          className="flex flex-col lg:max-w-4xl lg:ml-auto lg:mr-auto px-10 p-12 pb-16 lg:mb-16 shadow-lg bg-white"
         >
           <div>
             <h2 className="mb-4 text-wayblue">{aboutPage.ourStoryTitle}</h2>
@@ -203,7 +203,7 @@ const AboutPage = ({ data }) => {
       </div>
 
       <section id="core-values" className="flex flex-col mb-4 lg:mb-16 px-6">
-        <div className="max-w-screen-xl ml-auto mr-auto pb-20">
+        <div className="max-w-screen-xl ml-auto mr-auto px-2 pb-20">
           <h2 className="mt-12 lg:mt-16 mb-4 xl:pl-0 text-wayblue lg:max-w-4xl">
             {aboutPage.beliefsTitle}
           </h2>

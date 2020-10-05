@@ -55,7 +55,7 @@ const IndexPage = ({ data }) => {
 
       <div className="bg-light">
         <section className="latest-blog max-w-screen-xl m-auto p-6 pt-16 pb-16 xl:pl-0 xl:pr-0">
-          <div className="flex justify-between items-center mb-8 lg:mb-12">
+          <div className="flex justify-between items-center mb-8">
             <Link className="link text-red-600" to="/blog">
               <h2 className="text-2xl font-bold">Featured Media</h2>
             </Link>
