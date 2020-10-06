@@ -18,10 +18,6 @@ const AboutPage = ({ data }) => {
     const html =
       teamCount === 0 ? (
         <li
-          data-sal="slide-up"
-          data-sal-delay="100"
-          data-sal-duration="700"
-          data-sal-easing="ease"
           key={member.id}
           className="flex flex-col md:col-span-2 xl:col-span-1"
         >
@@ -40,14 +36,7 @@ const AboutPage = ({ data }) => {
           </div>
         </li>
       ) : (
-        <li
-          data-sal="slide-up"
-          data-sal-delay="100"
-          data-sal-duration="700"
-          data-sal-easing="ease"
-          key={member.id}
-          className="flex flex-col"
-        >
+        <li key={member.id} className="flex flex-col">
           <div className="rounded flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white pt-8 pb-8 md:pl-8 md:pr-8">
             <div className="flex items-center mb-6">
               <Img

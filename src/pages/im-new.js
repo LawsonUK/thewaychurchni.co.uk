@@ -26,75 +26,88 @@ const imNewPage = ({ data }) => {
             {imNewPage.title}
           </h1>
         </div>
-
-        <ul className="gallery grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full p-4 shadow-lg px-6">
-          <li
-            data-sal="slide-right"
-            data-sal-delay="100"
-            data-sal-duration="700"
-            data-sal-easing="ease"
-            className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col"
-          >
-            <Img
-              className="flex flex-grow"
-              fluid={image1}
-              alt="banner image 1"
-            />
-          </li>
-          <li
-            data-sal="slide-left"
-            data-sal-delay="100"
-            data-sal-duration="700"
-            data-sal-easing="ease"
-            className="bg-red-600 rounded overflow-hidden flex flex-col"
-          >
-            <Img
-              className="flex flex-grow"
-              fluid={image2}
-              alt="banner image 2"
-            />
-          </li>
-          <li
-            data-sal="slide-left"
-            data-sal-delay="100"
-            data-sal-duration="700"
-            data-sal-easing="ease"
-            className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1"
-          >
-            <Img
-              className="flex flex-grow"
-              fluid={image3}
-              alt="banner image 3"
-            />
-          </li>
-          <li
-            data-sal="slide-left"
-            data-sal-delay="100"
-            data-sal-duration="700"
-            data-sal-easing="ease"
-            className="bg-red-200 rounded overflow-hidden flex flex-col"
-          >
-            <Img
-              className="flex flex-grow"
-              fluid={image4}
-              alt="banner image 4"
-            />
-          </li>
-          <li
-            data-sal="slide-left"
-            data-sal-delay="100"
-            data-sal-duration="700"
-            data-sal-easing="ease"
-            className="bg-red-100 rounded overflow-hidden flex flex-col"
-          >
-            <Img
-              className="flex flex-grow"
-              fluid={image5}
-              alt="banner image 5"
-            />
-          </li>
-        </ul>
       </section>
+
+      <section className="contact-details max-w-screen-xl m-auto grid md:grid-cols-2 text-center">
+        <div
+          data-sal="slide-up"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
+          className="mb-12 flex flex-col"
+        >
+          <h3 className="text-black text-2xl font-bold mb-4">
+            Sunday Morning Service
+          </h3>
+          <pre>When: 11:00AM Where: Ballyclare Townhall</pre>
+          <a className="link" href="" target="_blank" rel="noreferrer">
+            Get Directions
+          </a>
+        </div>
+        <div
+          data-sal="slide-up"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
+          className="mb-12"
+        >
+          <h3 className="text-2xl font-bold mb-4 text-black">
+            Bible Study / Prayer Meeting
+          </h3>
+          <pre>When: 7:30PM Where: Foundary House</pre>
+          <a className="link" href="" target="_blank" rel="noreferrer">
+            Get Directions
+          </a>
+        </div>
+      </section>
+
+      <ul className="max-w-screen-xl m-auto gallery grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full p-4 shadow-lg px-6">
+        <li
+          data-sal="slide-right"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
+          className="bg-red-800 col-span-2 row-span-2 rounded overflow-hidden flex flex-col"
+        >
+          <Img className="flex flex-grow" fluid={image1} alt="banner image 1" />
+        </li>
+        <li
+          data-sal="slide-left"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
+          className="bg-red-600 rounded overflow-hidden flex flex-col"
+        >
+          <Img className="flex flex-grow" fluid={image2} alt="banner image 2" />
+        </li>
+        <li
+          data-sal="slide-left"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
+          className="bg-red-400 rounded overflow-hidden flex flex-col md:row-span-2 lg:row-span-1"
+        >
+          <Img className="flex flex-grow" fluid={image3} alt="banner image 3" />
+        </li>
+        <li
+          data-sal="slide-left"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
+          className="bg-red-200 rounded overflow-hidden flex flex-col"
+        >
+          <Img className="flex flex-grow" fluid={image4} alt="banner image 4" />
+        </li>
+        <li
+          data-sal="slide-left"
+          data-sal-delay="100"
+          data-sal-duration="700"
+          data-sal-easing="ease"
+          className="bg-red-100 rounded overflow-hidden flex flex-col"
+        >
+          <Img className="flex flex-grow" fluid={image5} alt="banner image 5" />
+        </li>
+      </ul>
       <section className="w-full ml-auto mr-auto py-8 bg-light">
         <div
           data-sal="fade"
