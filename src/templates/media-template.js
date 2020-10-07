@@ -93,11 +93,13 @@ const MediaTemplate = ({ data, pageContext, location }) => {
         <div>
           <div className="flex items-center justify-center mb-2 sm:mb-0 mr-6">
             <span>
-              <Img
-                className="rounded-full w-10 mr-4"
-                fluid={media.teacher.avatar.childImageSharp.fluid}
-                alt={media.teacher.name}
-              />
+              {media.teacher.avatar && (
+                <Img
+                  className="rounded-full w-10 mr-4"
+                  fluid={media.teacher.avatar.childImageSharp.fluid}
+                  alt={media.teacher.name}
+                />
+              )}
             </span>
             <span className="text-gray-700 font-bold" to="/">
               {media.teacher.name}
