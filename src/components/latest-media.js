@@ -72,11 +72,13 @@ const latestMedia = ({ media }) => {
 
         <div className="flex items-center mt-8">
           <span>
-            <Img
-              className="rounded-full w-10 xl:w-12 mr-4"
-              fluid={media.teacher.avatar.childImageSharp.fluid}
-              alt="Jonathan Carson"
-            />
+            {media.teacher.avatar && (
+              <Img
+                className="rounded-full w-10 xl:w-12 mr-4"
+                fluid={media.teacher.avatar.childImageSharp.fluid}
+                alt="Jonathan Carson"
+              />
+            )}
           </span>
           <span className="text-gray-700 font-bold" to="/">
             {media.teacher.name}
