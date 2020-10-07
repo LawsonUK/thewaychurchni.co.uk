@@ -7,6 +7,7 @@ import Img from "gatsby-image"
 const imNewPage = ({ data }) => {
   const imNewPage = data.imNewPage.nodes[0]
   const gallery = imNewPage.gallery
+  const services = imNewPage.services
   const image1 = gallery.image1.childImageSharp.fluid
   const image2 = gallery.image2.childImageSharp.fluid
   const image3 = gallery.image3.childImageSharp.fluid
@@ -28,37 +29,34 @@ const imNewPage = ({ data }) => {
         </div>
       </section>
 
-      <section className="contact-details max-w-screen-xl m-auto grid md:grid-cols-2 text-center">
-        <div
-          data-sal="slide-up"
-          data-sal-delay="100"
-          data-sal-duration="700"
-          data-sal-easing="ease"
-          className="mb-12 flex flex-col"
-        >
-          <h3 className="text-black text-2xl font-bold mb-4">
-            Sunday Morning Service
-          </h3>
-          <pre>When: 11:00AM Where: Ballyclare Townhall</pre>
-          <a className="link" href="" target="_blank" rel="noreferrer">
-            Get Directions
-          </a>
-        </div>
-        <div
-          data-sal="slide-up"
-          data-sal-delay="100"
-          data-sal-duration="700"
-          data-sal-easing="ease"
-          className="mb-12"
-        >
-          <h3 className="text-2xl font-bold mb-4 text-black">
-            Bible Study / Prayer Meeting
-          </h3>
-          <pre>When: 7:30PM Where: Foundary House</pre>
-          <a className="link" href="" target="_blank" rel="noreferrer">
-            Get Directions
-          </a>
-        </div>
+      <section className="contact-details max-w-screen-xl m-auto flex flex-col md:flex-row justify-around text-center">
+        {services &&
+          services.map(service => {
+            return (
+              <div
+                key={service.id}
+                data-sal="slide-up"
+                data-sal-delay="100"
+                data-sal-duration="700"
+                data-sal-easing="ease"
+                className="mb-12 flex flex-col"
+              >
+                <h3 className="text-black text-xl font-bold mb-4">
+                  {service.title}
+                </h3>
+                <span>When: {service.when}</span>
+                <span>Where: {service.where}</span>
+                <a
+                  className="link mt-4"
+                  href={service.directionsLink}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Get Directions
+                </a>
+              </div>
+            )
+          })}
       </section>
 
       <ul className="max-w-screen-xl m-auto gallery grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full p-4 shadow-lg px-6">
@@ -126,6 +124,13 @@ export const query = graphql`
       nodes {
         whatToExpectText
         title
+        services {
+          id
+          title
+          when
+          where
+          directionsLink
+        }
         gallery {
           image1 {
             childImageSharp {
