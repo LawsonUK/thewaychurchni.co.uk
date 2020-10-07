@@ -66,11 +66,13 @@ const card = ({ data, media = false }) => {
           </div>
           <div className="flex items-center mb-3">
             <span>
-              <Img
-                className="rounded-full w-10 mr-4"
-                fluid={data.teacher.avatar.childImageSharp.fluid}
-                alt={data.teacher.name}
-              />
+              {data.teacher.avatar && (
+                <Img
+                  className="rounded-full w-10 mr-4"
+                  fluid={data.teacher.avatar.childImageSharp.fluid}
+                  alt={data.teacher.name}
+                />
+              )}
             </span>
             <span className="text-gray-700 font-bold" to="/">
               {data.teacher.name}
