@@ -119,7 +119,6 @@ export const query = graphql`
     }
     media: allStrapiMediaPosts(
       sort: { order: DESC, fields: publishedOn }
-      skip: 1
       filter: { published: { eq: true } }
     ) {
       nodes {

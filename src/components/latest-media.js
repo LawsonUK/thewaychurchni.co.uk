@@ -72,7 +72,7 @@ const latestMedia = ({ media }) => {
 
         <div className="flex items-center mt-8">
           <span>
-            {media.teacher.avatar && (
+            {media.teacher && media.teacher.avatar && (
               <Img
                 className="rounded-full w-10 xl:w-12 mr-4"
                 fluid={media.teacher.avatar.childImageSharp.fluid}
@@ -81,7 +81,7 @@ const latestMedia = ({ media }) => {
             )}
           </span>
           <span className="text-gray-700 font-bold" to="/">
-            {media.teacher.name}
+            {media.teacher && media.teacher.name}
           </span>
         </div>
       </div>

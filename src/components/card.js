@@ -66,7 +66,7 @@ const card = ({ data, media = false }) => {
           </div>
           <div className="flex items-center mb-3">
             <span>
-              {data.teacher.avatar && (
+              {data.teacher && data.teacher.avatar && (
                 <Img
                   className="rounded-full w-10 mr-4"
                   fluid={data.teacher.avatar.childImageSharp.fluid}
@@ -75,7 +75,7 @@ const card = ({ data, media = false }) => {
               )}
             </span>
             <span className="text-gray-700 font-bold" to="/">
-              {data.teacher.name}
+              {data.teacher && data.teacher.name}
             </span>
           </div>
         </>
