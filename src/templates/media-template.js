@@ -59,14 +59,14 @@ const MediaTemplate = ({ data, pageContext, location }) => {
       className="link mb-8 lg:mb-0"
       to={`/media/${pageContext.prevMedia.slug}`}
     >
-      {pageContext.prevMedia.title}
+      {`<< ${pageContext.prevMedia.title}`}
     </Link>
   ) : (
     ""
   )
   const nextMediaLink = pageContext.nextMedia ? (
     <Link className="link" to={`/media/${pageContext.nextMedia.slug}`}>
-      {pageContext.nextMedia.title}
+      {`${pageContext.nextMedia.title} >>`}
     </Link>
   ) : (
     ""
