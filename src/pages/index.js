@@ -130,7 +130,7 @@ export const query = graphql`
       }
     }
     media: allStrapiMediaPosts(
-      limit: 2
+      limit: 3
       sort: { order: DESC, fields: publishedOn }
       filter: { published: { eq: true }, featured: { eq: true } }
     ) {
