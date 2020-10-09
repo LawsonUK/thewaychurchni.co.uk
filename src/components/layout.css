@@ -140,6 +140,14 @@ article a {
   top: 0;
   left: 0;
   max-height: 600px;
+  overflow: hidden;
+}
+
+.react-player > div > span {
+  overflow: hidden;
+}
+
+.react-player iframe {
 }
 
 .banner-background {
