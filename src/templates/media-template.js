@@ -140,7 +140,22 @@ const MediaTemplate = ({ data, pageContext, location }) => {
         </div>
       </section>
       <section className="player pt-12 pb-12 bg-light mb-16">
-        {format === "Video" ? (
+        {format === "Video" && url.includes("facebook") && (
+          <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center">
+            <iframe
+              src={`https://www.facebook.com/plugins/video.php?height=476&href=${url}&show_text=false&width=269`}
+              width="269"
+              height="476"
+              scrolling="no"
+              frameborder="0"
+              allowTransparency="true"
+              allow="encrypted-media"
+              allowFullScreen={true}
+            ></iframe>
+          </div>
+        )}
+
+        {format === "Video" && !url.includes("facebook") && (
           <div className="max-w-4xl m-auto pl-4 pr-4 player-wrapper">
             <ReactPlayer
               key={url}
@@ -157,7 +172,9 @@ const MediaTemplate = ({ data, pageContext, location }) => {
               }}
             />
           </div>
-        ) : (
+        )}
+
+        {format === "Audio" && (
           <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center">
             <audio controls="true" src={url} className="w-full">
               <track kind="captions" src="" srclang="en"></track>

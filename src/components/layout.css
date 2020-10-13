@@ -126,7 +126,7 @@ article a {
 
 @media only screen and (min-width: 1024px) {
   .player-wrapper {
-    padding-top: 36.25%;
+    padding-top: 33.25%;
   }
 
   .blog-image {
@@ -135,19 +135,37 @@ article a {
   }
 }
 
+@media only screen and (min-width: 1280px) {
+  .player-wrapper {
+    padding-top: 31.25%;
+  }
+}
+
+.fb-wrapper {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.fb-wrapper iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
 .react-player {
   position: absolute;
   top: 0;
   left: 0;
-  max-height: 600px;
-  overflow: hidden;
 }
 
 .react-player > div > span {
-  overflow: hidden;
 }
 
-.react-player iframe {
+.react-player > div > span > iframe {
 }
 
 .banner-background {

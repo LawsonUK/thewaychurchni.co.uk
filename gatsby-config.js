@@ -87,7 +87,7 @@ module.exports = {
       options: {
         apiURL: `https://thewaychurch.herokuapp.com`,
         queryLimit: 1000, // Default to 100
-        contentTypes: [`media-posts`, `media-types`],
+        contentTypes: [`media-posts`, `media-types`, `teacher`],
         singleTypes: [
           `home-page`,
           `live-page`,

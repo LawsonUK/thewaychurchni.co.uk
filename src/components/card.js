@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 const card = ({ data, media = false }) => {
   const url = media ? `/media/${data.slug}` : `/blog/${data.slug}`
   return (
-    <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white">
+    <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-5 bg-white">
       <Link to={url}>
         <Img
           className="w-full h-64 mb-4 rounded"
