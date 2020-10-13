@@ -107,7 +107,7 @@ const ContactPage = ({ data }) => {
       </section>
       <ul className="gallery max-w-screen-xl m-auto grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 p-4 shadow-lg px-6">
         <li
-          data-sal="slide-right"
+          data-sal="slide-up"
           data-sal-delay="100"
           data-sal-duration="700"
           data-sal-easing="ease"
@@ -116,7 +116,7 @@ const ContactPage = ({ data }) => {
           <Img className="flex flex-grow" fluid={image1} alt="Image 1" />
         </li>
         <li
-          data-sal="slide-left"
+          data-sal="slide-up"
           data-sal-delay="100"
           data-sal-duration="700"
           data-sal-easing="ease"
@@ -125,7 +125,7 @@ const ContactPage = ({ data }) => {
           <Img className="flex flex-grow" fluid={image2} alt="Image 2" />
         </li>
         <li
-          data-sal="slide-left"
+          data-sal="slide-up"
           data-sal-delay="100"
           data-sal-duration="700"
           data-sal-easing="ease"
@@ -134,7 +134,7 @@ const ContactPage = ({ data }) => {
           <Img className="flex flex-grow" fluid={image3} alt="Image 3" />
         </li>
         <li
-          data-sal="slide-left"
+          data-sal="slide-up"
           data-sal-delay="100"
           data-sal-duration="700"
           data-sal-easing="ease"
@@ -143,7 +143,7 @@ const ContactPage = ({ data }) => {
           <Img className="flex flex-grow" fluid={image4} alt="Image 4" />
         </li>
         <li
-          data-sal="slide-left"
+          data-sal="slide-up"
           data-sal-delay="100"
           data-sal-duration="700"
           data-sal-easing="ease"

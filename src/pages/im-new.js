@@ -61,7 +61,7 @@ const imNewPage = ({ data }) => {
 
       <ul className="max-w-screen-xl m-auto gallery grid md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-2 w-full p-4 shadow-lg px-6">
         <li
-          data-sal="slide-right"
+          data-sal="slide-up"
           data-sal-delay="100"
           data-sal-duration="700"
           data-sal-easing="ease"
@@ -70,7 +70,7 @@ const imNewPage = ({ data }) => {
           <Img className="flex flex-grow" fluid={image1} alt="banner image 1" />
         </li>
         <li
-          data-sal="slide-left"
+          data-sal="slide-up"
           data-sal-delay="100"
           data-sal-duration="700"
           data-sal-easing="ease"
@@ -79,7 +79,7 @@ const imNewPage = ({ data }) => {
           <Img className="flex flex-grow" fluid={image2} alt="banner image 2" />
         </li>
         <li
-          data-sal="slide-left"
+          data-sal="slide-up"
           data-sal-delay="100"
           data-sal-duration="700"
           data-sal-easing="ease"
@@ -88,7 +88,7 @@ const imNewPage = ({ data }) => {
           <Img className="flex flex-grow" fluid={image3} alt="banner image 3" />
         </li>
         <li
-          data-sal="slide-left"
+          data-sal="slide-up"
           data-sal-delay="100"
           data-sal-duration="700"
           data-sal-easing="ease"
@@ -97,7 +97,7 @@ const imNewPage = ({ data }) => {
           <Img className="flex flex-grow" fluid={image4} alt="banner image 4" />
         </li>
         <li
-          data-sal="slide-left"
+          data-sal="slide-up"
           data-sal-delay="100"
           data-sal-duration="700"
           data-sal-easing="ease"
