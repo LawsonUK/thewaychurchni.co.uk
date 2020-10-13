@@ -140,18 +140,27 @@ const MediaTemplate = ({ data, pageContext, location }) => {
         </div>
       </section>
       <section className="player pt-12 pb-12 bg-light mb-16">
-        {format === "Video" && url.includes("facebook") && (
-          <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center">
+        {format === "Video" &&
+        url.includes("facebook") &&
+        media.videoOrientation === "Portrait" ? (
+          <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center relative">
             <iframe
-              src={`https://www.facebook.com/plugins/video.php?height=476&href=${url}&show_text=false&width=269`}
-              width="269"
-              height="476"
+              src={`https://www.facebook.com/plugins/video.php?href=${url}&show_text=false`}
+              height="550px"
               scrolling="no"
-              frameborder="0"
-              allowTransparency="true"
               allow="encrypted-media"
               allowFullScreen={true}
             ></iframe>
+          </div>
+        ) : (
+          <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center relative">
+            <ReactPlayer
+              key={url}
+              url={url}
+              controls
+              height="489px"
+              className="contents"
+            />
           </div>
         )}
 
@@ -236,6 +245,7 @@ export const query = graphql`
     strapiMediaPosts(slug: { eq: $slug }) {
       title
       videoLink
+      videoOrientation
       slug
       publishedOn(formatString: "Do MMM Y")
       media_type {
