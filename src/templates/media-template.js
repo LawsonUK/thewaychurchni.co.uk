@@ -141,28 +141,33 @@ const MediaTemplate = ({ data, pageContext, location }) => {
       </section>
       <section className="player pt-12 pb-12 bg-light mb-16">
         {format === "Video" &&
-        url.includes("facebook") &&
-        media.videoOrientation === "Portrait" ? (
-          <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center relative">
-            <iframe
-              src={`https://www.facebook.com/plugins/video.php?href=${url}&show_text=false`}
-              height="550px"
-              scrolling="no"
-              allow="encrypted-media"
-              allowFullScreen={true}
-            ></iframe>
-          </div>
-        ) : (
-          <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center relative">
-            <ReactPlayer
-              key={url}
-              url={url}
-              controls
-              height="489px"
-              className="contents"
-            />
-          </div>
-        )}
+          url.includes("facebook") &&
+          media.videoOrientation === "Portrait" && (
+            <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center relative">
+              <iframe
+                src={`https://www.facebook.com/plugins/video.php?href=${url}&show_text=false`}
+                height="550px"
+                scrolling="no"
+                allow="encrypted-media"
+                allowFullScreen={true}
+                title={media.title}
+              ></iframe>
+            </div>
+          )}
+
+        {format === "Video" &&
+          url.includes("facebook") &&
+          media.videoOrientation !== "Portrait" && (
+            <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center relative">
+              <ReactPlayer
+                key={url}
+                url={url}
+                controls
+                height="489px"
+                className="contents"
+              />
+            </div>
+          )}
 
         {format === "Video" && !url.includes("facebook") && (
           <div className="max-w-4xl m-auto pl-4 pr-4 player-wrapper">
