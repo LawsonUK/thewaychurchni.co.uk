@@ -8,7 +8,11 @@ import facebookIcon from "@iconify/icons-cib/facebook"
 import twitterCircleFilled from "@iconify/icons-ant-design/twitter-circle-filled"
 import circleinstagramIcon from "@iconify/icons-whh/circleinstagram"
 
-const LivePage = () => {
+const LivePage = ({ data }) => {
+  const live =
+    data.allStrapiLivePage.nodes.length > 0
+      ? data.allStrapiLivePage.nodes[0]
+      : false
   return (
     <Layout>
       <SEO title="Live" />
@@ -22,28 +26,53 @@ const LivePage = () => {
         </div>
       </section>
       <section className="player pt-12 pb-12 bg-light mb-24">
-        <div
-          data-sal="slide-up"
-          data-sal-delay="100"
-          data-sal-duration="700"
-          data-sal-easing="ease"
-          className="max-w-4xl m-auto pl-4 pr-4 player-wrapper"
-        >
-          <ReactPlayer
-            url="https://www.youtube.com/watch?v=LI5dBkIG5EI"
-            className="react-player"
-            width="100%"
-            height="100%"
-            config={{
-              youtube: {
-                playerVars: { showinfo: 1 },
-              },
-              facebook: {
-                appId: "",
-              },
-            }}
-          />
-        </div>
+        {live &&
+          live.videoLink.includes("facebook") &&
+          live.videoOrientation === "Portrait" && (
+            <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center relative">
+              <iframe
+                src={`https://www.facebook.com/plugins/video.php?href=${live.videoLink}&show_text=false`}
+                height="550px"
+                scrolling="no"
+                allow="encrypted-media"
+                allowFullScreen={true}
+                title={live.title}
+              ></iframe>
+            </div>
+          )}
+
+        {live &&
+          live.videoLink.includes("facebook") &&
+          live.videoOrientation !== "Portrait" && (
+            <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center relative">
+              <ReactPlayer
+                key={live.videoLink}
+                url={live.videoLink}
+                controls
+                height="489px"
+                className="contents"
+              />
+            </div>
+          )}
+
+        {live && !live.videoLink.includes("facebook") && (
+          <div className="max-w-4xl m-auto pl-4 pr-4 player-wrapper">
+            <ReactPlayer
+              key={live.videoLink}
+              url={live.videoLink}
+              className="react-player"
+              width="100%"
+              height="100%"
+              config={{
+                youtube: {
+                  playerVars: {
+                    showinfo: 1,
+                  },
+                },
+              }}
+            />
+          </div>
+        )}
       </section>
       <section className="contact-details max-w-screen-xl m-auto grid md:grid-cols-3 text-center">
         <div className="mb-12">
@@ -102,5 +131,20 @@ const LivePage = () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  {
+    allStrapiLivePage {
+      nodes {
+        strapiId
+        subTitle
+        title
+        liveState
+        videoLink
+        videoOrientation
+      }
+    }
+  }
+`
 
 export default LivePage
