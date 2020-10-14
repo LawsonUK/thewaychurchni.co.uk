@@ -23,7 +23,7 @@ const LivePage = ({ data }) => {
           <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-wayblue">
             We're Streaming Now
           </h1>
-          <p>Why not join us for our Sunday service.</p>
+          <p>Why not join us for our live service.</p>
         </div>
       </section>
       <section className="player pt-12 pb-12 bg-light mb-24">
