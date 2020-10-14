@@ -76,8 +76,16 @@ const Header = ({ absolute, live, headerText }) => {
                     </Link>
                   </li>
                   <li className="mb-4">
-                    <AnchorLink className="link" to="/about#core-values">
-                      Core Values
+                    <AnchorLink className="link" to="/about#beliefs">
+                      Beliefs
+                    </AnchorLink>
+                  </li>
+                  <li className="mb-4">
+                    <AnchorLink
+                      className="link"
+                      to="/about#distinctives-values"
+                    >
+                      Distinctives & Values
                     </AnchorLink>
                   </li>
                   <li>
@@ -148,8 +156,13 @@ const Header = ({ absolute, live, headerText }) => {
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <AnchorLink className="link" to="/about#core-values">
-                    Core Values
+                  <AnchorLink className="link" to="/about#beliefs">
+                    Beliefs
+                  </AnchorLink>
+                </li>
+                <li className="mb-4">
+                  <AnchorLink className="link" to="/about#distinctives-values">
+                    Distinctives & Values
                   </AnchorLink>
                 </li>
                 <li>

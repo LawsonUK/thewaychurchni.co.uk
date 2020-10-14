@@ -13,6 +13,7 @@ const AboutPage = ({ data }) => {
   const image4 = gallery.image4.childImageSharp.fluid
   const image5 = gallery.image5.childImageSharp.fluid
 
+  // team output
   let teamCount = 0
   const team = aboutPage.team.map(member => {
     const html =
@@ -54,6 +55,7 @@ const AboutPage = ({ data }) => {
     return html
   })
 
+  // beliefs output
   let halfCount = 0
   let leftColBeliefs = false
   let rightColBeliefs = false
@@ -65,15 +67,12 @@ const AboutPage = ({ data }) => {
   if (halfCount > 0) {
     let countLeft = 0
     leftColBeliefs = aboutPage.whatWeBelieve.map(belief => {
-      const html =
-        countLeft <= halfCount ? (
-          <div key={belief.id} data-sal="fade">
-            <h3 className="text-xl mb-4 mt-4">{belief.title}</h3>
-            <pre>{belief.text}</pre>
-          </div>
-        ) : (
-          ""
-        )
+      const html = countLeft <= halfCount && (
+        <div key={belief.id} data-sal="fade">
+          <h3 className="text-xl mb-4 mt-4">{belief.title}</h3>
+          <pre>{belief.text}</pre>
+        </div>
+      )
 
       countLeft++
       return html
@@ -81,19 +80,46 @@ const AboutPage = ({ data }) => {
 
     let countRight = 0
     rightColBeliefs = aboutPage.whatWeBelieve.map(belief => {
-      const html =
-        countRight > halfCount ? (
-          <div key={belief.id} data-sal="fade">
-            <h3 className="text-xl mb-4 mt-4">{belief.title}</h3>
-            <pre>{belief.text}</pre>
-          </div>
-        ) : (
-          ""
-        )
+      const html = countRight > halfCount && (
+        <div key={belief.id} data-sal="fade">
+          <h3 className="text-xl mb-4 mt-4">{belief.title}</h3>
+          <pre>{belief.text}</pre>
+        </div>
+      )
 
       countRight++
       return html
     })
+  }
+
+  // values output
+  let leftColValues = false
+  let rightColValues = false
+  const index = 3
+
+  if (aboutPage.values && aboutPage.values.length > 0) {
+    debugger
+    leftColValues = aboutPage.values.slice(0, index).map(value => {
+      const html = (
+        <div key={value.id} data-sal="fade">
+          <h3 className="text-xl mb-4 mt-4">{value.title}</h3>
+          <pre>{value.text}</pre>
+        </div>
+      )
+      return html
+    })
+
+    rightColValues =
+      aboutPage.values.length >= index + 1 &&
+      aboutPage.values.slice(index, aboutPage.values.length + 1).map(value => {
+        const html = (
+          <div key={value.id} data-sal="fade">
+            <h3 className="text-xl mb-4 mt-4">{value.title}</h3>
+            <pre>{value.text}</pre>
+          </div>
+        )
+        return html
+      })
   }
 
   return (
@@ -191,8 +217,8 @@ const AboutPage = ({ data }) => {
         </section>
       </div>
 
-      <section id="core-values" className="flex flex-col mb-4 lg:mb-16 px-6">
-        <div className="max-w-screen-xl ml-auto mr-auto px-2 pb-20">
+      <section id="beliefs" className="flex flex-col mb-4 px-6">
+        <div className="max-w-screen-xl ml-auto mr-auto px-2">
           <h2 className="mt-12 lg:mt-16 mb-4 xl:pl-0 text-wayblue lg:max-w-4xl">
             {aboutPage.beliefsTitle}
           </h2>
@@ -202,6 +228,22 @@ const AboutPage = ({ data }) => {
           </div>
         </div>
       </section>
+
+      <section
+        id="distinctives-values"
+        className="flex flex-col mb-4 lg:mb-16 px-6"
+      >
+        <div className="max-w-screen-xl ml-auto mr-auto px-2 pb-20">
+          <h2 className="mt-12 lg:mt-16 mb-4 xl:pl-0 text-wayblue lg:max-w-4xl">
+            {aboutPage.valueTitle}
+          </h2>
+          <div className="lg:m-auto xl:p-0 grid grid-cols-1 md:grid-cols-2 md:gap-16 lg:gap-24">
+            <div>{leftColValues}</div>
+            <div>{rightColValues}</div>
+          </div>
+        </div>
+      </section>
+
       <section
         id="eldership"
         className="bg-light p-4 pt-12 pb-16 md:pt-8 md:pb-16"
@@ -230,6 +272,12 @@ export const query = graphql`
           text
           title
           id
+        }
+        valueTitle
+        values {
+          id
+          text
+          title
         }
         title
         team {

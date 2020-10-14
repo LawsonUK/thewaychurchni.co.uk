@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout-main"
 import SEO from "../components/seo"
 import ReactPlayer from "react-player/lazy"
