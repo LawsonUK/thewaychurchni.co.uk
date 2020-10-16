@@ -10,10 +10,10 @@ import twitterCircleFilled from "@iconify/icons-ant-design/twitter-circle-filled
 import circleinstagramIcon from "@iconify/icons-whh/circleinstagram"
 
 const LivePage = ({ data }) => {
-  const live =
-    data.allStrapiLivePage.nodes.length > 0
-      ? data.allStrapiLivePage.nodes[0]
-      : false
+  const live = data.livePage.nodes.length > 0 ? data.livePage.nodes[0] : false
+  const contactPage =
+    data.contactPage.nodes.length > 0 ? data.contactPage.nodes[0] : false
+
   return (
     <Layout>
       <SEO title="Live" />
@@ -76,26 +76,29 @@ const LivePage = ({ data }) => {
         )}
       </section>
       <section className="contact-details max-w-screen-xl m-auto grid md:grid-cols-3 text-center">
-        <div className="mb-12">
+        <div className="mb-12 flex flex-col">
           <h3 className="text-black text-2xl font-bold mb-4">Details</h3>
-          <a className="link" href="mailTo:info@thewaychurchni.co.uk">
-            info@thewaychurchni.co.uk
+          <a
+            className="link mb-2"
+            href={"mailto:" + contactPage.email + "?subject=Hi There"}
+          >
+            {contactPage.email}
+          </a>
+          <a href={"tel:" + contactPage.telephone + ""} className="link">
+            {contactPage.telephone}
           </a>
         </div>
         <div className="mb-12">
           <h3 className="text-2xl font-bold mb-4 text-black">Visit Us</h3>
-          <p className="mb-0">Ballyclare town hall</p>
-          <p className="mb-0">BT39 9BB</p>
-          <p>
-            <a
-              className="link"
-              href="https://goo.gl/maps/8svpGszzstGSKYmz7"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Get Directions
-            </a>
-          </p>
+          <pre>{contactPage.address}</pre>
+          <a
+            className="link"
+            href={contactPage.directionsLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Get Directions
+          </a>
         </div>
         <div className="mb-12">
           <h3 className="text-black text-2xl font-bold mb-4">
@@ -103,7 +106,7 @@ const LivePage = ({ data }) => {
           </h3>
           <ul className="flex mt-5 md:mt-0 justify-center">
             <li className="mr-2">
-              <a href="https://twitter.com/thewaychurch4">
+              <a href={contactPage.twitterLink}>
                 <Icon
                   icon={twitterCircleFilled}
                   style={{ fontSize: "35.259260177612305px", color: "#000000" }}
@@ -111,7 +114,7 @@ const LivePage = ({ data }) => {
               </a>
             </li>
             <li className="mr-2">
-              <a href="https://www.facebook.com/thewaychurchni">
+              <a href={contactPage.facebookLink}>
                 <Icon
                   icon={facebookIcon}
                   style={{ fontSize: "32.851852416992188px", color: "#000000" }}
@@ -119,7 +122,7 @@ const LivePage = ({ data }) => {
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/thewaychurchni/">
+              <a href={contactPage.instagramLink}>
                 <Icon
                   icon={circleinstagramIcon}
                   style={{ fontSize: "33.851852416992188px", color: "#000000" }}
@@ -135,7 +138,7 @@ const LivePage = ({ data }) => {
 
 export const query = graphql`
   {
-    allStrapiLivePage {
+    livePage: allStrapiLivePage {
       nodes {
         strapiId
         subTitle
@@ -143,6 +146,19 @@ export const query = graphql`
         liveState
         videoLink
         videoOrientation
+      }
+    }
+    contactPage: allStrapiContactPage {
+      nodes {
+        title
+        subTitle
+        email
+        telephone
+        address
+        directionsLink
+        twitterLink
+        facebookLink
+        InstagramLink
       }
     }
   }
