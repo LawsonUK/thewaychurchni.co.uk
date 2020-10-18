@@ -98,7 +98,6 @@ const AboutPage = ({ data }) => {
   const index = 3
 
   if (aboutPage.values && aboutPage.values.length > 0) {
-    debugger
     leftColValues = aboutPage.values.slice(0, index).map(value => {
       const html = (
         <div key={value.id} data-sal="fade">

@@ -84,7 +84,7 @@ const MediaTemplate = ({ data, pageContext, location }) => {
           <Link to="/media" className="link mb-3">
             Media
           </Link>
-          <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-wayblue">
+          <h1 className="text-3xl md:text-4xl font-extrabold mt-3 mb-4 text-wayblue">
             {media.title}
           </h1>
         </div>
@@ -190,8 +190,8 @@ const MediaTemplate = ({ data, pageContext, location }) => {
 
         {format === "Audio" && (
           <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center">
-            <audio controls="true" src={url} className="w-full">
-              <track kind="captions" src="" srclang="en"></track>
+            <audio controls={true} src={url} className="w-full">
+              <track kind="captions" src="" srcLang="en"></track>
             </audio>
           </div>
         )}
