@@ -19,6 +19,7 @@ function SEO({ description, lang, meta, title, image = "" }) {
             title
             description
             author
+            siteUrl
           }
         }
         metaImage: file(relativePath: { eq: "social-share.jpg" }) {
@@ -34,7 +35,9 @@ function SEO({ description, lang, meta, title, image = "" }) {
     `
   )
 
-  const metaImagePath = metaImage && metaImage.childImageSharp.fixed.src
+  const metaImagePath =
+    metaImage &&
+    `${site.siteMetadata.siteUrl}${metaImage.childImageSharp.fixed.src}`
 
   const metaDescription = description || site.siteMetadata.description
 
