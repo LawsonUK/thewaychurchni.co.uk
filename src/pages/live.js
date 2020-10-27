@@ -24,6 +24,7 @@ const LivePage = ({ data }) => {
   const live = data.livePage.nodes.length > 0 ? data.livePage.nodes[0] : false
   const contactPage =
     data.contactPage.nodes.length > 0 ? data.contactPage.nodes[0] : false
+  const siteUrl = data.site.siteMetadata.siteUrl
 
   return (
     <Layout>
@@ -38,7 +39,7 @@ const LivePage = ({ data }) => {
         </div>
         <div>
           <EmailShareButton
-            url={`https://www.thewaychurchni.co.uk/live`}
+            url={`${siteUrl}/live`}
             subject="The Way Church Live Service"
             body="Why not join us for our live service"
             className="mr-2"
@@ -46,21 +47,21 @@ const LivePage = ({ data }) => {
             <EmailIcon size={32} round={true} />
           </EmailShareButton>
           <TwitterShareButton
-            url={`https://www.thewaychurchni.co.uk/live`}
+            url={`${siteUrl}/live`}
             title="The Way Church Live Service"
             className="mr-2"
           >
             <TwitterIcon size={32} round={true} />
           </TwitterShareButton>
           <FacebookShareButton
-            url={`https://www.thewaychurchni.co.uk/live`}
+            url={`${siteUrl}/live`}
             quote="The Way Church Live Service"
             className="mr-2"
           >
             <FacebookIcon size={32} round={true} />
           </FacebookShareButton>
           <WhatsappShareButton
-            url={`https://www.thewaychurchni.co.uk/live`}
+            url={`${siteUrl}/live`}
             title="The Way Church Live Service"
           >
             <WhatsappIcon size={32} round={true} />
@@ -179,6 +180,11 @@ const LivePage = ({ data }) => {
 
 export const query = graphql`
   {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     livePage: allStrapiLivePage {
       nodes {
         strapiId

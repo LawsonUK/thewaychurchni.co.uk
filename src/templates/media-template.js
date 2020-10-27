@@ -18,6 +18,7 @@ import {
 
 const MediaTemplate = ({ data, pageContext, location }) => {
   const media = data.strapiMediaPosts
+  const siteUrl = data.site.siteMetadata.siteUrl
   let stateFormat = "Video"
   // check audio exists
   if (location) {
@@ -110,7 +111,7 @@ const MediaTemplate = ({ data, pageContext, location }) => {
         <span className="py-4">Published On: {media.publishedOn}</span>
         <div>
           <EmailShareButton
-            url={`https://www.thewaychurchni.co.uk/media/${media.slug}`}
+            url={`${siteUrl}/media/${media.slug}`}
             subject={media.title}
             body={media.description}
             className="mr-2"
@@ -118,21 +119,21 @@ const MediaTemplate = ({ data, pageContext, location }) => {
             <EmailIcon size={32} round={true} />
           </EmailShareButton>
           <TwitterShareButton
-            url={`https://www.thewaychurchni.co.uk/media/${media.slug}`}
+            url={`${siteUrl}/media/${media.slug}`}
             title={media.title}
             className="mr-2"
           >
             <TwitterIcon size={32} round={true} />
           </TwitterShareButton>
           <FacebookShareButton
-            url={`https://www.thewaychurchni.co.uk/media/${media.slug}`}
+            url={`${siteUrl}/media/${media.slug}`}
             quote={media.title}
             className="mr-2"
           >
             <FacebookIcon size={32} round={true} />
           </FacebookShareButton>
           <WhatsappShareButton
-            url={`https://www.thewaychurchni.co.uk/media/${media.slug}`}
+            url={`${siteUrl}/media/${media.slug}`}
             title={media.title}
           >
             <WhatsappIcon size={32} round={true} />
@@ -247,6 +248,11 @@ const MediaTemplate = ({ data, pageContext, location }) => {
 
 export const query = graphql`
   query MediaQuery($slug: String!) {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     strapiMediaPosts(slug: { eq: $slug }) {
       title
       videoLink
