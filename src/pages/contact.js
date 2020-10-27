@@ -95,7 +95,7 @@ const ContactPage = ({ data }) => {
               </a>
             </li>
             <li>
-              <a href={contactPage.instagramLink}>
+              <a href={contactPage.InstagramLink}>
                 <Icon
                   icon={circleinstagramIcon}
                   style={{ fontSize: "33.851852416992188px", color: "#000000" }}

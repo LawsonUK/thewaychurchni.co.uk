@@ -9,6 +9,17 @@ import facebookIcon from "@iconify/icons-cib/facebook"
 import twitterCircleFilled from "@iconify/icons-ant-design/twitter-circle-filled"
 import circleinstagramIcon from "@iconify/icons-whh/circleinstagram"
 
+import {
+  EmailShareButton,
+  EmailIcon,
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+} from "react-share"
+
 const LivePage = ({ data }) => {
   const live = data.livePage.nodes.length > 0 ? data.livePage.nodes[0] : false
   const contactPage =
@@ -24,6 +35,36 @@ const LivePage = ({ data }) => {
             We're Streaming Now
           </h1>
           <p>Why not join us for our live service.</p>
+        </div>
+        <div>
+          <EmailShareButton
+            url={`https://www.thewaychurchni.co.uk/live`}
+            subject="The Way Church Live Service"
+            body="Why not join us for our live service"
+            className="mr-2"
+          >
+            <EmailIcon size={32} round={true} />
+          </EmailShareButton>
+          <TwitterShareButton
+            url={`https://www.thewaychurchni.co.uk/live`}
+            title="The Way Church Live Service"
+            className="mr-2"
+          >
+            <TwitterIcon size={32} round={true} />
+          </TwitterShareButton>
+          <FacebookShareButton
+            url={`https://www.thewaychurchni.co.uk/live`}
+            quote="The Way Church Live Service"
+            className="mr-2"
+          >
+            <FacebookIcon size={32} round={true} />
+          </FacebookShareButton>
+          <WhatsappShareButton
+            url={`https://www.thewaychurchni.co.uk/live`}
+            title="The Way Church Live Service"
+          >
+            <WhatsappIcon size={32} round={true} />
+          </WhatsappShareButton>
         </div>
       </section>
       <section className="player pt-12 pb-12 bg-light mb-24">
@@ -122,7 +163,7 @@ const LivePage = ({ data }) => {
               </a>
             </li>
             <li>
-              <a href={contactPage.instagramLink}>
+              <a href={contactPage.InstagramLink}>
                 <Icon
                   icon={circleinstagramIcon}
                   style={{ fontSize: "33.851852416992188px", color: "#000000" }}
