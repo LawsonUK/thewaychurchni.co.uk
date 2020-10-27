@@ -3,7 +3,7 @@ module.exports = {
     title: `The Way Church`,
     description: `Proclaiming Jesus as the way and living as people of the way.`,
     author: `The Way Church`,
-    siteUrl: `https://thewaychurch.netlify.app`,
+    siteUrl: `https://www.thewaychurchni.co.uk/`,
   },
   plugins: [
     {
