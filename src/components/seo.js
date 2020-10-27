@@ -34,9 +34,7 @@ function SEO({ description, lang, meta, title, image = "" }) {
     `
   )
 
-  const metaImagePath =
-    metaImage &&
-    `${site.siteMetadata.siteUrl}${metaImage.childImageSharp.fixed.src}`
+  const metaImagePath = metaImage && metaImage.childImageSharp.fixed.src
 
   const metaDescription = description || site.siteMetadata.description
 
