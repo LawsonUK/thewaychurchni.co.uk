@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title, image = "" }) {
-  const { site, socialImage } = useStaticQuery(
+  const { site, metaImage } = useStaticQuery(
     graphql`
       query {
         site {
@@ -21,10 +21,12 @@ function SEO({ description, lang, meta, title, image = "" }) {
             author
           }
         }
-        socialImage: file(relativePath: { eq: "social-share.jpg" }) {
+        metaImage: file(relativePath: { eq: "social-share.jpg" }) {
           childImageSharp {
             fixed {
               src
+              width
+              height
             }
           }
         }
@@ -32,9 +34,9 @@ function SEO({ description, lang, meta, title, image = "" }) {
     `
   )
 
-  const socialImagePath =
-    socialImage &&
-    `https://thewaychurch.netlify.app${socialImage.childImageSharp.fixed.src}`
+  const metaImagePath =
+    metaImage &&
+    `${site.siteMetadata.siteUrl}${metaImage.childImageSharp.fixed.src}`
 
   const metaDescription = description || site.siteMetadata.description
 
@@ -46,10 +48,6 @@ function SEO({ description, lang, meta, title, image = "" }) {
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
-        {
-          name: `image`,
-          content: socialImagePath,
-        },
         {
           name: `description`,
           content: metaDescription,
@@ -67,10 +65,6 @@ function SEO({ description, lang, meta, title, image = "" }) {
           content: `website`,
         },
         {
-          property: `og:image`,
-          content: socialImagePath,
-        },
-        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -86,11 +80,35 @@ function SEO({ description, lang, meta, title, image = "" }) {
           name: `twitter:description`,
           content: metaDescription,
         },
-        {
-          name: `twitter:image`,
-          content: socialImagePath,
-        },
-      ].concat(meta)}
+      ]
+        .concat(
+          metaImage
+            ? [
+                {
+                  property: "og:image",
+                  content: metaImagePath,
+                },
+                {
+                  property: "og:image:width",
+                  content: metaImage.childImageSharp.width,
+                },
+                {
+                  property: "og:image:height",
+                  content: metaImage.childImageSharp.height,
+                },
+                {
+                  name: "twitter:card",
+                  content: "summary_large_image",
+                },
+              ]
+            : [
+                {
+                  name: "twitter:card",
+                  content: "summary",
+                },
+              ]
+        )
+        .concat(meta)}
     />
   )
 }
@@ -106,7 +124,11 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-  image: PropTypes.string,
+  image: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+  }),
 }
 
 export default SEO
