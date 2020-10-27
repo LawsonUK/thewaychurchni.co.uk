@@ -87,7 +87,7 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: `https://thewaychurch.herokuapp.com`,
-        queryLimit: 1000, // Default to 100
+        queryLimit: 10000, // Default to 100
         contentTypes: [`media-posts`, `media-types`, `teacher`],
         singleTypes: [
           `home-page`,
