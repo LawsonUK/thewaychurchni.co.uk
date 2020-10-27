@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `The Way Church`,
     description: `Proclaiming Jesus as the way and living as people of the way.`,
-    author: `Lawson Software`,
+    author: `The Way Church`,
   },
   plugins: [
     {
