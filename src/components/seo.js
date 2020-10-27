@@ -32,7 +32,9 @@ function SEO({ description, lang, meta, title, image = "" }) {
     `
   )
 
-  const socialImagePath = socialImage && socialImage.childImageSharp.fixed.src
+  const socialImagePath =
+    socialImage &&
+    `https://thewaychurch.netlify.app${socialImage.childImageSharp.fixed.src}`
 
   const metaDescription = description || site.siteMetadata.description
 
