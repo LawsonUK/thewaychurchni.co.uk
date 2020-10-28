@@ -212,7 +212,7 @@ const MediaTemplate = ({ data, pageContext, location }) => {
               frameBorder="no"
               allow="autoplay"
               title="Audio Player"
-              src={`https://w.soundcloud.com/player/?url=${url.track}%3Fsecret_token%3D${url.secret_token}&color=%2300f0ff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false`}
+              src={`https://w.soundcloud.com/player/?url=${url.track}%3Fsecret_token%3D${url.secret_token}&color=%2354b0b1&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false`}
             ></iframe>
             <div
               style={{
