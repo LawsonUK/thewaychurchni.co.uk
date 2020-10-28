@@ -99,9 +99,7 @@ export const query = graphql`
             }
           }
         }
-        audioFile {
-          publicURL
-        }
+        audioLink
         teacher {
           avatar {
             childImageSharp {
@@ -139,9 +137,7 @@ export const query = graphql`
             }
           }
         }
-        audioFile {
-          publicURL
-        }
+        audioLink
         teacher {
           avatar {
             childImageSharp {

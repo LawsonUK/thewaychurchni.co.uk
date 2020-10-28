@@ -43,7 +43,7 @@ const card = ({ data, media = false }) => {
                 </svg>
               </Link>
             )}
-            {data.audioFile && (
+            {data.audioLink && (
               <Link
                 to={url}
                 className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-400 text-yellow-800 cursor-pointer items-center"

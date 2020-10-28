@@ -48,7 +48,7 @@ const latestMedia = ({ media }) => {
               </svg>
             </Link>
           )}
-          {media.audioFile && (
+          {media.audioLink && (
             <Link
               to={`/media/${media.slug}`}
               className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-400 text-yellow-800 cursor-pointer items-center"

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import Layout from "../components/layout-main"
 import SEO from "../components/seo"
 import { graphql, Link } from "gatsby"
@@ -20,6 +20,26 @@ const MediaTemplate = ({ data, pageContext, location }) => {
   const media = data.strapiMediaPosts
   const siteUrl = data.site.siteMetadata.siteUrl
   let stateFormat = "Video"
+
+  let audioLink = {
+    track: "",
+    secret_token: "",
+  }
+
+  // check url and secret are present
+  if (
+    media.audioLink &&
+    media.audioLink.includes("url") &&
+    media.audioLink.includes("secret_token")
+  ) {
+    audioLink.track = media.audioLink.match(
+      new RegExp("url=(.*)%3Fsecret_token")
+    )[1]
+    audioLink.secret_token = media.audioLink.match(
+      new RegExp("secret_token%3D(.*)&color=")
+    )[1]
+  }
+
   // check audio exists
   if (location) {
     if (location.state) {
@@ -36,7 +56,7 @@ const MediaTemplate = ({ data, pageContext, location }) => {
   const [format, setFormat] = useState(stateFormat)
 
   const [url, setUrl] = useState(
-    format === "Video" ? media.videoLink : media.audioFile.publicURL
+    format === "Video" ? media.videoLink : audioLink
   )
 
   const handlePlayer = event => {
@@ -48,15 +68,10 @@ const MediaTemplate = ({ data, pageContext, location }) => {
         : "Audio"
 
     setFormat(format)
-  }
 
-  useEffect(() => {
-    const url =
-      format === "Video"
-        ? media.videoLink
-        : `${siteUrl}${media.audioFile.publicURL}`
+    const url = format === "Video" ? media.videoLink : audioLink
     setUrl(url)
-  }, [format, media])
+  }
 
   const prevMediaLink = pageContext.prevMedia ? (
     <Link
@@ -188,11 +203,31 @@ const MediaTemplate = ({ data, pageContext, location }) => {
           </div>
         )}
 
-        {format === "Audio" && (
+        {format === "Audio" && url.track && url.secret_token && (
           <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center">
-            <audio controls={true} src={url} className="w-full">
-              <track kind="captions" src="" srcLang="en"></track>
-            </audio>
+            <iframe
+              width="100%"
+              height="166"
+              scrolling="no"
+              frameBorder="no"
+              allow="autoplay"
+              title="Audio Player"
+              src={`https://w.soundcloud.com/player/?url=${url.track}%3Fsecret_token%3D${url.secret_token}&color=%2300f0ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
+            ></iframe>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#cccccc",
+                lineBreak: "anywhere",
+                wordBreak: "normal",
+                overflow: "hidden",
+                whiteSpace: "nowrap",
+                textOverflow: "ellipsis",
+                fontFamily:
+                  "Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
+                fontWeight: "100",
+              }}
+            ></div>
           </div>
         )}
         <div
@@ -214,7 +249,7 @@ const MediaTemplate = ({ data, pageContext, location }) => {
               </svg>
             </button>
           )}
-          {media.audioFile && (
+          {audioLink && (
             <button
               onClick={handlePlayer}
               className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-400 text-yellow-800 cursor-pointer items-center"
@@ -263,9 +298,7 @@ export const query = graphql`
       }
       description
       excerpt
-      audioFile {
-        publicURL
-      }
+      audioLink
       teacher {
         avatar {
           childImageSharp {
