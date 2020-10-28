@@ -3,7 +3,7 @@ module.exports = {
     title: `The Way Church`,
     description: `Proclaiming Jesus as the way and living as people of the way.`,
     author: `The Way Church`,
-    siteUrl: `https://theywaychurch.netlify.app`,
+    siteUrl: `https://thewaychurch.netlify.app`,
   },
   plugins: [
     {
@@ -87,7 +87,7 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: `https://thewaychurch.herokuapp.com`,
-        queryLimit: 10000, // Default to 100
+        queryLimit: 1000, // Default to 100
         contentTypes: [`media-posts`, `media-types`, `teacher`],
         singleTypes: [
           `home-page`,
