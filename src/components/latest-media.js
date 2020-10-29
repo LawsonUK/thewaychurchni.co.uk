@@ -5,7 +5,7 @@ import MediaImage from "./media-image"
 
 const latestMedia = ({ media }) => {
   return (
-    <section className="featured-message max-w-screen-xl m-auto grid gap-12 xl:gap-24 sm:grid-cols-2 p-6 pt-16 pb-16 xl:pl-0 xl:pr-0">
+    <section className="featured-message max-w-screen-xl m-auto grid gap-2 md:gap-12 xl:gap-24 sm:grid-cols-2 p-6 pt-8 md:pt-16 pb-16 xl:pl-0 xl:pr-0">
       <div>
         <Link to={`/media/${media.slug}`}>
           {media.mediaImage ? (
