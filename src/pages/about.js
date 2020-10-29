@@ -24,11 +24,13 @@ const AboutPage = ({ data }) => {
         >
           <div className="rounded flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white pt-8 pb-8 md:px-8">
             <div className="flex items-center mb-6 md:px-20 xl:px-0">
-              <Img
-                className="rounded-full w-20 mr-6"
-                fluid={member.image.childImageSharp.fluid}
-                alt={member.title}
-              />
+              {member.image && (
+                <Img
+                  className="rounded-full w-20 mr-6"
+                  fluid={member.image.childImageSharp.fluid}
+                  alt={member.title}
+                />
+              )}
               <h3 className="text-2xl text-wayblue">{member.title}</h3>
             </div>
             <div className="px-2 md:px-20 xl:px-0">
@@ -40,11 +42,13 @@ const AboutPage = ({ data }) => {
         <li key={member.id} className="flex flex-col">
           <div className="rounded flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-4 bg-white pt-8 pb-8 md:pl-8 md:pr-8">
             <div className="flex items-center mb-6">
-              <Img
-                className="rounded-full w-20 mr-6"
-                fluid={member.image.childImageSharp.fluid}
-                alt={member.title}
-              />
+              {member.image && (
+                <Img
+                  className="rounded-full w-20 mr-6"
+                  fluid={member.image.childImageSharp.fluid}
+                  alt={member.title}
+                />
+              )}
               <h3 className="text-2xl text-wayblue">{member.title}</h3>
             </div>
             <pre>{member.body}</pre>
