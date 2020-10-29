@@ -108,7 +108,7 @@ const MediaTemplate = ({ data, pageContext, location }) => {
         <div>
           <div className="flex items-center justify-center mb-2 sm:mb-0 mr-6">
             <span>
-              {media.teacher.avatar && (
+              {media.teacher && media.teacher.avatar && (
                 <Img
                   className="rounded-full w-10 mr-4"
                   fluid={media.teacher.avatar.childImageSharp.fluid}
