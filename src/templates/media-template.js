@@ -116,9 +116,11 @@ const MediaTemplate = ({ data, pageContext, location }) => {
                 />
               )}
             </span>
-            <span className="text-gray-700 font-bold" to="/">
-              {media.teacher.name}
-            </span>
+            {media.teacher && (
+              <span className="text-gray-700 font-bold" to="/">
+                {media.teacher.name}
+              </span>
+            )}
           </div>
         </div>
 
