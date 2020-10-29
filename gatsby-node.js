@@ -28,8 +28,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   if (medias) {
     const promises = medias.map(async (media, index) => {
-      const prevMedia = medias[index - 1] ? medias[index - 1].node : false
-      const nextMedia = medias[index + 1] ? medias[index + 1].node : false
+      const prevMedia = medias[index - 1] ? medias[index - 1].node : null
+      const nextMedia = medias[index + 1] ? medias[index + 1].node : null
 
       createPage({
         path: `/media/${media.node.slug}`,
