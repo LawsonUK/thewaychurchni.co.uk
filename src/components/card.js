@@ -1,16 +1,21 @@
 import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
+import MediaImage from "./media-image"
 
 const card = ({ data, media = false }) => {
   const url = media ? `/media/${data.slug}` : `/blog/${data.slug}`
   return (
     <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-5 bg-white">
       <Link to={url}>
-        <Img
-          className="w-full h-64 mb-4 rounded"
-          fluid={data.featuredImage.childImageSharp.fluid}
-        />
+        {data.featuredImage ? (
+          <Img
+            className="w-full h-64 mb-4 rounded"
+            fluid={data.featuredImage.childImageSharp.fluid}
+          />
+        ) : (
+          <MediaImage />
+        )}
       </Link>
       <Link className="text-xl font-bold block text-red-500 mb-2" to={url}>
         {data.title}

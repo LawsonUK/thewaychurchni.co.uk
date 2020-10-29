@@ -203,33 +203,36 @@ const MediaTemplate = ({ data, pageContext, location }) => {
           </div>
         )}
 
-        {format === "Audio" && url.track && url.secret_token && (
-          <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center">
-            <iframe
-              width="100%"
-              height="166"
-              scrolling="no"
-              frameBorder="no"
-              allow="autoplay"
-              title="Audio Player"
-              src={`https://w.soundcloud.com/player/?url=${url.track}%3Fsecret_token%3D${url.secret_token}&color=%2354b0b1&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false`}
-            ></iframe>
-            <div
-              style={{
-                fontSize: "10px",
-                color: "#cccccc",
-                lineBreak: "anywhere",
-                wordBreak: "normal",
-                overflow: "hidden",
-                whiteSpace: "nowrap",
-                textOverflow: "ellipsis",
-                fontFamily:
-                  "Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
-                fontWeight: "100",
-              }}
-            ></div>
-          </div>
-        )}
+        {format === "Audio" &&
+          url.track &&
+          url.secret_token &&
+          media.audioLink && (
+            <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center">
+              <iframe
+                width="100%"
+                height="166"
+                scrolling="no"
+                frameBorder="no"
+                allow="autoplay"
+                title="Audio Player"
+                src={`https://w.soundcloud.com/player/?url=${url.track}%3Fsecret_token%3D${url.secret_token}&color=%2354b0b1&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false`}
+              ></iframe>
+              <div
+                style={{
+                  fontSize: "10px",
+                  color: "#cccccc",
+                  lineBreak: "anywhere",
+                  wordBreak: "normal",
+                  overflow: "hidden",
+                  whiteSpace: "nowrap",
+                  textOverflow: "ellipsis",
+                  fontFamily:
+                    "Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
+                  fontWeight: "100",
+                }}
+              ></div>
+            </div>
+          )}
         <div
           data-sal="fade"
           className="max-w-4xl m-auto mt-8 flex justify-center items-center"
@@ -249,7 +252,7 @@ const MediaTemplate = ({ data, pageContext, location }) => {
               </svg>
             </button>
           )}
-          {audioLink && (
+          {audioLink && media.audioLink && (
             <button
               onClick={handlePlayer}
               className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-400 text-yellow-800 cursor-pointer items-center"
