@@ -1,5 +1,3 @@
-const fetch = require(`node-fetch`)
-
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const results = await graphql(

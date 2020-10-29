@@ -8,10 +8,10 @@ const latestMedia = ({ media }) => {
     <section className="featured-message max-w-screen-xl m-auto grid gap-12 xl:gap-24 sm:grid-cols-2 p-6 pt-16 pb-16 xl:pl-0 xl:pr-0">
       <div>
         <Link to={`/media/${media.slug}`}>
-          {media.featuredImage ? (
+          {media.mediaImage ? (
             <Img
               className="rounded"
-              fluid={media.featuredImage.childImageSharp.fluid}
+              fluid={media.mediaImage.childImageSharp.fluid}
               alt={media.title}
             />
           ) : (

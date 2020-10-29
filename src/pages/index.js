@@ -104,7 +104,7 @@ export const query = graphql`
         slug
         description
         excerpt
-        featuredImage {
+        mediaImage {
           childImageSharp {
             fluid(maxWidth: 620, maxHeight: 373, quality: 70) {
               ...GatsbyImageSharpFluid_withWebp
@@ -142,7 +142,7 @@ export const query = graphql`
         slug
         description
         excerpt
-        featuredImage {
+        mediaImage {
           childImageSharp {
             fluid(maxWidth: 620, maxHeight: 373, quality: 70) {
               ...GatsbyImageSharpFluid_withWebp

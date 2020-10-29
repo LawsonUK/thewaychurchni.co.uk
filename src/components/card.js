@@ -8,10 +8,10 @@ const card = ({ data, media = false }) => {
   return (
     <div className="rounded overflow-hidden flex flex-col flex-grow shadow-lg border-solid border border-gray-300 p-5 bg-white">
       <Link to={url}>
-        {data.featuredImage ? (
+        {data.mediaImage ? (
           <Img
             className="w-full h-64 mb-4 rounded"
-            fluid={data.featuredImage.childImageSharp.fluid}
+            fluid={data.mediaImage.childImageSharp.fluid}
           />
         ) : (
           <MediaImage />

@@ -13,7 +13,7 @@ const NotFoundPage = ({ data }) => {
   const image2 = gallery.image2.childImageSharp.fluid
   const image3 = gallery.image3.childImageSharp.fluid
   const image4 = gallery.image4.childImageSharp.fluid
-  const image5 = gallery.image5.childImageSharp.fluid
+  // const image5 = gallery.image5.childImageSharp.fluid
   return (
     <Layout>
       <SEO title="404: Not found" />
@@ -56,11 +56,11 @@ const NotFoundPage = ({ data }) => {
           />
         </li>
         <li className="bg-red-100 rounded overflow-hidden flex flex-col">
-          <Img
+          {/* <Img
             className="flex flex-grow"
             fluid={image5}
             alt="Jonathan Carson"
-          />
+          /> */}
         </li>
       </ul>
     </Layout>
@@ -94,13 +94,6 @@ export const query = graphql`
             }
           }
           image4 {
-            childImageSharp {
-              fluid(maxWidth: 306, maxHeight: 229, quality: 70) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-          image5 {
             childImageSharp {
               fluid(maxWidth: 306, maxHeight: 229, quality: 70) {
                 ...GatsbyImageSharpFluid_withWebp
