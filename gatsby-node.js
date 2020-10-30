@@ -3,7 +3,10 @@ exports.createPages = async ({ graphql, actions }) => {
   const results = await graphql(
     `
       {
-        media: allStrapiMediaPosts(sort: { fields: publishedOn, order: DESC }) {
+        media: allStrapiMediaPosts(
+          filter: { published: { eq: true } }
+          sort: { fields: publishedOn, order: DESC }
+        ) {
           edges {
             node {
               strapiId
