@@ -81,7 +81,7 @@ const latestMedia = ({ media }) => {
               <Img
                 className="rounded-full w-10 xl:w-12 mr-4"
                 fluid={media.teacher.avatar.childImageSharp.fluid}
-                alt="Jonathan Carson"
+                alt={media.teacher && media.teacher.name}
               />
             )}
           </span>

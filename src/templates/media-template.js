@@ -160,7 +160,7 @@ const MediaTemplate = ({ data, pageContext, location }) => {
       </section>
       <section className="player pt-12 pb-12 bg-light mb-16">
         {format === "Video" &&
-          url.includes("facebook") &&
+          (url.includes("facebook") || url.includes("fb.watch")) &&
           media.videoOrientation === "Portrait" && (
             <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center relative">
               <iframe
@@ -175,7 +175,7 @@ const MediaTemplate = ({ data, pageContext, location }) => {
           )}
 
         {format === "Video" &&
-          url.includes("facebook") &&
+          (url.includes("facebook") || url.includes("fb.watch")) &&
           media.videoOrientation !== "Portrait" && (
             <div className="max-w-4xl m-auto pl-4 pr-4 flex justify-center items-center relative">
               <ReactPlayer

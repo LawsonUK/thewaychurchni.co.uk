@@ -27,7 +27,9 @@ const card = ({ data, media = false }) => {
         Published On: {data.publishedOn}
       </span>
       <pre className="mt-4 mb-8 text-sm">
-        {data.excerpt.split(" ").splice(0, 20).join(" ")}...
+        {data.excerpt.length > 20
+          ? `${data.excerpt.split(" ").splice(0, 20).join(" ")}...`
+          : data.excerpt}
       </pre>
       {media ? (
         <>
