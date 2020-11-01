@@ -21,13 +21,13 @@ const ContactPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Contact" />
-      <section className="banner max-w-screen-xl m-auto text-center mt-24 mb-8 md:mb-24 flex flex-col px-6 pt-0 xl:p-0">
+      <section className="banner max-w-screen-xl m-auto text-center mt-24 mb-12 md:mb-24 flex flex-col px-6 pt-0 xl:p-0">
         <div className="w-full">
           <h3 className="mb-3">Contact</h3>
           <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-wayblue">
             {contactPage.title}
           </h1>
-          <pre>{contactPage.subTitle}</pre>
+          <pre className="text-sm">{contactPage.subTitle}</pre>
         </div>
       </section>
       <section className="contact-details max-w-screen-xl m-auto grid md:grid-cols-3 text-center">

@@ -21,12 +21,12 @@ const card = ({ data, media = false }) => {
         {data.title}
       </Link>
       {media && (
-        <span className="text-sm text-gray-600">{data.media_type.type}</span>
+        <span className="text-sm text-gray-500">{data.media_type.type}</span>
       )}
-      <span className="text-sm text-gray-600">
+      <span className="text-sm text-gray-500">
         Published On: {data.publishedOn}
       </span>
-      <pre className="mt-2 mb-8">
+      <pre className="mt-4 mb-8 text-sm">
         {data.excerpt.split(" ").splice(0, 20).join(" ")}...
       </pre>
       {media ? (

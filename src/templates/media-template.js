@@ -99,7 +99,7 @@ const MediaTemplate = ({ data, pageContext, location }) => {
           <Link to="/media" className="link mb-3">
             Media
           </Link>
-          <h1 className="text-3xl md:text-4xl font-extrabold mt-3 mb-4 text-wayblue">
+          <h1 className="text-2xl md:text-4xl font-extrabold my-6 text-wayblue">
             {media.title}
           </h1>
         </div>
@@ -124,8 +124,10 @@ const MediaTemplate = ({ data, pageContext, location }) => {
           </div>
         </div>
 
-        <span className="py-4">Published On: {media.publishedOn}</span>
-        <div>
+        <span className="py-4 text-gray-600">
+          Published On: {media.publishedOn}
+        </span>
+        <div className="mt-4 sm:mt-0">
           <EmailShareButton
             url={`${siteUrl}/media/${media.slug}`}
             subject={media.title}

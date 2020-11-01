@@ -5,8 +5,8 @@ import MediaImage from "./media-image"
 
 const latestMedia = ({ media }) => {
   return (
-    <section className="featured-message max-w-screen-xl m-auto grid gap-2 md:gap-12 xl:gap-24 sm:grid-cols-2 p-6 pt-8 md:pt-16 pb-16 xl:pl-0 xl:pr-0">
-      <div>
+    <section className="featured-message max-w-screen-xl m-auto grid gap-2 sm:gap-8 md:gap-12 xl:gap-24 md:grid-cols-2 p-6 pt-8 md:pt-16 pb-16 xl:pl-0 xl:pr-0 mt-6 md:mt-0">
+      <div className="mb-3">
         <Link to={`/media/${media.slug}`}>
           {media.mediaImage ? (
             <Img
@@ -27,12 +27,12 @@ const latestMedia = ({ media }) => {
           {media.title}
         </Link>
         <div className="flex flex-col mb-2">
-          <span className="text-sm text-gray-600">{media.media_type.type}</span>
-          <span className="text-sm text-gray-600">
+          <span className="text-sm text-gray-500">{media.media_type.type}</span>
+          <span className="text-sm text-gray-500">
             Published On: {media.publishedOn}
           </span>
         </div>
-        <pre className="mb-6">
+        <pre className="mt-4 mb-8 text-sm">
           {media.excerpt.split(" ").splice(0, 20).join(" ")}...
         </pre>
 
