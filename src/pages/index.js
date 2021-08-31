@@ -9,6 +9,7 @@ import BackgroundImage from "gatsby-background-image"
 
 const IndexPage = ({ data }) => {
   const indexPage = data.indexpage.nodes[0] ? data.indexpage.nodes[0] : false
+  console.log("indexPage", indexPage)
   const message = data.message.nodes[0] ? data.message.nodes[0] : false
   const medias = data.media.nodes ? data.media.nodes : false
 
@@ -21,10 +22,15 @@ const IndexPage = ({ data }) => {
         fluid={indexPage.bannerImage.childImageSharp.fluid}
         backgroundColor={`#040e18`}
       >
-        <div className="absolute top-0 bottom-0 right-0 left-0 bg-white opacity-50 z-0 transition-opacity duration-200 lg:opacity-0"></div>
+        <div className="absolute top-0 bottom-0 right-0 left-0 bg-white opacity-0 z-0 transition-opacity duration-200"></div>
         <section className="banner max-w-screen-xl m-auto flex flex-grow p-4 xl:p-0 relative z-10">
           <div
-            className="pl-4 pr-4 xl:pl-0 xl:pr-0 mt-16 sm:mt-0"
+            className={`pl-4 pr-4 xl:pl-0 xl:pr-0 mt-16 sm:mt-0`}
+            style={
+              !indexPage.bannerText
+                ? { marginTop: "350px" }
+                : { marginTop: "0px" }
+            }
             data-sal="slide-up"
             data-sal-delay="100"
             data-sal-duration="700"
@@ -34,12 +40,22 @@ const IndexPage = ({ data }) => {
               <pre className="heading font-sans">{indexPage.bannerText}</pre>
             </h1>
             <div className="absolute">
-              <Link
-                to="/about"
-                className="text-gray-100 bg-red-500 pt-3 pb-3 pl-6 pr-6 rounded shadow-md mr-4"
-              >
-                Learn more
-              </Link>
+              {indexPage.moreLink ? (
+                <a
+                  className="text-gray-100 bg-red-500 pt-3 pb-3 pl-6 pr-6 rounded shadow-md mr-4"
+                  href={`${indexPage.moreLink}`}
+                >
+                  Learn more
+                </a>
+              ) : (
+                <Link
+                  to="/about"
+                  className="text-gray-100 bg-red-500 pt-3 pb-3 pl-6 pr-6 rounded shadow-md mr-4"
+                >
+                  Learn more
+                </Link>
+              )}
+
               <Link
                 to="/contact"
                 className="bg-gray-100 text-red-500 pt-3 pb-3 pl-6 pr-6 rounded shadow-md"
@@ -81,6 +97,7 @@ export const query = graphql`
     indexpage: allStrapiHomePage {
       nodes {
         bannerText
+        moreLink
         bannerImage {
           childImageSharp {
             fluid(maxWidth: 1280, quality: 70) {
