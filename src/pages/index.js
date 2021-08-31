@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import LatestMedia from "../components/latest-media"
 import Card from "../components/card"
-
 import BackgroundImage from "gatsby-background-image"
 
 const IndexPage = ({ data }) => {
