@@ -161,7 +161,7 @@ article a {
 
 .banner-background:before,
 .banner-background:after {
-  /* background-position: 75% 60% !important; */
+  background-position: 75% 60% !important;
   background-color: #fff;
 }
 

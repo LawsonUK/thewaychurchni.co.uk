@@ -47,12 +47,7 @@ const Header = ({ absolute, live, headerText }) => {
     </li>
   )
   return (
-    <div
-      className={`${
-        absolute &&
-        "absolute bg-gradient-to-b from-gray-100 to-transparent pb-64"
-      } z-10 w-full pt-4`}
-    >
+    <div className={`${absolute && "absolute"} z-10 w-full pt-4`}>
       <header
         className={`p-4 flex relative justify-between items-center max-w-screen-xl m-auto xl:p-0 xl:pt-4`}
       >
